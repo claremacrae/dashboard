@@ -9,10 +9,8 @@ class Build:
 
         # TODO Add Appveyor link
         # TODO What if build does not exist yet?
-        travis_status_markdown = self.create_travis_status_markdown()
-
         line = f"| {self.user} | {self.project} | {self.branch} | " + \
-               travis_status_markdown +\
+               self.create_travis_status_markdown() + \
                " | |"
         stream.write(line + '\n')
 
