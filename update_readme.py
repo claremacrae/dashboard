@@ -22,7 +22,11 @@ class BranchBuild:
 
         # Appveyor info
         self.appveyor_token = appveyor_token
-        self.custom_appveyor_user = custom_appveyor_user
+        self.appveyor_project = self.project.lower().replace('.', '-')
+        if custom_appveyor_user:
+            self.appveyor_user = custom_appveyor_user
+        else:
+            self.appveyor_user = self.user
 
     def write_row(self, stream):
         # TODO Add Appveyor link
@@ -51,15 +55,10 @@ class BranchBuild:
         if not self.appveyor_token:
             return '&nbsp;'
 
-        project_locase = self.project.lower().replace('.', '-')
-        if self.custom_appveyor_user:
-            user = self.custom_appveyor_user
-        else:
-            user = self.user
         return self.hyperlinked_image(
             "Build status",
             f"https://ci.appveyor.com/api/projects/status/{self.appveyor_token}/branch/{self.branch}?svg=true",
-            f"https://ci.appveyor.com/project/{user}/{project_locase}/branch/{self.branch}")
+            f"https://ci.appveyor.com/project/{self.appveyor_user}/{self.appveyor_project}/branch/{self.branch}")
 
 
 class BuildHistory(BranchBuild):
@@ -82,14 +81,9 @@ class BuildHistory(BranchBuild):
         if not self.appveyor_token:
             return '&nbsp;'
 
-        project_locase = self.project.lower().replace('.', '-')
-        if self.custom_appveyor_user:
-            user = self.custom_appveyor_user
-        else:
-            user = self.user
         return self.hyperlinked_text(
             "history",
-            f"https://ci.appveyor.com/project/{user}/{project_locase}/history")
+            f"https://ci.appveyor.com/project/{self.appveyor_user}/{self.appveyor_project}/history")
 
 class Builds:
     def __init__(self):
