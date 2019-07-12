@@ -19,7 +19,12 @@ class Build:
         else:
             travis_url_base_image = 'api.travis-ci.org'
             travis_url_base_target = 'travis-ci.org'
-        travis_status_markdown = "[![Build Status](" + f"https://{travis_url_base_image}/{self.user}/{self.project}.svg?branch={self.branch}" + ")](" + f"https://{travis_url_base_target}/{self.user}/{self.project}" + ")"
+        travis_status_markdown = \
+            "[![Build Status](" + \
+            f"https://{travis_url_base_image}/{self.user}/{self.project}.svg?branch={self.branch}" + \
+            ")](" + \
+            f"https://{travis_url_base_target}/{self.user}/{self.project}" + \
+            ")"
         return travis_status_markdown
 
 
