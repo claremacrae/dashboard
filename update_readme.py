@@ -1,4 +1,11 @@
+branch_name_for_history = 'BRANCH_NAME_FOR_HISTORY'
+
+
 class BranchBuild:
+    """
+    Class that generates a row in the dashboard to represent the current status of builds
+    for a particular branch in a particular repo
+    """
     def __init__(self, user, project, branch, travis_com, appveyor_token, custom_appveyor_user):
         self.user = user
         self.project = project
@@ -6,10 +13,6 @@ class BranchBuild:
         self.travis_com = travis_com
         self.appveyor_token = appveyor_token
         self.custom_appveyor_user = custom_appveyor_user
-
-        # TODO Add special-case branch name that provides different links, to see all of the history:
-        # - https://travis-ci.com/claremacrae/ApprovalTests.cpp/branches
-        # - https://ci.appveyor.com/project/isidore/approvaltests-cpp/history
 
     def write_row(self, stream):
         # TODO Add Appveyor link
@@ -22,6 +25,9 @@ class BranchBuild:
 
     def hyperlinked_image(self, link_label, image_url, target_url):
         return f"[![{link_label}]({image_url})]({target_url})"
+
+    def hyperlinked_text(self, link_label, target_url):
+        return f"[{link_label}]({target_url})"
 
     def travis_status(self):
         # see https://devops.stackexchange.com/questions/1201/whats-the-difference-between-travis-ci-org-and-travis-ci-com
@@ -54,6 +60,35 @@ class BranchBuild:
             f"https://ci.appveyor.com/project/{user}/{project_locase}/branch/{self.branch}")
 
 
+class BuildHistory(BranchBuild):
+    """
+    Class that generates a row in the dashboard to represent links to the build history
+    for all branches or builds in a particular repo
+    """
+    def __init__(self, user, project, branch, travis_com, appveyor_token, custom_appveyor_user):
+        super().__init__(user, project, branch, travis_com, appveyor_token, custom_appveyor_user)
+
+    def branch_link(self):
+        return 'all'
+
+    def travis_status(self):
+        return self.hyperlinked_text(
+            "branches",
+            f"https://travis-ci.com/{self.user}/{self.project}/branches")
+
+    def appveyor_status(self):
+        if not self.appveyor_token:
+            return ''
+
+        project_locase = self.project.lower().replace('.', '-')
+        if self.custom_appveyor_user:
+            user = self.custom_appveyor_user
+        else:
+            user = self.user
+        return self.hyperlinked_text(
+            "history",
+            f"https://ci.appveyor.com/project/{user}/{project_locase}/history")
+
 class Builds:
     def __init__(self):
         self.builds = []
@@ -62,6 +97,9 @@ class Builds:
         self.builds.append(build)
 
     def add_builds(self, user, project, branches, travis_com, appveyor_token = None, custom_appveyor_user = None):
+        build = BuildHistory(user, project, branch_name_for_history, travis_com, appveyor_token, custom_appveyor_user)
+        self.add_build(build)
+
         for branch in branches:
             build = BranchBuild(user, project, branch, travis_com, appveyor_token, custom_appveyor_user)
             self.add_build(build)
