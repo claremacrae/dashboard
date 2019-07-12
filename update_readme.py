@@ -7,6 +7,10 @@ class Build:
         self.appveyor_token = appveyor_token
         self.custom_appveyor_user = custom_appveyor_user
 
+        # TODO Add special-case branch name that provides different links, to see all of the history:
+        # - https://travis-ci.com/claremacrae/ApprovalTests.cpp/branches
+        # - https://ci.appveyor.com/project/isidore/approvaltests-cpp/history
+
     def write_row(self, stream):
         # TODO Add Appveyor link
         # TODO What if build does not exist yet?
