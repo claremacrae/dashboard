@@ -1,5 +1,5 @@
 class Build:
-    def __init__(self, user, project, branch, travis_com, appveyor_token = None):
+    def __init__(self, user, project, branch, travis_com, appveyor_token):
         self.user = user
         self.project = project
         self.branch = branch
@@ -35,19 +35,24 @@ class Build:
         return travis_status_markdown
 
     def create_appveyor_status_markdown(self):
-        return ''
+        if not self.appveyor_token:
+            return ''
+
+        project_locase = self.project.lower().replace('.', '-')
+        appveyor_markdown = f"[![Build status](https://ci.appveyor.com/api/projects/status/{self.appveyor_token}/branch/{self.branch}?svg=true)](https://ci.appveyor.com/project/{self.user}/{project_locase}/branch/{self.branch})"
+        return appveyor_markdown
 
 class Builds:
     def __init__(self):
         self.builds = []
 
-    def add_build(self, user, project, branch, travis_com):
-        build = Build(user, project, branch, travis_com)
+    def add_build(self, user, project, branch, travis_com, appveyor_token):
+        build = Build(user, project, branch, travis_com, appveyor_token)
         self.builds.append(build)
 
-    def add_builds(self, user, project, branches, travis_com):
+    def add_builds(self, user, project, branches, travis_com, appveyor_token = None):
         for branch in branches:
-            self.add_build(user, project, branch, travis_com)
+            self.add_build(user, project, branch, travis_com, appveyor_token)
 
     def write_header(self, stream):
         stream.write('# dashboard\n')
@@ -68,10 +73,10 @@ def create_readme():
     builds.add_builds('approvals', 'ApprovalTests.cpp', ['master'], False)
     builds.add_builds('approvals', 'ApprovalTests.cpp.StarterProject', ['master'], False)
 
-    builds.add_builds('claremacrae', 'ApprovalTests.cpp', ['master', 'more_travis_builds', 'more_appveyor_builds'], True)
-    builds.add_builds('claremacrae', 'ApprovalTests.cpp.StarterProject', ['master', 'more_travis_builds', 'more_appveyor_builds'], True)
+    builds.add_builds('claremacrae', 'ApprovalTests.cpp', ['master', 'more_travis_builds', 'more_appveyor_builds'], True, '37smtsp3a694okv8')
+    builds.add_builds('claremacrae', 'ApprovalTests.cpp.StarterProject', ['master', 'more_travis_builds', 'more_appveyor_builds'], True, 'mu8a5uib1ha7sx41')
 
-    builds.add_builds('claremacrae', 'ApprovalTests.cpp.Nursery', ['master'], True)
+    builds.add_builds('claremacrae', 'ApprovalTests.cpp.Nursery', ['master'], True, 'iqtnpa83t13os98v')
 
     builds.write_readme()
 
