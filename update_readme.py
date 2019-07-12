@@ -44,11 +44,11 @@ class Build:
             user = self.custom_appveyor_user
         else:
             user = self.user
-        return f"[![Build status]" + \
-           f"(https://ci.appveyor.com/api/projects/status/{self.appveyor_token}/branch/{self.branch}?svg=true)" + \
-        "](" + \
-           f"https://ci.appveyor.com/project/{user}/{project_locase}/branch/{self.branch}" + \
-        ")"
+        return self.hyperlinked_text(
+            "Build status",
+            f"https://ci.appveyor.com/api/projects/status/{self.appveyor_token}/branch/{self.branch}?svg=true",
+            f"https://ci.appveyor.com/project/{user}/{project_locase}/branch/{self.branch}")
+
 
 class Builds:
     def __init__(self):
