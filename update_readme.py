@@ -79,8 +79,9 @@ def create_readme():
     builds.add_builds('approvals', 'ApprovalTests.cpp', ['master'], False, 'lf3i76ije89oihi5', 'isidore')
     builds.add_builds('approvals', 'ApprovalTests.cpp.StarterProject', ['master'], False)
 
-    builds.add_builds('claremacrae', 'ApprovalTests.cpp', ['master', 'more_travis_builds', 'more_appveyor_builds'], True, '37smtsp3a694okv8')
-    builds.add_builds('claremacrae', 'ApprovalTests.cpp.StarterProject', ['master', 'more_travis_builds', 'more_appveyor_builds'], True, 'mu8a5uib1ha7sx41')
+    my_branches = ['master', 'more_travis_builds', 'more_appveyor_builds']
+    builds.add_builds('claremacrae', 'ApprovalTests.cpp', my_branches, True, '37smtsp3a694okv8')
+    builds.add_builds('claremacrae', 'ApprovalTests.cpp.StarterProject', my_branches, True, 'mu8a5uib1ha7sx41')
 
     builds.add_builds('claremacrae', 'ApprovalTests.cpp.Nursery', ['master'], True, 'iqtnpa83t13os98v')
 
