@@ -44,7 +44,12 @@ class Build:
             user = self.custom_appveyor_user
         else:
             user = self.user
-        appveyor_markdown = f"[![Build status]" + f"(https://ci.appveyor.com/api/projects/status/{self.appveyor_token}/branch/{self.branch}?svg=true)" + "](" + f"https://ci.appveyor.com/project/{user}/{project_locase}/branch/{self.branch}" + ")"
+        appveyor_markdown = \
+            f"[![Build status]" + \
+            f"(https://ci.appveyor.com/api/projects/status/{self.appveyor_token}/branch/{self.branch}?svg=true)" + \
+            "](" + \
+            f"https://ci.appveyor.com/project/{user}/{project_locase}/branch/{self.branch}" + \
+            ")"
         return appveyor_markdown
 
 class Builds:
