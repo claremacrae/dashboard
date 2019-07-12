@@ -31,12 +31,12 @@ class BranchBuild:
 
         # There is currently no way that I can see for including the branch name in the second URL here.
         # See this, for requests from others for this: https://github.com/travis-ci/travis-ci/issues/5024
-        return self.hyperlinked_text(
+        return self.hyperlinked_image(
             "Build Status",
             f"https://{travis_url_base_image}/{self.user}/{self.project}.svg?branch={self.branch}",
             f"https://{travis_url_base_target}/{self.user}/{self.project}")
 
-    def hyperlinked_text(self, link_label, image_url, target_url):
+    def hyperlinked_image(self, link_label, image_url, target_url):
         return f"[![{link_label}]({image_url})]({target_url})"
 
     def appveyor_status(self):
@@ -48,7 +48,7 @@ class BranchBuild:
             user = self.custom_appveyor_user
         else:
             user = self.user
-        return self.hyperlinked_text(
+        return self.hyperlinked_image(
             "Build status",
             f"https://ci.appveyor.com/api/projects/status/{self.appveyor_token}/branch/{self.branch}?svg=true",
             f"https://ci.appveyor.com/project/{user}/{project_locase}/branch/{self.branch}")
