@@ -30,6 +30,10 @@ class Build:
         link_label = "Build Status"
         image_url = f"https://{travis_url_base_image}/{self.user}/{self.project}.svg?branch={self.branch}"
         target_url = f"https://{travis_url_base_target}/{self.user}/{self.project}"
+        travis_status_markdown = self.hyperlinked_text(image_url, link_label, target_url)
+        return travis_status_markdown
+
+    def hyperlinked_text(self, image_url, link_label, target_url):
         travis_status_markdown = \
             "[![" + link_label + "](" + \
             image_url + \
