@@ -29,8 +29,6 @@ class BranchBuild:
             self.appveyor_user = self.user
 
     def write_row(self, stream):
-        # TODO Add Appveyor link
-        # TODO What if build does not exist yet?
         line = f"| {self.user} | {self.project} | {self.branch_link()} | {self.travis_status()} |{self.appveyor_status()} |"
         stream.write(line + '\n')
 
