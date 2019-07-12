@@ -58,13 +58,13 @@ class Builds:
     def __init__(self):
         self.builds = []
 
-    def add_build(self, user, project, branch, travis_com, appveyor_token, custom_appveyor_user):
-        build = BranchBuild(user, project, branch, travis_com, appveyor_token, custom_appveyor_user)
+    def add_build(self, build):
         self.builds.append(build)
 
     def add_builds(self, user, project, branches, travis_com, appveyor_token = None, custom_appveyor_user = None):
         for branch in branches:
-            self.add_build(user, project, branch, travis_com, appveyor_token, custom_appveyor_user)
+            build = BranchBuild(user, project, branch, travis_com, appveyor_token, custom_appveyor_user)
+            self.add_build(build)
 
     def write_header(self, stream):
         stream.write('<a id="top"></a>\n')
