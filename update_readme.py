@@ -42,10 +42,9 @@ class Builds:
         build = Build(user, project, branch, travis_com)
         self.builds.append(build)
 
-    def add_builds(self, user, projects, branches, travis_com):
-        for project in projects:
-            for branch in branches:
-                self.add_build(user, project, branch, travis_com)
+    def add_builds(self, user, project, branches, travis_com):
+        for branch in branches:
+            self.add_build(user, project, branch, travis_com)
 
     def write_header(self, stream):
         stream.write('# dashboard\n')
@@ -64,9 +63,14 @@ def create_readme():
     builds = Builds()
 
     approvals_projects = ['ApprovalTests.cpp', 'ApprovalTests.cpp.StarterProject']
-    builds.add_builds('approvals', approvals_projects, ['master'], False)
-    builds.add_builds('claremacrae', approvals_projects, ['master', 'more_travis_builds', 'more_appveyor_builds'], True)
-    builds.add_builds('claremacrae', ['ApprovalTests.cpp.Nursery'], ['master'], True)
+
+    for project in approvals_projects:
+        builds.add_builds('approvals', project, ['master'], False)
+
+    for project in approvals_projects:
+        builds.add_builds('claremacrae', project, ['master', 'more_travis_builds', 'more_appveyor_builds'], True)
+
+    builds.add_builds('claremacrae', 'ApprovalTests.cpp.Nursery', ['master'], True)
 
     builds.write_readme()
 
