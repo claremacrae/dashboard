@@ -1,4 +1,4 @@
-class Build:
+class BranchBuild:
     def __init__(self, user, project, branch, travis_com, appveyor_token, custom_appveyor_user):
         self.user = user
         self.project = project
@@ -59,7 +59,7 @@ class Builds:
         self.builds = []
 
     def add_build(self, user, project, branch, travis_com, appveyor_token, custom_appveyor_user):
-        build = Build(user, project, branch, travis_com, appveyor_token, custom_appveyor_user)
+        build = BranchBuild(user, project, branch, travis_com, appveyor_token, custom_appveyor_user)
         self.builds.append(build)
 
     def add_builds(self, user, project, branches, travis_com, appveyor_token = None, custom_appveyor_user = None):
