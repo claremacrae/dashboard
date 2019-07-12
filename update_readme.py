@@ -62,7 +62,7 @@ def create_readme():
 
     approvals_projects = ['ApprovalTests.cpp', 'ApprovalTests.cpp.StarterProject']
     builds.add_builds('approvals', approvals_projects, ['master'], False)
-    builds.add_builds('claremacrae', approvals_projects, ['master', 'more_appveyor_builds'], True)
+    builds.add_builds('claremacrae', approvals_projects, ['master', 'more_travis_builds', 'more_appveyor_builds'], True)
     builds.add_builds('claremacrae', ['ApprovalTests.cpp.Nursery'], ['master'], True)
 
     builds.write_readme()
