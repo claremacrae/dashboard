@@ -27,10 +27,10 @@ class Build:
 
         # There is currently no way that I can see for including the branch name in the second URL here.
         # See this, for requests from others for this: https://github.com/travis-ci/travis-ci/issues/5024
-        link_label = "Build Status"
-        image_url = f"https://{travis_url_base_image}/{self.user}/{self.project}.svg?branch={self.branch}"
-        target_url = f"https://{travis_url_base_target}/{self.user}/{self.project}"
-        return self.hyperlinked_text(link_label, image_url, target_url)
+        return self.hyperlinked_text(
+            "Build Status",
+            f"https://{travis_url_base_image}/{self.user}/{self.project}.svg?branch={self.branch}",
+            f"https://{travis_url_base_target}/{self.user}/{self.project}")
 
     def hyperlinked_text(self, link_label, image_url, target_url):
         return f"[![{link_label}]({image_url})]({target_url})"
