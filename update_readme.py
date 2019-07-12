@@ -62,13 +62,11 @@ class Builds:
 def create_readme():
     builds = Builds()
 
-    approvals_projects = ['ApprovalTests.cpp', 'ApprovalTests.cpp.StarterProject']
+    builds.add_builds('approvals', 'ApprovalTests.cpp', ['master'], False)
+    builds.add_builds('approvals', 'ApprovalTests.cpp.StarterProject', ['master'], False)
 
-    for project in approvals_projects:
-        builds.add_builds('approvals', project, ['master'], False)
-
-    for project in approvals_projects:
-        builds.add_builds('claremacrae', project, ['master', 'more_travis_builds', 'more_appveyor_builds'], True)
+    builds.add_builds('claremacrae', 'ApprovalTests.cpp', ['master', 'more_travis_builds', 'more_appveyor_builds'], True)
+    builds.add_builds('claremacrae', 'ApprovalTests.cpp.StarterProject', ['master', 'more_travis_builds', 'more_appveyor_builds'], True)
 
     builds.add_builds('claremacrae', 'ApprovalTests.cpp.Nursery', ['master'], True)
 
