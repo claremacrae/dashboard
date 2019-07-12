@@ -30,9 +30,9 @@ class Build:
         link_label = "Build Status"
         image_url = f"https://{travis_url_base_image}/{self.user}/{self.project}.svg?branch={self.branch}"
         target_url = f"https://{travis_url_base_target}/{self.user}/{self.project}"
-        return self.hyperlinked_text(image_url, link_label, target_url)
+        return self.hyperlinked_text(link_label, image_url, target_url)
 
-    def hyperlinked_text(self, image_url, link_label, target_url):
+    def hyperlinked_text(self, link_label, image_url, target_url):
         return f"[![{link_label}]({image_url})]({target_url})"
 
     def appveyor_status(self):
