@@ -10,7 +10,17 @@ class BranchBuild:
         self.user = user
         self.project = project
         self.branch = branch
-        self.travis_com = travis_com
+
+        # Travis info
+        # see https://devops.stackexchange.com/questions/1201/whats-the-difference-between-travis-ci-org-and-travis-ci-com
+        if travis_com:
+            self.travis_url_base_image = 'travis-ci.com'
+            self.travis_url_base_target = self.travis_url_base_image
+        else:
+            self.travis_url_base_image = 'api.travis-ci.org'
+            self.travis_url_base_target = 'travis-ci.org'
+
+        # Appveyor info
         self.appveyor_token = appveyor_token
         self.custom_appveyor_user = custom_appveyor_user
 
@@ -30,20 +40,12 @@ class BranchBuild:
         return f"[{link_label}]({target_url})"
 
     def travis_status(self):
-        # see https://devops.stackexchange.com/questions/1201/whats-the-difference-between-travis-ci-org-and-travis-ci-com
-        if self.travis_com:
-            travis_url_base_image = 'travis-ci.com'
-            travis_url_base_target = travis_url_base_image
-        else:
-            travis_url_base_image = 'api.travis-ci.org'
-            travis_url_base_target = 'travis-ci.org'
-
         # There is currently no way that I can see for including the branch name in the second URL here.
         # See this, for requests from others for this: https://github.com/travis-ci/travis-ci/issues/5024
         return self.hyperlinked_image(
             "Build Status",
-            f"https://{travis_url_base_image}/{self.user}/{self.project}.svg?branch={self.branch}",
-            f"https://{travis_url_base_target}/{self.user}/{self.project}")
+            f"https://{self.travis_url_base_image}/{self.user}/{self.project}.svg?branch={self.branch}",
+            f"https://{self.travis_url_base_target}/{self.user}/{self.project}")
 
     def appveyor_status(self):
         if not self.appveyor_token:
