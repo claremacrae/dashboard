@@ -1,7 +1,7 @@
 # dashboard
 A space to check build-statuses of projects I'm working on
 
-| User  | project | branch | [Travis](https://travis-ci.com/claremacrae/) | [Appveyor](https://ci.appveyor.com/projects) |
+| User | project | branch | [Travis](https://travis-ci.com/claremacrae/) | [Appveyor](https://ci.appveyor.com/projects) |
 | ------------- | ------------- | - | - | - |
 | approvals | ApprovalTests.cpp | master | [![Build Status](https://api.travis-ci.org/approvals/ApprovalTests.cpp.svg?branch=master)](https://travis-ci.org/approvals/ApprovalTests.cpp) | |
 | approvals | ApprovalTests.cpp.StarterProject | master | [![Build Status](https://api.travis-ci.org/approvals/ApprovalTests.cpp.StarterProject.svg?branch=master)](https://travis-ci.org/approvals/ApprovalTests.cpp.StarterProject) | |
