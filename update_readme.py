@@ -60,6 +60,7 @@ class Builds:
             self.add_build(user, project, branch, travis_com, appveyor_token, custom_appveyor_user)
 
     def write_header(self, stream):
+        stream.write('<a id="top"></a>\n')
         stream.write('# dashboard\n')
         stream.write("A space to check build-statuses of projects I'm working on\n")
         stream.write('\n')
