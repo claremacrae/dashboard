@@ -1,11 +1,22 @@
 class Build:
-    def __init__(self, user, project, branch):
+    def __init__(self, user, project, branch, travis_com):
         self.user = user
         self.project = project
         self.branch = branch
+        self.travis_com = travis_com
 
     def write_row(self, stream):
-        line = f"| {self.user} | {self.project} | {self.branch} | [![Build Status](https://api.travis-ci.org/{self.user}/{self.project}.svg?branch={self.branch})](https://travis-ci.org/approvals/{self.project}) | [![Build status](https://ci.appveyor.com/api/projects/status/lf3i76ije89oihi5?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-cpp) |"
+        # see https://devops.stackexchange.com/questions/1201/whats-the-difference-between-travis-ci-org-and-travis-ci-com
+        if self.travis_com:
+            travis_url_base_image = 'travis-ci.com'
+            travis_url_base_target = travis_url_base_image
+        else:
+            travis_url_base_image = 'api.travis-ci.org'
+            travis_url_base_target = 'travis-ci.org'
+
+        # TODO Add Appveyor link
+        # TODO What if build does not exist yet?
+        line = f"| {self.user} | {self.project} | {self.branch} | [![Build Status](https://{travis_url_base_image}/{self.user}/{self.project}.svg?branch={self.branch})](https://{travis_url_base_target}/{self.user}/{self.project}) | |"
         stream.write(line + '\n')
 
 
@@ -13,14 +24,14 @@ class Builds:
     def __init__(self):
         self.builds = []
 
-    def add_build(self, user, project, branch):
-        build = Build(user, project, branch)
+    def add_build(self, user, project, branch, travis_com):
+        build = Build(user, project, branch, travis_com)
         self.builds.append(build)
 
-    def add_builds(self, user, projects, branches):
+    def add_builds(self, user, projects, branches, travis_com):
         for branch in branches:
             for project in projects:
-                self.add_build(user, project, branch)
+                self.add_build(user, project, branch, travis_com)
 
     def write_header(self, stream):
         stream.write('# dashboard\n')
@@ -39,9 +50,9 @@ def create_readme():
     builds = Builds()
 
     approvals_projects = ['ApprovalTests.cpp', 'ApprovalTests.cpp.StarterProject']
-    builds.add_builds('approvals', approvals_projects, ['master'])
-    builds.add_builds('claremacrae', approvals_projects, ['master', 'more_appveyor_builds'])
-    builds.add_builds('claremacrae', ['ApprovalTests.cpp.Nursery'], ['master'])
+    builds.add_builds('approvals', approvals_projects, ['master'], False)
+    builds.add_builds('claremacrae', approvals_projects, ['master', 'more_appveyor_builds'], True)
+    builds.add_builds('claremacrae', ['ApprovalTests.cpp.Nursery'], ['master'], True)
 
     builds.write_readme()
 
