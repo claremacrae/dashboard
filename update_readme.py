@@ -1,14 +1,15 @@
 class Build:
-    def __init__(self, user, project, branch, travis_com):
+    def __init__(self, user, project, branch, travis_com, appveyor_token = None):
         self.user = user
         self.project = project
         self.branch = branch
         self.travis_com = travis_com
+        self.appveyor_token = appveyor_token
 
     def write_row(self, stream):
         # TODO Add Appveyor link
         # TODO What if build does not exist yet?
-        line = f"| {self.user} | {self.project} | {self.create_branch_link_markdown()} | {self.create_travis_status_markdown()} | |"
+        line = f"| {self.user} | {self.project} | {self.create_branch_link_markdown()} | {self.create_travis_status_markdown()} |{self.create_appveyor_status_markdown()} |"
         stream.write(line + '\n')
 
     def create_branch_link_markdown(self):
@@ -33,6 +34,8 @@ class Build:
             ")"
         return travis_status_markdown
 
+    def create_appveyor_status_markdown(self):
+        return ''
 
 class Builds:
     def __init__(self):
