@@ -6,12 +6,9 @@ class Build:
         self.travis_com = travis_com
 
     def write_row(self, stream):
-
         # TODO Add Appveyor link
         # TODO What if build does not exist yet?
-        line = f"| {self.user} | {self.project} | {self.branch} | " + \
-               self.create_travis_status_markdown() + \
-               " | |"
+        line = f"| {self.user} | {self.project} | {self.branch} | {self.create_travis_status_markdown()} | |"
         stream.write(line + '\n')
 
     def create_travis_status_markdown(self):
