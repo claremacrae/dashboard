@@ -69,7 +69,7 @@ class BuildHistory(BranchBuild):
         super().__init__(user, project, branch, travis_com, appveyor_token, custom_appveyor_user)
 
     def branch_link(self):
-        return 'all'
+        return '&nbsp;'
 
     def travis_status(self):
         return self.hyperlinked_text(
