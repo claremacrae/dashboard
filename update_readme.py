@@ -20,6 +20,9 @@ class BranchBuild:
     def branch_link(self):
         return f"[{self.branch}](https://github.com/{self.user}/{self.project}/commits/{self.branch})"
 
+    def hyperlinked_image(self, link_label, image_url, target_url):
+        return f"[![{link_label}]({image_url})]({target_url})"
+
     def travis_status(self):
         # see https://devops.stackexchange.com/questions/1201/whats-the-difference-between-travis-ci-org-and-travis-ci-com
         if self.travis_com:
@@ -35,9 +38,6 @@ class BranchBuild:
             "Build Status",
             f"https://{travis_url_base_image}/{self.user}/{self.project}.svg?branch={self.branch}",
             f"https://{travis_url_base_target}/{self.user}/{self.project}")
-
-    def hyperlinked_image(self, link_label, image_url, target_url):
-        return f"[![{link_label}]({image_url})]({target_url})"
 
     def appveyor_status(self):
         if not self.appveyor_token:
