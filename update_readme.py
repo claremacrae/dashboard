@@ -47,7 +47,7 @@ class BranchBuild:
 
     def appveyor_status(self):
         if not self.appveyor_token:
-            return ''
+            return '&nbsp;'
 
         project_locase = self.project.lower().replace('.', '-')
         if self.custom_appveyor_user:
@@ -78,7 +78,7 @@ class BuildHistory(BranchBuild):
 
     def appveyor_status(self):
         if not self.appveyor_token:
-            return ''
+            return '&nbsp;'
 
         project_locase = self.project.lower().replace('.', '-')
         if self.custom_appveyor_user:
