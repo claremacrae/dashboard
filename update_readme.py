@@ -62,7 +62,7 @@ class BuildHistory(BranchBuild):
     for all branches or builds in a particular repo
     """
     def __init__(self, user, project, travis_com, appveyor_token, custom_appveyor_user):
-        super().__init__(user, project, 'invalid branch name', travis_com, appveyor_token, custom_appveyor_user)
+        super().__init__(user, project, None, travis_com, appveyor_token, custom_appveyor_user)
 
     def branch_link(self):
         return '&nbsp;'
