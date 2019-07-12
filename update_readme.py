@@ -34,13 +34,7 @@ class Build:
         return travis_status_markdown
 
     def hyperlinked_text(self, image_url, link_label, target_url):
-        travis_status_markdown = \
-            "[![" + link_label + "](" + \
-            image_url + \
-            ")](" + \
-            target_url + \
-            ")"
-        return travis_status_markdown
+        return "[![" + link_label + "](" + image_url + ")](" + target_url + ")"
 
     def appveyor_status(self):
         if not self.appveyor_token:
