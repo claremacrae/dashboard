@@ -40,8 +40,8 @@ class Builds:
         self.builds.append(build)
 
     def add_builds(self, user, projects, branches, travis_com):
-        for branch in branches:
-            for project in projects:
+        for project in projects:
+            for branch in branches:
                 self.add_build(user, project, branch, travis_com)
 
     def write_header(self, stream):
