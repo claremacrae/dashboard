@@ -93,8 +93,10 @@ class Builds:
         self.builds.append(build)
 
     def add_builds(self, user, project, branches, travis_com, appveyor_token = None, custom_appveyor_user = None):
-        build = BuildHistory(user, project, branch_name_for_history, travis_com, appveyor_token, custom_appveyor_user)
-        self.add_build(build)
+        # Add a first row, with links to all Travis branches and all Appveyor builds.
+        # Currently disabled as it clutters up the table and distracts from the build status images
+        # build = BuildHistory(user, project, branch_name_for_history, travis_com, appveyor_token, custom_appveyor_user)
+        # self.add_build(build)
 
         for branch in branches:
             build = BranchBuild(user, project, branch, travis_com, appveyor_token, custom_appveyor_user)
