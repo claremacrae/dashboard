@@ -1,10 +1,11 @@
 class Build:
-    def __init__(self, user, project, branch, travis_com, appveyor_token):
+    def __init__(self, user, project, branch, travis_com, appveyor_token, custom_appveyor_user):
         self.user = user
         self.project = project
         self.branch = branch
         self.travis_com = travis_com
         self.appveyor_token = appveyor_token
+        self.custom_appveyor_user = custom_appveyor_user
 
     def write_row(self, stream):
         # TODO Add Appveyor link
@@ -39,20 +40,24 @@ class Build:
             return ''
 
         project_locase = self.project.lower().replace('.', '-')
-        appveyor_markdown = f"[![Build status](https://ci.appveyor.com/api/projects/status/{self.appveyor_token}/branch/{self.branch}?svg=true)](https://ci.appveyor.com/project/{self.user}/{project_locase}/branch/{self.branch})"
+        if self.custom_appveyor_user:
+            user = self.custom_appveyor_user
+        else:
+            user = self.user
+        appveyor_markdown = f"[![Build status](https://ci.appveyor.com/api/projects/status/{self.appveyor_token}/branch/{self.branch}?svg=true)](https://ci.appveyor.com/project/{user}/{project_locase}/branch/{self.branch})"
         return appveyor_markdown
 
 class Builds:
     def __init__(self):
         self.builds = []
 
-    def add_build(self, user, project, branch, travis_com, appveyor_token):
-        build = Build(user, project, branch, travis_com, appveyor_token)
+    def add_build(self, user, project, branch, travis_com, appveyor_token, custom_appveyor_user):
+        build = Build(user, project, branch, travis_com, appveyor_token, custom_appveyor_user)
         self.builds.append(build)
 
-    def add_builds(self, user, project, branches, travis_com, appveyor_token = None):
+    def add_builds(self, user, project, branches, travis_com, appveyor_token = None, custom_appveyor_user = None):
         for branch in branches:
-            self.add_build(user, project, branch, travis_com, appveyor_token)
+            self.add_build(user, project, branch, travis_com, appveyor_token, custom_appveyor_user)
 
     def write_header(self, stream):
         stream.write('# dashboard\n')
@@ -70,7 +75,7 @@ class Builds:
 def create_readme():
     builds = Builds()
 
-    builds.add_builds('approvals', 'ApprovalTests.cpp', ['master'], False)
+    builds.add_builds('approvals', 'ApprovalTests.cpp', ['master'], False, 'lf3i76ije89oihi5', 'isidore')
     builds.add_builds('approvals', 'ApprovalTests.cpp.StarterProject', ['master'], False)
 
     builds.add_builds('claremacrae', 'ApprovalTests.cpp', ['master', 'more_travis_builds', 'more_appveyor_builds'], True, '37smtsp3a694okv8')
