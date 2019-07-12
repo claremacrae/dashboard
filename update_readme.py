@@ -39,12 +39,15 @@ class BranchBuild:
         return f"[{link_label}]({target_url})"
 
     def travis_status(self):
-        # There is currently no way that I can see for including the branch name in the second URL here.
+        # There is currently no way that I can see for linking to the current build on the chosen branch.
         # See this, for requests from others for this: https://github.com/travis-ci/travis-ci/issues/5024
+        # For the workaround I'm currently using, see https://stackoverflow.com/a/32946454/104370
+        # We now link to to all branches for which there are Travis builds, allowing the user to
+        # click on the branch of interest, and see its latest build.
         return self.hyperlinked_image(
             "Build Status",
             f"https://{self.travis_url_base_image}/{self.user}/{self.project}.svg?branch={self.branch}",
-            f"https://{self.travis_url_base_target}/{self.user}/{self.project}")
+            f"https://{self.travis_url_base_target}/{self.user}/{self.project}/branches")
 
     def appveyor_status(self):
         if not self.appveyor_token:
