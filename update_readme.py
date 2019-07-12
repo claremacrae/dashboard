@@ -16,12 +16,9 @@ class Build:
 
         # TODO Add Appveyor link
         # TODO What if build does not exist yet?
+        travis_status_markdown = "[![Build Status](" + f"https://{travis_url_base_image}/{self.user}/{self.project}.svg?branch={self.branch}" + ")](" + f"https://{travis_url_base_target}/{self.user}/{self.project}" + ")"
         line = f"| {self.user} | {self.project} | {self.branch} | " + \
-               "[![Build Status](" + \
-               f"https://{travis_url_base_image}/{self.user}/{self.project}.svg?branch={self.branch}" +\
-               ")](" + \
-               f"https://{travis_url_base_target}/{self.user}/{self.project}" +\
-               ")" +\
+               travis_status_markdown +\
                " | |"
         stream.write(line + '\n')
 
