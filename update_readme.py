@@ -10,13 +10,13 @@ class Build:
     def write_row(self, stream):
         # TODO Add Appveyor link
         # TODO What if build does not exist yet?
-        line = f"| {self.user} | {self.project} | {self.branch_link_markdown()} | {self.create_travis_status_markdown()} |{self.create_appveyor_status_markdown()} |"
+        line = f"| {self.user} | {self.project} | {self.branch_link_markdown()} | {self.travis_status_markdown()} |{self.create_appveyor_status_markdown()} |"
         stream.write(line + '\n')
 
     def branch_link_markdown(self):
         return f"[{self.branch}](https://github.com/{self.user}/{self.project}/commits/{self.branch})"
 
-    def create_travis_status_markdown(self):
+    def travis_status_markdown(self):
         # see https://devops.stackexchange.com/questions/1201/whats-the-difference-between-travis-ci-org-and-travis-ci-com
         if self.travis_com:
             travis_url_base_image = 'travis-ci.com'
