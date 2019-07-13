@@ -26,11 +26,14 @@ class BranchBuild:
             self.appveyor_user = self.user
 
     def write_row(self, stream):
-        line = f"| {self.user} | {self.project} | {self.branch_link()} | {self.travis_status()} |{self.appveyor_status()} |"
+        line = f"| {self.user_link()} | {self.project} | {self.branch_link()} | {self.travis_status()} |{self.appveyor_status()} |"
         stream.write(line + '\n')
 
+    def user_link(self):
+        return self.user
+
     def branch_link(self):
-        return f"[{self.branch}](https://github.com/{self.user}/{self.project}/commits/{self.branch})"
+        return f"[{self.branch}](https://github.com/{self.user_link()}/{self.project}/commits/{self.branch})"
 
     def hyperlinked_image(self, link_label, image_url, target_url):
         return f"[![{link_label}]({image_url})]({target_url})"
