@@ -33,7 +33,7 @@ class BranchBuild:
         return self.user
 
     def project_link(self):
-        return self.project
+        return f"[{self.project}](https://github.com/{self.user_link()}/{self.project}/)"
 
     def branch_link(self):
         return f"[{self.branch}](https://github.com/{self.user_link()}/{self.project}/commits/{self.branch})"
