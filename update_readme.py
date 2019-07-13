@@ -33,10 +33,10 @@ class BranchBuild:
         return self.user
 
     def project_link(self):
-        return f"[{self.project}](https://github.com/{self.user_link()}/{self.project}/)"
+        return f"[{self.project}](https://github.com/{self.user}/{self.project}/)"
 
     def branch_link(self):
-        return f"[{self.branch}](https://github.com/{self.user_link()}/{self.project}/commits/{self.branch})"
+        return f"[{self.branch}](https://github.com/{self.user}/{self.project}/commits/{self.branch})"
 
     def hyperlinked_image(self, link_label, image_url, target_url):
         return f"[![{link_label}]({image_url})]({target_url})"
