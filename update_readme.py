@@ -19,7 +19,7 @@ class BranchBuild:
 
         # Appveyor info
         self.appveyor_token = appveyor_token
-        self.appveyor_project = self.project.lower().replace('.', '-')
+        self.appveyor_project = self.project.lower().replace('.', '-').replace('_', '-')
         if custom_appveyor_user:
             self.appveyor_user = custom_appveyor_user
         else:
@@ -137,4 +137,5 @@ def create_readme():
     builds.write_readme()
 
 if __name__ == '__main__':
+    # See also https://travis-ci.com/dashboard
     create_readme()
