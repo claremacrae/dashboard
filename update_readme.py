@@ -65,30 +65,6 @@ class BranchBuild:
             f"https://ci.appveyor.com/project/{self.appveyor_user}/{self.appveyor_project}/branch/{self.branch}")
 
 
-class BuildHistory(BranchBuild):
-    """
-    Class that generates a row in the dashboard to represent links to the build history
-    for all branches or builds in a particular repo
-    """
-    def __init__(self, user, project, travis_com, appveyor_token, custom_appveyor_user):
-        super().__init__(user, project, None, travis_com, appveyor_token, custom_appveyor_user)
-
-    def branch_link(self):
-        return '&nbsp;'
-
-    def travis_status(self):
-        return self.hyperlinked_text(
-            "branches",
-            f"https://travis-ci.com/{self.user}/{self.project}/branches")
-
-    def appveyor_status(self):
-        if not self.appveyor_token:
-            return '&nbsp;'
-
-        return self.hyperlinked_text(
-            "history",
-            f"https://ci.appveyor.com/project/{self.appveyor_user}/{self.appveyor_project}/history")
-
 class Builds:
     def __init__(self):
         self.builds = []
@@ -97,11 +73,6 @@ class Builds:
         self.builds.append(build)
 
     def add_builds(self, user, project, branches, travis_com, appveyor_token = None, custom_appveyor_user = None):
-        # Add a first row, with links to all Travis branches and all Appveyor builds.
-        # Currently disabled as it clutters up the table and distracts from the build status images
-        # build = BuildHistory(user, project, travis_com, appveyor_token, custom_appveyor_user)
-        # self.add_build(build)
-
         for branch in branches:
             build = BranchBuild(user, project, branch, travis_com, appveyor_token, custom_appveyor_user)
             self.add_build(build)
