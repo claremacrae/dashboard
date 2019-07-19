@@ -128,7 +128,7 @@ def create_readme():
 
     builds.add_builds('claremacrae', 'ci_playground', ['trunk'], True, 'cbksrgvypq5vksy2')
 
-    my_branches = ['master', 'more_appveyor_builds']
+    my_branches = ['master']
     builds.add_builds('claremacrae', 'ApprovalTests.cpp', my_branches, True, '37smtsp3a694okv8')
     builds.add_builds('claremacrae', 'ApprovalTests.cpp.StarterProject', my_branches, True, 'mu8a5uib1ha7sx41')
 
