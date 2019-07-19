@@ -13,7 +13,8 @@ class Builds:
             build = BranchBuild(user, project, branch, travis_com, appveyor_token, custom_appveyor_user)
             self.add_build(build)
 
-    def write_header(self, stream):
+    @staticmethod
+    def write_header(stream):
         stream.write('<a id="top"></a>\n')
         stream.write('# dashboard\n')
         stream.write("A space to check build-statuses of projects I'm working on\n")
