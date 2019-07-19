@@ -26,7 +26,7 @@ class BranchBuild:
             self.appveyor_user = self.user
 
     def write_row(self, stream):
-        line = f"| {self.user_link()} | {self.project_link()} | {self.branch_link()} | {self.travis_status()} |{self.appveyor_status()} |"
+        line = f"| {self.user_link()} | {self.project_link()} | {self.network_link()} | {self.branch_link()} | {self.travis_status()} |{self.appveyor_status()} |"
         stream.write(line + '\n')
 
     def user_link(self):
@@ -34,6 +34,9 @@ class BranchBuild:
 
     def project_link(self):
         return f"[{self.project}](https://github.com/{self.user}/{self.project}/)"
+
+    def network_link(self):
+        return f"[network](https://github.com/{self.user}/{self.project}/network)"
 
     def branch_link(self):
         return f"[{self.branch}](https://github.com/{self.user}/{self.project}/commits/{self.branch})"
@@ -82,8 +85,8 @@ class Builds:
         stream.write('# dashboard\n')
         stream.write("A space to check build-statuses of projects I'm working on\n")
         stream.write('\n')
-        stream.write('| User | project | branch | [Travis](https://travis-ci.com/claremacrae/) | [Appveyor](https://ci.appveyor.com/projects) |\n')
-        stream.write('| ------------- | ------------- | - | - | - |\n')
+        stream.write('| User | project | network | branch | [Travis](https://travis-ci.com/claremacrae/) | [Appveyor](https://ci.appveyor.com/projects) |\n')
+        stream.write('| ------------- | ------------- - | -| - | - | - |\n')
 
     def write_readme(self):
         with open('README.md', 'w') as stream:
