@@ -7,6 +7,7 @@ def create_readme():
     add_approvals_builds(builds)
     add_ci_playground(builds)
     add_my_approvals_projects(builds)
+    add_catch_projects(builds)
 
     builds.write_readme()
 
@@ -25,6 +26,11 @@ def add_ci_playground(builds):
 def add_approvals_builds(builds):
     builds.add_builds('approvals', 'ApprovalTests.cpp', ['master'], False, 'lf3i76ije89oihi5', 'isidore')
     builds.add_builds('approvals', 'ApprovalTests.cpp.StarterProject', ['master'], False)
+
+
+def add_catch_projects(builds):
+    builds.add_builds('catchorg', 'Catch2', ['master'], False)
+    builds.add_builds('claremacrae', 'Catch2', ['master'], False)
 
 
 if __name__ == '__main__':
