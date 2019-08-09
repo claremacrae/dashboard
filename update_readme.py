@@ -21,7 +21,7 @@ def add_my_approvals_projects(builds):
 
 def add_my_miscellaneous(builds):
     builds.add_builds('claremacrae', 'ci_playground', ['trunk'], True, 'cbksrgvypq5vksy2')
-    builds.add_builds('claremacrae', 'cpp_snippets', ['master'], True)
+    builds.add_builds('claremacrae', 'cpp_snippets', ['master'], True, 'hqf8xh615dyp3u4l')
 
 
 def add_approvals_builds(builds):
