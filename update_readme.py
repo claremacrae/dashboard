@@ -13,7 +13,7 @@ def create_readme():
 
 
 def add_my_approvals_projects(builds):
-    builds.add_builds('claremacrae', 'ApprovalTests.cpp', ['master'], True, '37smtsp3a694okv8')
+    builds.add_builds('claremacrae', 'ApprovalTests.cpp', ['master', 'setup_sanitizers'], True, '37smtsp3a694okv8')
     builds.add_builds('claremacrae', 'ApprovalTests.cpp.StarterProject', ['master'], True, 'mu8a5uib1ha7sx41')
     builds.add_builds('claremacrae', 'ApprovalTests.cpp.Nursery', ['master'], True, 'iqtnpa83t13os98v')
 
