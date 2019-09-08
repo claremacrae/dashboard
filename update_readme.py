@@ -24,7 +24,7 @@ def add_my_miscellaneous(builds):
 
 
 def add_approvals_builds(builds):
-    builds.add_builds('approvals', 'ApprovalTests.cpp', ['master', 'namespaces_experiment'], False, 'lf3i76ije89oihi5', 'isidore')
+    builds.add_builds('approvals', 'ApprovalTests.cpp', ['master'], False, 'lf3i76ije89oihi5', 'isidore')
     builds.add_builds('approvals', 'ApprovalTests.cpp.StarterProject', ['master'], False)
 
 
