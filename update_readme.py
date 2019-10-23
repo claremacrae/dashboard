@@ -7,7 +7,6 @@ def create_readme():
     add_approval_tests_cpp(builds)
     add_approval_tests_cpp_starter_project(builds)
 
-    add_approvals_builds(builds)
     add_my_miscellaneous(builds)
     add_my_approvals_projects(builds)
     add_catch_projects(builds)
@@ -29,11 +28,6 @@ def add_my_approvals_projects(builds):
 def add_my_miscellaneous(builds):
     builds.add_builds('claremacrae', 'ci_playground', ['trunk'], True, 'cbksrgvypq5vksy2')
     builds.add_builds('claremacrae', 'cpp_snippets', ['master'], True, 'hqf8xh615dyp3u4l')
-
-
-def add_approvals_builds(builds):
-    pass
-
 
 def add_catch_projects(builds):
     builds.add_builds('catchorg', 'Catch2', ['master'], False)
