@@ -27,7 +27,7 @@ def add_approval_tests_cpp_starter_project(builds):
 
 def add_approval_tests_cpp_qt(builds):
     builds.add_builds('approvals', 'ApprovalTests.cpp.Qt', ['master'], True)
-    builds.add_builds('claremacrae', 'ApprovalTests.cpp.Qt', ['master'], True)
+    builds.add_builds('claremacrae', 'ApprovalTests.cpp.Qt', ['master'], True, 'g60qbttap7m5nul2')
 
 
 def add_approval_tests_cpp_nursery(builds):
