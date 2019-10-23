@@ -6,9 +6,9 @@ def create_readme():
 
     add_approval_tests_cpp(builds)
     add_approval_tests_cpp_starter_project(builds)
+    add_approval_tests_cpp_nursery(builds)
 
     add_my_miscellaneous(builds)
-    add_approval_tests_cpp_nursery(builds)
     add_catch_projects(builds)
 
     builds.write_readme()
