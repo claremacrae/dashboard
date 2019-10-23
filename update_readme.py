@@ -16,22 +16,26 @@ def create_readme():
 
 
 def add_approval_tests_cpp(builds):
-    builds.add_builds('approvals', 'ApprovalTests.cpp', ['master'], False, 'lf3i76ije89oihi5', 'isidore')
-    builds.add_builds('claremacrae', 'ApprovalTests.cpp', ['master'], True, '37smtsp3a694okv8') # 'setup_sanitizers'
+    repo = 'ApprovalTests.cpp'
+    builds.add_builds('approvals', repo, ['master'], False, 'lf3i76ije89oihi5', 'isidore')
+    builds.add_builds('claremacrae', repo, ['master'], True, '37smtsp3a694okv8') # 'setup_sanitizers'
 
 
 def add_approval_tests_cpp_starter_project(builds):
-    builds.add_builds('approvals', 'ApprovalTests.cpp.StarterProject', ['master'], False)
-    builds.add_builds('claremacrae', 'ApprovalTests.cpp.StarterProject', ['master'], True, 'mu8a5uib1ha7sx41')
+    repo = 'ApprovalTests.cpp.StarterProject'
+    builds.add_builds('approvals', repo, ['master'], False)
+    builds.add_builds('claremacrae', repo, ['master'], True, 'mu8a5uib1ha7sx41')
 
 
 def add_approval_tests_cpp_qt(builds):
-    builds.add_builds('approvals', 'ApprovalTests.cpp.Qt', ['master'], True)
-    builds.add_builds('claremacrae', 'ApprovalTests.cpp.Qt', ['master'], True, 'g60qbttap7m5nul2')
+    repo = 'ApprovalTests.cpp.Qt'
+    builds.add_builds('approvals', repo, ['master'], True)
+    builds.add_builds('claremacrae', repo, ['master'], True, 'g60qbttap7m5nul2')
 
 
 def add_approval_tests_cpp_nursery(builds):
-    builds.add_builds('claremacrae', 'ApprovalTests.cpp.Nursery', ['master'], True, 'iqtnpa83t13os98v')
+    repo = 'ApprovalTests.cpp.Nursery'
+    builds.add_builds('claremacrae', repo, ['master'], True, 'iqtnpa83t13os98v')
 
 
 def add_my_miscellaneous(builds):
