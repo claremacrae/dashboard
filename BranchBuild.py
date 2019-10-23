@@ -27,6 +27,7 @@ class BranchBuild:
 
     def write_row(self, stream):
         line = f"| {self.user_link()} | {self.project_link()} | {self.network_link()} | {self.branch_link()} | {self.travis_status()} |{self.appveyor_status()} |"
+        # line = f"* {self.user_link()} {self.project_link()} {self.network_link()} {self.branch_link()} {self.travis_status()} {self.appveyor_status()} "
         stream.write(line + '\n')
 
     def user_link(self):
