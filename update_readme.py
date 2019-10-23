@@ -17,7 +17,7 @@ def create_readme():
 
 def add_approval_tests_cpp(builds):
     builds.add_builds('approvals', 'ApprovalTests.cpp', ['master'], False, 'lf3i76ije89oihi5', 'isidore')
-    builds.add_builds('claremacrae', 'ApprovalTests.cpp', ['master', 'setup_sanitizers'], True, '37smtsp3a694okv8')
+    builds.add_builds('claremacrae', 'ApprovalTests.cpp', ['master'], True, '37smtsp3a694okv8') # 'setup_sanitizers'
 
 
 def add_approval_tests_cpp_starter_project(builds):
@@ -41,7 +41,7 @@ def add_my_miscellaneous(builds):
 
 def add_catch_projects(builds):
     builds.add_builds('catchorg', 'Catch2', ['master'], False)
-    builds.add_builds('claremacrae', 'Catch2', ['master'], False, '8m77qos96rmcn6jg')
+    # builds.add_builds('claremacrae', 'Catch2', ['master'], False, '8m77qos96rmcn6jg')
 
 
 if __name__ == '__main__':
