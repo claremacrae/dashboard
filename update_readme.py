@@ -13,13 +13,16 @@ def create_readme():
 
     builds.write_readme()
 
+
 def add_approval_tests_cpp(builds):
     builds.add_builds('approvals', 'ApprovalTests.cpp', ['master'], False, 'lf3i76ije89oihi5', 'isidore')
     builds.add_builds('claremacrae', 'ApprovalTests.cpp', ['master', 'setup_sanitizers'], True, '37smtsp3a694okv8')
 
+
 def add_approval_tests_cpp_starter_project(builds):
     builds.add_builds('approvals', 'ApprovalTests.cpp.StarterProject', ['master'], False)
     builds.add_builds('claremacrae', 'ApprovalTests.cpp.StarterProject', ['master'], True, 'mu8a5uib1ha7sx41')
+
 
 def add_approval_tests_cpp_nursery(builds):
     builds.add_builds('claremacrae', 'ApprovalTests.cpp.Nursery', ['master'], True, 'iqtnpa83t13os98v')
@@ -28,6 +31,7 @@ def add_approval_tests_cpp_nursery(builds):
 def add_my_miscellaneous(builds):
     builds.add_builds('claremacrae', 'ci_playground', ['trunk'], True, 'cbksrgvypq5vksy2')
     builds.add_builds('claremacrae', 'cpp_snippets', ['master'], True, 'hqf8xh615dyp3u4l')
+
 
 def add_catch_projects(builds):
     builds.add_builds('catchorg', 'Catch2', ['master'], False)
