@@ -7,6 +7,7 @@ def create_readme():
     add_approval_tests_cpp(builds)
     add_approval_tests_cpp_starter_project(builds)
     add_approval_tests_cpp_nursery(builds)
+    add_approval_tests_cpp_qt(builds)
 
     add_catch_projects(builds)
     add_my_miscellaneous(builds)
@@ -22,6 +23,11 @@ def add_approval_tests_cpp(builds):
 def add_approval_tests_cpp_starter_project(builds):
     builds.add_builds('approvals', 'ApprovalTests.cpp.StarterProject', ['master'], False)
     builds.add_builds('claremacrae', 'ApprovalTests.cpp.StarterProject', ['master'], True, 'mu8a5uib1ha7sx41')
+
+
+def add_approval_tests_cpp_qt(builds):
+    builds.add_builds('approvals', 'ApprovalTests.cpp.Qt', ['master'], False)
+    builds.add_builds('claremacrae', 'ApprovalTests.cpp.Qt', ['master'], False)
 
 
 def add_approval_tests_cpp_nursery(builds):
