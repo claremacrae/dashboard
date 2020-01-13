@@ -19,7 +19,7 @@ def create_readme():
 
 def add_approval_tests_cpp(builds):
     repo = 'ApprovalTests.cpp'
-    builds.add_builds('approvals', repo, ['master', 'compile_time_ninja_check_74', 'issue38_long_filenames'], False, 'lf3i76ije89oihi5', 'isidore', True)
+    builds.add_builds('approvals', repo, ['master', 'issue38_long_filenames'], False, 'lf3i76ije89oihi5', 'isidore', True)
     builds.add_builds('claremacrae', repo, ['master'], True, '37smtsp3a694okv8') # 'setup_sanitizers'
 
 
