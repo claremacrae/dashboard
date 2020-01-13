@@ -8,9 +8,9 @@ class Builds:
     def add_build(self, build):
         self.builds.append(build)
 
-    def add_builds(self, user, project, branches, travis_com, appveyor_token = None, custom_appveyor_user = None):
+    def add_builds(self, user, project, branches, travis_com, appveyor_token = None, custom_appveyor_user = None, include_github_actions = False):
         for branch in branches:
-            build = BranchBuild(user, project, branch, travis_com, appveyor_token, custom_appveyor_user)
+            build = BranchBuild(user, project, branch, travis_com, appveyor_token, custom_appveyor_user, include_github_actions)
             self.add_build(build)
 
     @staticmethod
@@ -19,8 +19,8 @@ class Builds:
         stream.write('# dashboard\n')
         stream.write("A space to check build-statuses of projects I'm working on\n")
         stream.write('\n')
-        stream.write('| User | project | network | branch | [Travis](https://travis-ci.com/claremacrae/) | [Appveyor](https://ci.appveyor.com/projects) |\n')
-        stream.write('| ------------- | -------------- | --- | --- | --- | --- |\n')
+        stream.write('| User | project | network | branch | [Travis](https://travis-ci.com/claremacrae/) | [Appveyor](https://ci.appveyor.com/projects) | GitHub |\n')
+        stream.write('| ------------- | -------------- | --- | --- | --- | --- | --- |\n')
 
     def write_readme(self):
         with open('README.md', 'w') as stream:
