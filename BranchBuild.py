@@ -26,8 +26,7 @@ class BranchBuild:
             self.appveyor_user = self.user
 
     def write_row(self, stream):
-        line = f"| {self.user_link()} | {self.project_link()} | {self.network_link()} | {self.branch_link()} | {self.travis_status()} | {self.appveyor_status()} | {self.github_status()} |"
-        # line = f"* {self.user_link()} {self.project_link()} {self.network_link()} {self.branch_link()} {self.travis_status()} {self.appveyor_status()} "
+        line = f"| {self.user_link()} | {self.project_link()} / {self.branch_link()} | {self.network_link()} | {self.travis_status()} | {self.appveyor_status()} | {self.github_status()} |"
         stream.write(line + '\n')
 
     def user_link(self):

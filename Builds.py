@@ -25,9 +25,8 @@ class Builds:
     def write_table_title_rows(stream):
         titles = [
             'User',
-            'project',
+            'project / branch',
             'network',
-            'branch',
             '[Travis](https://travis-ci.com/claremacrae/)',
             '[Appveyor](https://ci.appveyor.com/projects)',
             'GitHub']
