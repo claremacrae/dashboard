@@ -28,7 +28,7 @@ class BranchBuild:
         self.include_github_actions = include_github_actions
 
     def write_row(self, stream):
-        line = f"| {self.user_link()} | {self.project_link()} | {self.network_link()} | {self.branch_link()} | {self.travis_status()} |{self.appveyor_status()} | {self.github_status()} |"
+        line = f"| {self.user_link()} | {self.project_link()} | {self.network_link()} | {self.branch_link()} | {self.travis_status()} | {self.appveyor_status()} | {self.github_status()} |"
         # line = f"* {self.user_link()} {self.project_link()} {self.network_link()} {self.branch_link()} {self.travis_status()} {self.appveyor_status()} "
         stream.write(line + '\n')
 
@@ -63,7 +63,7 @@ class BranchBuild:
 
     def appveyor_status(self):
         if not self.appveyor_token:
-            return '&nbsp;'
+            return '` `'
 
         return self.hyperlinked_image(
             "Build status",
@@ -72,7 +72,7 @@ class BranchBuild:
 
     def github_status(self):
         if not self.include_github_actions:
-            return '&nbsp;'
+            return '` `'
 
         return self.hyperlinked_image(
             "Build Status",
