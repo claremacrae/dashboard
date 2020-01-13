@@ -3,7 +3,7 @@ class BranchBuild:
     Class that generates a row in the dashboard to represent the current status of builds
     for a particular branch in a particular repo
     """
-    def __init__(self, user, project, branch, travis_com, appveyor_token, custom_appveyor_user, include_github_actions):
+    def __init__(self, user, project, branch, travis_com, appveyor_token, custom_appveyor_user):
         self.user = user
         self.project = project
         self.branch = branch
@@ -24,8 +24,6 @@ class BranchBuild:
             self.appveyor_user = custom_appveyor_user
         else:
             self.appveyor_user = self.user
-
-        self.include_github_actions = include_github_actions
 
     def write_row(self, stream):
         line = f"| {self.user_link()} | {self.project_link()} | {self.network_link()} | {self.branch_link()} | {self.travis_status()} | {self.appveyor_status()} | {self.github_status()} |"
@@ -71,9 +69,6 @@ class BranchBuild:
             f"https://ci.appveyor.com/project/{self.appveyor_user}/{self.appveyor_project}/branch/{self.branch}")
 
     def github_status(self):
-        if not self.include_github_actions:
-            return '` `'
-
         return self.hyperlinked_image(
             "Build Status",
             f'https://github.com/{self.user}/{self.project}/workflows/build/badge.svg?branch={self.branch}',
