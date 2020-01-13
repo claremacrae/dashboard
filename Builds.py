@@ -23,14 +23,14 @@ class Builds:
 
     @staticmethod
     def write_table_title_rows(stream):
-        user = 'User'
-        project = 'project'
-        network = 'network'
-        branch = 'branch'
-        travis = '[Travis](https://travis-ci.com/claremacrae/)'
-        appveyor = '[Appveyor](https://ci.appveyor.com/projects)'
-        git_hub = 'GitHub'
-        titles = [user, project, network, branch, travis, appveyor, git_hub]
+        titles = [
+            'User',
+            'project',
+            'network',
+            'branch',
+            '[Travis](https://travis-ci.com/claremacrae/)',
+            '[Appveyor](https://ci.appveyor.com/projects)',
+            'GitHub']
         stream.write(f"| {' | '.join(titles)} |\n")
         divider = '| '
         for title in titles:
