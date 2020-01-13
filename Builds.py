@@ -26,9 +26,8 @@ class Builds:
         travis = '[Travis](https://travis-ci.com/claremacrae/)'
         appveyor = '[Appveyor](https://ci.appveyor.com/projects)'
         git_hub = 'GitHub'
-        stream.write(
-            '| %s | %s | %s | %s | %s | %s | %s |\n' % (
-                user, project, network, branch, travis, appveyor, git_hub))
+        titles = [user, project, network, branch, travis, appveyor, git_hub]
+        stream.write(f"| {' | '.join(titles)} |\n")
         stream.write('| ------------- | -------------- | --- | --- | --- | --- | --- |\n')
 
     def write_readme(self):
