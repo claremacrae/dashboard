@@ -19,6 +19,10 @@ class Builds:
         stream.write('# dashboard\n')
         stream.write("A space to check build-statuses of projects I'm working on\n")
         stream.write('\n')
+        Builds.write_table_title_rows(stream)
+
+    @staticmethod
+    def write_table_title_rows(stream):
         user = 'User'
         project = 'project'
         network = 'network'
