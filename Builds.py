@@ -32,7 +32,10 @@ class Builds:
         git_hub = 'GitHub'
         titles = [user, project, network, branch, travis, appveyor, git_hub]
         stream.write(f"| {' | '.join(titles)} |\n")
-        stream.write('| ------------- | -------------- | --- | --- | --- | --- | --- |\n')
+        divider = '| '
+        for title in titles:
+            divider += ' --- |'
+        stream.write(f'{divider}\n')
 
     def write_readme(self):
         with open('README.md', 'w') as stream:
