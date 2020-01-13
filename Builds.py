@@ -19,7 +19,16 @@ class Builds:
         stream.write('# dashboard\n')
         stream.write("A space to check build-statuses of projects I'm working on\n")
         stream.write('\n')
-        stream.write('| User | project | network | branch | [Travis](https://travis-ci.com/claremacrae/) | [Appveyor](https://ci.appveyor.com/projects) | GitHub |\n')
+        user = 'User'
+        project = 'project'
+        network = 'network'
+        branch = 'branch'
+        travis = '[Travis](https://travis-ci.com/claremacrae/)'
+        appveyor = '[Appveyor](https://ci.appveyor.com/projects)'
+        git_hub = 'GitHub'
+        stream.write(
+            '| %s | %s | %s | %s | %s | %s | %s |\n' % (
+                user, project, network, branch, travis, appveyor, git_hub))
         stream.write('| ------------- | -------------- | --- | --- | --- | --- | --- |\n')
 
     def write_readme(self):
