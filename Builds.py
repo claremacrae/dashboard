@@ -20,7 +20,7 @@ class Builds:
         stream.write("A space to check build-statuses of projects I'm working on\n")
         stream.write('\n')
         stream.write('| User | project | network | branch | [Travis](https://travis-ci.com/claremacrae/) | [Appveyor](https://ci.appveyor.com/projects) |\n')
-        stream.write('| ------------- | -------------- | -| - | - | - |\n')
+        stream.write('| ------------- | -------------- | --- | --- | --- | --- |\n')
 
     def write_readme(self):
         with open('README.md', 'w') as stream:
