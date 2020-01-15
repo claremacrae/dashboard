@@ -1,12 +1,14 @@
+from collections import defaultdict
+
 from BranchBuild import BranchBuild
 
 
 class Builds:
     def __init__(self):
-        self.builds = []
+        self.builds = defaultdict(list)
 
     def add_build(self, build):
-        self.builds.append(build)
+        self.builds[build.user].append(build)
 
     def add_builds(self, user, project, branches, travis_com, appveyor_token = None, custom_appveyor_user = None, include_github_actions = False):
         for branch in branches:
@@ -39,5 +41,7 @@ class Builds:
     def write_readme(self):
         with open('README.md', 'w') as stream:
             self.write_header(stream)
-            for build in self.builds:
-                build.write_row(stream)
+            for user_names in self.builds.keys():
+                builds = self.builds[user_names]
+                for build in builds:
+                    build.write_row(stream)
