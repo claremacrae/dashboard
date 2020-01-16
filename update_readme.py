@@ -51,7 +51,7 @@ def add_approval_tests_cpp_builds(builds):
 
 
 def add_my_miscellaneous(builds):
-    builds.add_builds('claremacrae', 'approval-tests-setup', ['trunk'], True)
+    builds.add_builds('claremacrae', 'approval-tests-setup', ['master'], True)
     builds.add_builds('claremacrae', 'ci_playground', ['trunk'], True, 'cbksrgvypq5vksy2')
     builds.add_builds('claremacrae', 'cpp_snippets', ['master'], True, 'hqf8xh615dyp3u4l')
 
