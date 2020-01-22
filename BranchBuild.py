@@ -3,6 +3,7 @@ class BranchBuild:
     Class that generates a row in the dashboard to represent the current status of builds
     for a particular branch in a particular repo
     """
+
     def __init__(self, user, project, branch, travis_com, appveyor_token, custom_appveyor_user):
         self.user = user
         self.project = project
