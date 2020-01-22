@@ -46,8 +46,15 @@ def add_approval_tests_cpp_nursery(builds):
 
 
 def add_approval_tests_cpp_builds(builds):
-    repo = 'ApprovalTests.cpp.Builds'
-    builds.add_builds('claremacrae', repo, ['master'], True)
+    repos = [
+        'ApprovalTests.cpp.Builds',
+        'ApprovalTests.cpp.CMakeSamples',
+        'ApprovalTests.cpp.Demos',
+        # 'ApprovalTests.cpp.Scripts',
+        'SuperBuildApprovalTests',
+    ]
+    for repo in repos:
+        builds.add_builds('claremacrae', repo, ['master'], True)
 
 
 def add_my_miscellaneous(builds):
