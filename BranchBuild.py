@@ -28,7 +28,7 @@ class BranchBuild:
             self.appveyor_user = self.user
 
     def write_row(self, stream):
-        links =[
+        links = [
             self.user_link(),
             F'{self.project_link()} / {self.branch_link()}',
             self.network_link(),

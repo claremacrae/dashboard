@@ -34,7 +34,7 @@ class Builds:
             'GitHub']
         stream.write(f"| {' | '.join(titles)} |\n")
         divider = '| '
-        for title in titles:
+        for _ in titles:
             divider += ' --- |'
         stream.write(f'{divider}\n')
 
