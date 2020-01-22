@@ -57,8 +57,9 @@ def add_my_miscellaneous(builds):
 
 
 def add_catch_projects(builds):
-    builds.add_builds('catchorg', 'Catch2', ['master'], False)
+    # builds.add_builds('catchorg', 'Catch2', ['master'], False)
     # builds.add_builds('claremacrae', 'Catch2', ['master'], False, '8m77qos96rmcn6jg')
+    pass
 
 
 if __name__ == '__main__':
