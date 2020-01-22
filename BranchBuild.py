@@ -10,7 +10,8 @@ class BranchBuild:
         self.branch = branch
 
         # Travis info
-        # see https://devops.stackexchange.com/questions/1201/whats-the-difference-between-travis-ci-org-and-travis-ci-com
+        # see
+        # https://devops.stackexchange.com/questions/1201/whats-the-difference-between-travis-ci-org-and-travis-ci-com
         if travis_com:
             self.travis_url_base_image = 'travis-ci.com'
             self.travis_url_base_target = self.travis_url_base_image
@@ -42,10 +43,12 @@ class BranchBuild:
     def branch_link(self):
         return f"[{self.branch}](https://github.com/{self.user}/{self.project}/commits/{self.branch})"
 
-    def hyperlinked_image(self, link_label, image_url, target_url):
+    @staticmethod
+    def hyperlinked_image(link_label, image_url, target_url):
         return f"[![{link_label}]({image_url})]({target_url})"
 
-    def hyperlinked_text(self, link_label, target_url):
+    @staticmethod
+    def hyperlinked_text(link_label, target_url):
         return f"[{link_label}]({target_url})"
 
     def travis_status(self):
