@@ -30,7 +30,7 @@ class BranchBuild:
         stream.write(line + '\n')
 
     def user_link(self):
-        return f"[{self.user}](https://github.com/{self.user}/)"
+        return f"[{self.user}](https://github.com/{self.user}?tab=repositories)"
 
     def project_link(self):
         return f"[{self.project}](https://github.com/{self.user}/{self.project}/)"
