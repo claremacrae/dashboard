@@ -10,8 +10,7 @@ class Builds:
     def add_build(self, build):
         self.builds[build.user].append(build)
 
-    def add_builds(self, user, project, branches, travis_com, appveyor_token=None, custom_appveyor_user=None,
-                   include_github_actions=False):
+    def add_builds(self, user, project, branches, travis_com, appveyor_token=None, custom_appveyor_user=None):
         for branch in branches:
             build = BranchBuild(user, project, branch, travis_com, appveyor_token, custom_appveyor_user)
             self.add_build(build)
