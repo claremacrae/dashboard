@@ -11,7 +11,7 @@ def create_readme():
     add_approval_tests_cpp_nursery(builds)
     add_approval_tests_cpp_builds(builds)
 
-    add_catch_projects(builds)
+    # add_catch_projects(builds)
     add_my_miscellaneous(builds)
 
     builds.write_readme()
@@ -63,10 +63,10 @@ def add_my_miscellaneous(builds):
     builds.add_builds('claremacrae', 'cpp_snippets', ['master'], True, 'hqf8xh615dyp3u4l')
 
 
-def add_catch_projects(builds):
-    # builds.add_builds('catchorg', 'Catch2', ['master'], False)
-    # builds.add_builds('claremacrae', 'Catch2', ['master'], False, '8m77qos96rmcn6jg')
-    pass
+# def add_catch_projects(builds):
+#     builds.add_builds('catchorg', 'Catch2', ['master'], False)
+#     builds.add_builds('claremacrae', 'Catch2', ['master'], False, '8m77qos96rmcn6jg')
+#     pass
 
 
 if __name__ == '__main__':
