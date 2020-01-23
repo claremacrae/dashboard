@@ -42,7 +42,6 @@ class Builds:
         user_link_text = F'**Account: {build.user_link()}**'
         stream.write(f"| {user_link_text} |\n")
 
-
     def write_readme(self):
         with open('README.md', 'w') as stream:
             self.write_header(stream)
