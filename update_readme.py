@@ -1,8 +1,9 @@
 from build_table import BuildTable
+from builds import Builds
 
 
 def create_readme():
-    builds = BuildTable()
+    builds = Builds()
 
     add_approval_tests_cpp(builds)
     add_approval_tests_cpp_starter_project(builds)
@@ -14,7 +15,8 @@ def create_readme():
     # add_catch_projects(builds)
     add_my_miscellaneous(builds)
 
-    builds.write_readme()
+    table = BuildTable()
+    table.write_readme(builds)
 
 
 def add_approval_tests_cpp(builds):

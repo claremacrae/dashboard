@@ -1,7 +1,4 @@
-from builds import Builds
-
-
-class BuildTable(Builds):
+class BuildTable:
     @staticmethod
     def write_header(stream):
         stream.write('<a id="top"></a>\n')
@@ -29,11 +26,11 @@ class BuildTable(Builds):
         user_link_text = F'**Account: {build.user_link()}**'
         stream.write(f"| {user_link_text} |\n")
 
-    def write_readme(self):
+    def write_readme(self, all_builds):
         with open('README.md', 'w') as stream:
             self.write_header(stream)
-            for user_names in self.builds.keys():
-                builds = self.builds[user_names]
+            for user_names in all_builds.builds.keys():
+                builds = all_builds.builds[user_names]
                 user_name_row_written = False
                 for build in builds:
                     if not user_name_row_written:
