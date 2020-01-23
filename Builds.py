@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-from BranchBuild import BranchBuild
+from branch_build import BranchBuild
 
 
 class Builds:
