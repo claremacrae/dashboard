@@ -29,7 +29,6 @@ class BranchBuild:
 
     def write_row(self, stream):
         links = [
-            self.user_link(),
             F'{self.project_link()} / {self.branch_link()}',
             self.network_link(),
             self.travis_status(),
