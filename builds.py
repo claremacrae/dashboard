@@ -14,4 +14,3 @@ class Builds:
         for branch in branches:
             build = BranchBuild(user, project, branch, travis_com, appveyor_token, custom_appveyor_user)
             self.add_build(build)
-
