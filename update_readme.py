@@ -1,4 +1,4 @@
-from Builds import Builds
+from builds import Builds
 
 
 def create_readme():
