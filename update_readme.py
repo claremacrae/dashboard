@@ -1,4 +1,4 @@
-from builds import BuildTable
+from build_table import BuildTable
 
 
 def create_readme():
