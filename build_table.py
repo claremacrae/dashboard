@@ -26,6 +26,18 @@ class BuildTable:
         user_link_text = F'**Account: {build.user_link()}**'
         stream.write(f"| {user_link_text} |\n")
 
+    @staticmethod
+    def write_row(stream, branch_build):
+        links = [
+            F'{branch_build.project_link()} / {branch_build.branch_link()}',
+            branch_build.network_link(),
+            branch_build.travis_status(),
+            branch_build.appveyor_status(),
+            branch_build.github_status(),
+        ]
+        line = ' | '.join(links)
+        stream.write(F'| {line} |' + '\n')
+
     def write_readme(self, all_builds):
         with open('README.md', 'w') as stream:
             self.write_header(stream)
@@ -36,4 +48,4 @@ class BuildTable:
                     if not user_name_row_written:
                         self.write_user_row(stream, build)
                         user_name_row_written = True
-                    build.write_row(stream)
+                    self.write_row(stream, build)

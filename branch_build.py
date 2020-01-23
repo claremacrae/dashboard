@@ -1,6 +1,6 @@
 class BranchBuild:
     """
-    Class that generates a row in the dashboard to represent the current status of builds
+    Class that represents a row in the dashboard to represent the current status of builds
     for a particular branch in a particular repo
     """
 
@@ -26,17 +26,6 @@ class BranchBuild:
             self.appveyor_user = custom_appveyor_user
         else:
             self.appveyor_user = self.user
-
-    def write_row(self, stream):
-        links = [
-            F'{self.project_link()} / {self.branch_link()}',
-            self.network_link(),
-            self.travis_status(),
-            self.appveyor_status(),
-            self.github_status(),
-        ]
-        line = ' | '.join(links)
-        stream.write(F'| {line} |' + '\n')
 
     def user_link(self):
         return f"[{self.user}](https://github.com/{self.user}?tab=repositories)"
