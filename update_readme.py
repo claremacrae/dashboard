@@ -40,6 +40,7 @@ def add_approval_tests_cpp_qt(builds):
 def add_approval_tests_cpp_qt_starter_project(builds):
     repo = 'ApprovalTests.cpp.Qt.StarterProject'
     builds.add_builds('approvals', repo, ['master'], False)
+    builds.add_builds('claremacrae', repo, ['master'], True, 'g60qbttap7m5nul2')
 
 
 def add_approval_tests_cpp_nursery(builds):
