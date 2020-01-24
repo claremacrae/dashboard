@@ -28,7 +28,7 @@ def add_approval_tests_cpp(builds):
 def add_approval_tests_cpp_starter_project(builds):
     repo = 'ApprovalTests.cpp.StarterProject'
     builds.add_builds('approvals', repo, ['master'], False)
-    builds.add_builds('claremacrae', repo, ['master'], True)
+    builds.add_builds('claremacrae', repo, ['master'], True, 'ytjgybf5r9fviifm')
 
 
 def add_approval_tests_cpp_qt(builds):
