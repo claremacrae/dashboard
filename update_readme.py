@@ -27,19 +27,19 @@ def add_approval_tests_cpp(builds):
 
 def add_approval_tests_cpp_starter_project(builds):
     repo = 'ApprovalTests.cpp.StarterProject'
-    builds.add_builds('approvals', repo, ['master', 'cygwin_appveyor_fail'], False)
+    builds.add_builds('approvals', repo, ['master', 'cygwin_appveyor_fail'], False, 'qx0546k6ii57919w', 'isidore')
     builds.add_builds('claremacrae', repo, ['master', 'cygwin_appveyor_fail'], True, 'ytjgybf5r9fviifm')
 
 
 def add_approval_tests_cpp_qt(builds):
     repo = 'ApprovalTests.cpp.Qt'
-    builds.add_builds('approvals', repo, ['master'], True)
+    builds.add_builds('approvals', repo, ['master'], True, 'pf8et0nk1mdajskf', 'isidore')
     builds.add_builds('claremacrae', repo, ['master'], True, 'g60qbttap7m5nul2')
 
 
 def add_approval_tests_cpp_qt_starter_project(builds):
     repo = 'ApprovalTests.cpp.Qt.StarterProject'
-    builds.add_builds('approvals', repo, ['master'], False)
+    builds.add_builds('approvals', repo, ['master'], False, 'tpitsul9axlv93uk', 'isidore')
     builds.add_builds('claremacrae', repo, ['master'], True, 'xe2iwuto0sc342a7')
 
 
