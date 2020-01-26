@@ -27,8 +27,8 @@ def add_approval_tests_cpp(builds):
 
 def add_approval_tests_cpp_starter_project(builds):
     repo = 'ApprovalTests.cpp.StarterProject'
-    builds.add_builds('approvals', repo, ['master', 'cygwin_appveyor_fail'], False, 'qx0546k6ii57919w', 'isidore')
-    builds.add_builds('claremacrae', repo, ['master', 'cygwin_appveyor_fail'], True, 'ytjgybf5r9fviifm')
+    builds.add_builds('approvals', repo, ['master'], False, 'qx0546k6ii57919w', 'isidore')
+    builds.add_builds('claremacrae', repo, ['master'], True, 'ytjgybf5r9fviifm')
 
 
 def add_approval_tests_cpp_qt(builds):
