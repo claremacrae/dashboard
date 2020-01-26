@@ -28,20 +28,24 @@ class BranchBuild:
             self.appveyor_user = self.user
 
     def user_link(self):
-        user = self.user
-        return f"[{user}](https://github.com/{self.user}?tab=repositories)"
+        text = self.user
+        url = f"https://github.com/{self.user}?tab=repositories"
+        return self.hyperlinked_text(text, url)
 
     def project_link(self):
-        project = self.project
-        return f"[{project}](https://github.com/{self.user}/{self.project}/)"
+        text = self.project
+        url = f"https://github.com/{self.user}/{self.project}/"
+        return self.hyperlinked_text(text, url)
 
     def network_link(self):
-        network = 'network'
-        return f"[{network}](https://github.com/{self.user}/{self.project}/network)"
+        text = 'network'
+        url = f"https://github.com/{self.user}/{self.project}/network"
+        return self.hyperlinked_text(text, url)
 
     def branch_link(self):
-        branch = self.branch
-        return f"[{branch}](https://github.com/{self.user}/{self.project}/commits/{self.branch})"
+        text = self.branch
+        url = f"https://github.com/{self.user}/{self.project}/commits/{self.branch}"
+        return self.hyperlinked_text(text, url)
 
     @staticmethod
     def hyperlinked_image(link_label, image_url, target_url):
