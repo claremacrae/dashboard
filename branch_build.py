@@ -49,11 +49,11 @@ class BranchBuild:
 
     @staticmethod
     def hyperlinked_image(link_label, image_url, target_url):
-        return f"[![{link_label}]({image_url})]({target_url})"
+        return f'[![{link_label}]({image_url})]({target_url})'
 
     @staticmethod
     def hyperlinked_text(link_label, target_url):
-        return f"[{link_label}]({target_url})"
+        return f'[{link_label}]({target_url})'
 
     def travis_status(self):
         # There is currently no way that I can see for linking to the current build on the chosen branch.
