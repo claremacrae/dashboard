@@ -14,6 +14,8 @@ def create_readme():
 
     add_my_random_repos(builds)
 
+    add_boost_ut_repos(builds)
+
     table = BuildTable()
     table.write_readme(builds)
 
@@ -54,6 +56,12 @@ def add_my_random_repos(builds):
     builds.add_builds('claremacrae', 'approval-tests-setup', ['master'], True)
     builds.add_builds('claremacrae', 'ci_playground', ['trunk'], True, 'cbksrgvypq5vksy2')
     builds.add_builds('claremacrae', 'cpp_snippets', ['master'], True, 'hqf8xh615dyp3u4l')
+
+
+def add_boost_ut_repos(builds):
+    repo = 'ut'
+    builds.add_builds('boost-experimental', repo, ['master'], False)
+    builds.add_builds('claremacrae', repo, ['master', 'clare_learning'], True, 'ab4jv9x8kveev0n4')
 
 
 if __name__ == '__main__':
