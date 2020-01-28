@@ -5,21 +5,7 @@ from builds import Builds
 def create_readme():
     builds = Builds()
 
-    repo = 'ApprovalTests.cpp'
-    builds.add_builds('approvals', repo, ['master'], False, 'lf3i76ije89oihi5', 'isidore')
-    builds.add_builds('claremacrae', repo, ['master'], True, '37smtsp3a694okv8')  # 'setup_sanitizers'
-
-    repo1 = 'ApprovalTests.cpp.StarterProject'
-    builds.add_builds('approvals', repo1, ['master'], False, 'qx0546k6ii57919w', 'isidore')
-    builds.add_builds('claremacrae', repo1, ['master'], True, 'ytjgybf5r9fviifm')
-
-    repo2 = 'ApprovalTests.cpp.Qt'
-    builds.add_builds('approvals', repo2, ['master'], True, 'pf8et0nk1mdajskf', 'isidore')
-    builds.add_builds('claremacrae', repo2, ['master'], True, 'g60qbttap7m5nul2')
-
-    repo3 = 'ApprovalTests.cpp.Qt.StarterProject'
-    builds.add_builds('approvals', repo3, ['master'], False, 'tpitsul9axlv93uk', 'isidore')
-    builds.add_builds('claremacrae', repo3, ['master'], True, 'xe2iwuto0sc342a7')
+    add_official_approval_test_repos(builds)
 
     repo4 = 'ApprovalTests.cpp.Nursery'
     builds.add_builds('claremacrae', repo4, ['master'], True, 'iqtnpa83t13os98v')
@@ -45,7 +31,22 @@ def create_readme():
     table.write_readme(builds)
 
 
+def add_official_approval_test_repos(builds):
+    repo = 'ApprovalTests.cpp'
+    builds.add_builds('approvals', repo, ['master'], False, 'lf3i76ije89oihi5', 'isidore')
+    builds.add_builds('claremacrae', repo, ['master'], True, '37smtsp3a694okv8')  # 'setup_sanitizers'
 
+    repo1 = 'ApprovalTests.cpp.StarterProject'
+    builds.add_builds('approvals', repo1, ['master'], False, 'qx0546k6ii57919w', 'isidore')
+    builds.add_builds('claremacrae', repo1, ['master'], True, 'ytjgybf5r9fviifm')
+
+    repo2 = 'ApprovalTests.cpp.Qt'
+    builds.add_builds('approvals', repo2, ['master'], True, 'pf8et0nk1mdajskf', 'isidore')
+    builds.add_builds('claremacrae', repo2, ['master'], True, 'g60qbttap7m5nul2')
+
+    repo3 = 'ApprovalTests.cpp.Qt.StarterProject'
+    builds.add_builds('approvals', repo3, ['master'], False, 'tpitsul9axlv93uk', 'isidore')
+    builds.add_builds('claremacrae', repo3, ['master'], True, 'xe2iwuto0sc342a7')
 
 
 if __name__ == '__main__':
