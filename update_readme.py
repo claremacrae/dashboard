@@ -61,7 +61,7 @@ def add_my_random_repos(builds):
 def add_boost_ut_repos(builds):
     repo = 'ut'
     builds.add_builds('boost-experimental', repo, ['master'], False)
-    builds.add_builds('claremacrae', repo, ['master', 'clare_learning'], True, 'ab4jv9x8kveev0n4')
+    builds.add_builds('claremacrae', repo, ['master', 'clare_learning', 'ctest_support'], True, 'ab4jv9x8kveev0n4')
 
 
 if __name__ == '__main__':
