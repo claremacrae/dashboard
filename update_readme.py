@@ -7,25 +7,12 @@ def create_readme():
 
     add_official_approval_test_repos(builds)
 
-    repo4 = 'ApprovalTests.cpp.Nursery'
-    builds.add_builds('claremacrae', repo4, ['master'], True, 'iqtnpa83t13os98v')
-
-    repos = [
-        'ApprovalTests.cpp.Builds',
-        'ApprovalTests.cpp.CMakeSamples',
-        'ApprovalTests.cpp.Demos',
-        # 'ApprovalTests.cpp.Scripts',
-        'SuperBuildApprovalTests',
-    ]
-    for repo5 in repos:
-        builds.add_builds('claremacrae', repo5, ['master'], True)
+    add_my_experimental_approvals_repos(builds)
 
     # builds.add_builds('catchorg', 'Catch2', ['master'], False)
     # builds.add_builds('claremacrae', 'Catch2', ['master'], False, '8m77qos96rmcn6jg')
 
-    builds.add_builds('claremacrae', 'approval-tests-setup', ['master'], True)
-    builds.add_builds('claremacrae', 'ci_playground', ['trunk'], True, 'cbksrgvypq5vksy2')
-    builds.add_builds('claremacrae', 'cpp_snippets', ['master'], True, 'hqf8xh615dyp3u4l')
+    add_my_random_repos(builds)
 
     table = BuildTable()
     table.write_readme(builds)
@@ -47,6 +34,26 @@ def add_official_approval_test_repos(builds):
     repo3 = 'ApprovalTests.cpp.Qt.StarterProject'
     builds.add_builds('approvals', repo3, ['master'], False, 'tpitsul9axlv93uk', 'isidore')
     builds.add_builds('claremacrae', repo3, ['master'], True, 'xe2iwuto0sc342a7')
+
+
+def add_my_experimental_approvals_repos(builds):
+    repo4 = 'ApprovalTests.cpp.Nursery'
+    builds.add_builds('claremacrae', repo4, ['master'], True, 'iqtnpa83t13os98v')
+    repos = [
+        'ApprovalTests.cpp.Builds',
+        'ApprovalTests.cpp.CMakeSamples',
+        'ApprovalTests.cpp.Demos',
+        # 'ApprovalTests.cpp.Scripts',
+        'SuperBuildApprovalTests',
+    ]
+    for repo5 in repos:
+        builds.add_builds('claremacrae', repo5, ['master'], True)
+
+
+def add_my_random_repos(builds):
+    builds.add_builds('claremacrae', 'approval-tests-setup', ['master'], True)
+    builds.add_builds('claremacrae', 'ci_playground', ['trunk'], True, 'cbksrgvypq5vksy2')
+    builds.add_builds('claremacrae', 'cpp_snippets', ['master'], True, 'hqf8xh615dyp3u4l')
 
 
 if __name__ == '__main__':
