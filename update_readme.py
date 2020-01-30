@@ -5,6 +5,13 @@ from builds import Builds
 def create_readme():
     builds = Builds()
 
+    add_all_builds(builds)
+
+    table = BuildTable()
+    table.write_readme(builds)
+
+
+def add_all_builds(builds):
     add_official_approval_test_repos(builds)
 
     add_my_experimental_approvals_repos(builds)
@@ -15,9 +22,6 @@ def create_readme():
     add_my_random_repos(builds)
 
     add_boost_ut_repos(builds)
-
-    table = BuildTable()
-    table.write_readme(builds)
 
 
 def add_official_approval_test_repos(builds):
