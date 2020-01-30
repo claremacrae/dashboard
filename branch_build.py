@@ -49,7 +49,7 @@ class BranchBuild:
 
     @staticmethod
     def hyperlinked_image(link_label, image_url, target_url):
-        return f'[![{link_label}]({image_url})]({target_url})'
+        return f'<a href="{target_url}" target="_blank">![{link_label}]({image_url})</a>'
 
     @staticmethod
     def hyperlinked_text(link_label, target_url):
