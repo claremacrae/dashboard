@@ -63,7 +63,7 @@ class BranchBuild:
         # click on the branch of interest, and see its latest build.
         return self.hyperlinked_image(
             "Build Status",
-            f"https://{self.travis_url_base_image}/{self.user}/{self.project}.svg?branch={self.branch}&label=linux/osx",
+            f"https://{self.travis_url_base_image}/{self.user}/{self.project}.svg?branch={self.branch}",
             f"https://{self.travis_url_base_target}/{self.user}/{self.project}/branches")
 
     def appveyor_status(self):
@@ -72,11 +72,11 @@ class BranchBuild:
 
         return self.hyperlinked_image(
             "Build status",
-            f"https://ci.appveyor.com/api/projects/status/{self.appveyor_token}/branch/{self.branch}?svg=true&label=windows",
+            f"https://ci.appveyor.com/api/projects/status/{self.appveyor_token}/branch/{self.branch}?svg=true",
             f"https://ci.appveyor.com/project/{self.appveyor_user}/{self.appveyor_project}/branch/{self.branch}")
 
     def github_status(self):
         return self.hyperlinked_image(
             "Build Status",
-            f'https://github.com/{self.user}/{self.project}/workflows/build/badge.svg?branch={self.branch}&label=actions',
+            f'https://github.com/{self.user}/{self.project}/workflows/build/badge.svg?branch={self.branch}',
             f'https://github.com/{self.user}/{self.project}/actions?query=branch%3A{self.branch}')
