@@ -72,7 +72,7 @@ class BranchBuild:
 
         return self.hyperlinked_image(
             "Build status",
-            f"https://ci.appveyor.com/api/projects/status/{self.appveyor_token}/branch/{self.branch}?svg=true",
+            f'https://img.shields.io/appveyor/ci/{self.appveyor_user}/{self.appveyor_project}/{self.branch}?label=windows',
             f"https://ci.appveyor.com/project/{self.appveyor_user}/{self.appveyor_project}/branch/{self.branch}")
 
     def github_status(self):
