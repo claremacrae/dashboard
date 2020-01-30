@@ -1,12 +1,12 @@
 def add_all_builds(builds):
-    # add_official_approval_test_repos(builds)
+    add_official_approval_test_repos(builds)
 
-    # add_my_experimental_approvals_repos(builds)
+    add_my_experimental_approvals_repos(builds)
 
     # builds.add_builds('catchorg', 'Catch2', ['master'], False)
     # builds.add_builds('claremacrae', 'Catch2', ['master'], False, '8m77qos96rmcn6jg')
 
-    # add_my_random_repos(builds)
+    add_my_random_repos(builds)
 
     add_boost_ut_repos(builds)
 
