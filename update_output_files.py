@@ -4,28 +4,24 @@ from builds import Builds
 from my_builds import add_all_builds
 
 
-def create_readme():
-    builds = Builds()
-
-    add_all_builds(builds)
-
+def create_readme(builds):
     table = BuildTable()
     table.write_readme(builds)
 
 
-def create_badges():
-    builds = Builds()
-
-    add_all_builds(builds)
-
+def create_badges(builds):
     table = BuildBadges()
     table.write_badges(builds)
 
 
 def update_output_files():
     # See also https://travis-ci.com/dashboard
-    create_readme()
-    create_badges()
+
+    builds = Builds()
+    add_all_builds(builds)
+
+    create_readme(builds)
+    create_badges(builds)
 
 
 if __name__ == '__main__':
