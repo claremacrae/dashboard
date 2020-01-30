@@ -22,7 +22,11 @@ def create_badges():
     table.write_badges(builds)
 
 
-if __name__ == '__main__':
+def update_output_files():
     # See also https://travis-ci.com/dashboard
     create_readme()
     create_badges()
+
+
+if __name__ == '__main__':
+    update_output_files()
