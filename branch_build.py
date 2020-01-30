@@ -49,7 +49,7 @@ class BranchBuild:
 
     @staticmethod
     def hyperlinked_image(link_label, image_url, target_url):
-        return f'<a href="{target_url}" target="_blank">![{link_label}]({image_url})</a>'
+        return f'[![{link_label}]({image_url})]({target_url})'
 
     @staticmethod
     def hyperlinked_text(link_label, target_url):
@@ -72,7 +72,7 @@ class BranchBuild:
 
         return self.hyperlinked_image(
             "Build status",
-            f'https://img.shields.io/appveyor/ci/{self.appveyor_user}/{self.appveyor_project}/{self.branch}?label=windows',
+            f"https://ci.appveyor.com/api/projects/status/{self.appveyor_token}/branch/{self.branch}?svg=true",
             f"https://ci.appveyor.com/project/{self.appveyor_user}/{self.appveyor_project}/branch/{self.branch}")
 
     def github_status(self):
