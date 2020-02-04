@@ -8,7 +8,7 @@ class Builds:
         self.builds = defaultdict(list)
 
     def add_build(self, build):
-        self.builds[build.user].append(build)
+        self.builds[build.repo_info.user].append(build)
 
     def add_builds(self, user, project, branches, travis_com, appveyor_token=None, custom_appveyor_user=None):
         for branch in branches:
