@@ -54,7 +54,8 @@ def add_my_experimental_approvals_repos(builds):
 
 
 def add_my_random_repos(builds):
-    builds.add_builds('claremacrae', 'approval-tests-setup', ['master'])
+    # clone of other people's work - using CMake's FetchContent:
+    # builds.add_builds('claremacrae', 'approval-tests-setup', ['master'])
     builds.add_builds('claremacrae', 'ci_playground', ['trunk'], TravisConfig(True), AppveyorConfig('cbksrgvypq5vksy2'))
     builds.add_builds('claremacrae', 'cpp_snippets', ['master'], TravisConfig(True), AppveyorConfig('hqf8xh615dyp3u4l'))
 

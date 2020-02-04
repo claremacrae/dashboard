@@ -77,12 +77,6 @@ claremacrae/SuperBuildApprovalTests
 ` ` 
 [![Build Status](https://github.com/claremacrae/SuperBuildApprovalTests/workflows/build/badge.svg?branch=master)](https://github.com/claremacrae/SuperBuildApprovalTests/actions?query=branch%3Amaster) 
 
-claremacrae/approval-tests-setup
-
-[![Build Status](https://travis-ci.com/claremacrae/approval-tests-setup.svg?branch=master)](https://travis-ci.com/claremacrae/approval-tests-setup/branches) 
-` ` 
-[![Build Status](https://github.com/claremacrae/approval-tests-setup/workflows/build/badge.svg?branch=master)](https://github.com/claremacrae/approval-tests-setup/actions?query=branch%3Amaster) 
-
 claremacrae/ci_playground
 
 [![Build Status](https://travis-ci.com/claremacrae/ci_playground.svg?branch=trunk)](https://travis-ci.com/claremacrae/ci_playground/branches) 
