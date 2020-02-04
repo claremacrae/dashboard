@@ -62,4 +62,5 @@ def add_my_random_repos(builds):
 def add_boost_ut_repos(builds):
     repo = 'ut'
     builds.add_builds('boost-experimental', repo, ['master'], TravisConfig(False))
-    builds.add_builds('claremacrae', repo, ['master', 'clare_learning'], TravisConfig(True), AppveyorConfig('ab4jv9x8kveev0n4'))
+    builds.add_builds('claremacrae', repo, ['master', 'clare_learning'], TravisConfig(True),
+                      AppveyorConfig('ab4jv9x8kveev0n4'))
