@@ -3,6 +3,17 @@ class RepoInfo:
         self.user = user
         self.project = project
 
+
+class AppveyorBuildInfo:
+    def __init__(self, repo_info, appveyor_token, custom_appveyor_user):
+        self.appveyor_token = appveyor_token
+        self.appveyor_project = repo_info.project.lower().replace('.', '-').replace('_', '-')
+        if custom_appveyor_user:
+            self.appveyor_user = custom_appveyor_user
+        else:
+            self.appveyor_user = repo_info.user
+
+
 class BranchBuild:
     """
     Class that represents a row in the dashboard to represent the current status of builds
@@ -24,6 +35,7 @@ class BranchBuild:
             self.travis_url_base_target = 'travis-ci.org'
 
         # Appveyor info
+        self.appveyor_build_info = AppveyorBuildInfo(self.repo_info, appveyor_token, custom_appveyor_user)
         self.appveyor_token = appveyor_token
         self.appveyor_project = self.repo_info.project.lower().replace('.', '-').replace('_', '-')
         if custom_appveyor_user:
