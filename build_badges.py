@@ -3,9 +3,9 @@ class BuildBadges:
     @staticmethod
     def write_row(stream, branch_build):
         links = [
-            branch_build.travis_build_info.status(),
-            branch_build.appveyor_build_info.status(),
-            branch_build.github_build_info.status(),
+            branch_build.travis_build_info.status(branch_build.repo_info),
+            branch_build.appveyor_build_info.status(branch_build.repo_info),
+            branch_build.github_build_info.status(branch_build.repo_info),
         ]
         stream.write(F'\n')
         stream.write(F'{branch_build.repo_info.user}/{branch_build.repo_info.project}\n')

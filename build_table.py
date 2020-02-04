@@ -31,9 +31,9 @@ class BuildTable:
         links = [
             F'{branch_build.repo_info.project_link()} / {branch_build.repo_info.branch_link()}',
             branch_build.repo_info.network_link(),
-            branch_build.travis_build_info.status(),
-            branch_build.appveyor_build_info.status(),
-            branch_build.github_build_info.status(),
+            branch_build.travis_build_info.status(branch_build.repo_info),
+            branch_build.appveyor_build_info.status(branch_build.repo_info),
+            branch_build.github_build_info.status(branch_build.repo_info),
         ]
         line = ' | '.join(links)
         stream.write(F'| {line} |' + '\n')
