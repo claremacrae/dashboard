@@ -18,6 +18,4 @@ class BuildBadges:
             for user_names in all_builds.builds.keys():
                 builds = all_builds.builds[user_names]
                 for build in builds:
-                    if build.repo_info.branch != 'master':
-                        continue
-                    self.write_row(stream, build, 'master')
+                    self.write_row(stream, build, build.repo_info.branches[0])

@@ -48,5 +48,5 @@ class BuildTable:
                     if not user_name_row_written:
                         self.write_user_row(stream, build)
                         user_name_row_written = True
-                    for branch in [build.repo_info.branch]:
+                    for branch in build.repo_info.branches:
                         self.write_row(stream, build, branch)

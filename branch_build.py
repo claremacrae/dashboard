@@ -2,10 +2,10 @@ import dashboard_utilities
 
 
 class RepoInfo:
-    def __init__(self, user, project, branch):
+    def __init__(self, user, project, branches):
         self.user = user
         self.project = project
-        self.branch = branch
+        self.branches = branches
 
     def user_link(self):
         text = self.user

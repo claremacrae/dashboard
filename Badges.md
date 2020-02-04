@@ -83,6 +83,12 @@ claremacrae/approval-tests-setup
 ` ` 
 [![Build Status](https://github.com/claremacrae/approval-tests-setup/workflows/build/badge.svg?branch=master)](https://github.com/claremacrae/approval-tests-setup/actions?query=branch%3Amaster) 
 
+claremacrae/ci_playground
+
+[![Build Status](https://travis-ci.com/claremacrae/ci_playground.svg?branch=trunk)](https://travis-ci.com/claremacrae/ci_playground/branches) 
+[![Build status](https://ci.appveyor.com/api/projects/status/cbksrgvypq5vksy2/branch/trunk?svg=true)](https://ci.appveyor.com/project/claremacrae/ci-playground/branch/trunk) 
+[![Build Status](https://github.com/claremacrae/ci_playground/workflows/build/badge.svg?branch=trunk)](https://github.com/claremacrae/ci_playground/actions?query=branch%3Atrunk) 
+
 claremacrae/cpp_snippets
 
 [![Build Status](https://travis-ci.com/claremacrae/cpp_snippets.svg?branch=master)](https://travis-ci.com/claremacrae/cpp_snippets/branches) 
