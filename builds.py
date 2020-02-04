@@ -10,8 +10,8 @@ class Builds:
     def add_build(self, build):
         self.builds[build.repo_info.user].append(build)
 
-    def add_builds(self, user, project, branches, travis_build_info=TravisConfig(True),
-                   appveyor_build_info=AppveyorConfig()):
+    def add_repo(self, user, project, branches, travis_build_info=TravisConfig(True),
+                 appveyor_build_info=AppveyorConfig()):
         build = RepoAndBuilds(RepoInfo(user, project, branches), travis_build_info,
                               appveyor_build_info)
         self.add_build(build)
