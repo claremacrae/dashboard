@@ -3,7 +3,7 @@ class BuildBadges:
     @staticmethod
     def write_row(stream, branch_build):
         links = [
-            branch_build.travis_status(),
+            branch_build.travis_build_info.travis_status(),
             branch_build.appveyor_build_info.appveyor_status(),
             branch_build.github_status(),
         ]

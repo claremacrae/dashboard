@@ -40,6 +40,17 @@ class TravisBuildInfo:
             self.travis_url_base_image = 'api.travis-ci.org'
             self.travis_url_base_target = 'travis-ci.org'
 
+    def travis_status(self):
+        # There is currently no way that I can see for linking to the current build on the chosen branch.
+        # See this, for requests from others for this: https://github.com/travis-ci/travis-ci/issues/5024
+        # For the workaround I'm currently using, see https://stackoverflow.com/a/32946454/104370
+        # We now link to to all branches for which there are Travis builds, allowing the user to
+        # click on the branch of interest, and see its latest build.
+        return dashboard_utilities.hyperlinked_image(
+            "Build Status",
+            f"https://{self.travis_url_base_image}/{self.repo_info.user}/{self.repo_info.project}.svg?branch={self.repo_info.branch}",
+            f"https://{self.travis_url_base_target}/{self.repo_info.user}/{self.repo_info.project}/branches")
+
 
 class AppveyorBuildInfo:
     def __init__(self, repo_info, appveyor_token, custom_appveyor_user):
@@ -74,17 +85,6 @@ class BranchBuild:
 
         # Appveyor info
         self.appveyor_build_info = AppveyorBuildInfo(self.repo_info, appveyor_token, custom_appveyor_user)
-
-    def travis_status(self):
-        # There is currently no way that I can see for linking to the current build on the chosen branch.
-        # See this, for requests from others for this: https://github.com/travis-ci/travis-ci/issues/5024
-        # For the workaround I'm currently using, see https://stackoverflow.com/a/32946454/104370
-        # We now link to to all branches for which there are Travis builds, allowing the user to
-        # click on the branch of interest, and see its latest build.
-        return dashboard_utilities.hyperlinked_image(
-            "Build Status",
-            f"https://{self.travis_build_info.travis_url_base_image}/{self.repo_info.user}/{self.repo_info.project}.svg?branch={self.repo_info.branch}",
-            f"https://{self.travis_build_info.travis_url_base_target}/{self.repo_info.user}/{self.repo_info.project}/branches")
 
     def github_status(self):
         return dashboard_utilities.hyperlinked_image(
