@@ -91,10 +91,6 @@ class BranchBuild:
 
     def __init__(self, user, project, branch, travis_com, appveyor_token, custom_appveyor_user):
         self.repo_info = RepoInfo(user, project, branch)
-
         self.travis_build_info = TravisBuildInfo(self.repo_info, travis_com)
-
-        # Appveyor info
         self.appveyor_build_info = AppveyorBuildInfo(self.repo_info, appveyor_token, custom_appveyor_user)
-
         self.github_build_info = GitHubBuildInfo(self.repo_info)
