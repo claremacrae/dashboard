@@ -55,15 +55,6 @@ class BranchBuild:
         self.repo_info = RepoInfo(user, project, branch)
 
         self.travis_build_info = TravisBuildInfo(travis_com)
-        # Travis info
-        # see
-        # https://devops.stackexchange.com/questions/1201/whats-the-difference-between-travis-ci-org-and-travis-ci-com
-        if travis_com:
-            self.travis_url_base_image = 'travis-ci.com'
-            self.travis_url_base_target = self.travis_url_base_image
-        else:
-            self.travis_url_base_image = 'api.travis-ci.org'
-            self.travis_url_base_target = 'travis-ci.org'
 
         # Appveyor info
         self.appveyor_build_info = AppveyorBuildInfo(self.repo_info, appveyor_token, custom_appveyor_user)
@@ -81,8 +72,8 @@ class BranchBuild:
         # click on the branch of interest, and see its latest build.
         return dashboard_utilities.hyperlinked_image(
             "Build Status",
-            f"https://{self.travis_url_base_image}/{self.repo_info.user}/{self.repo_info.project}.svg?branch={self.repo_info.branch}",
-            f"https://{self.travis_url_base_target}/{self.repo_info.user}/{self.repo_info.project}/branches")
+            f"https://{self.travis_build_info.travis_url_base_image}/{self.repo_info.user}/{self.repo_info.project}.svg?branch={self.repo_info.branch}",
+            f"https://{self.travis_build_info.travis_url_base_target}/{self.repo_info.user}/{self.repo_info.project}/branches")
 
     def appveyor_status(self):
         if not self.appveyor_build_info.appveyor_token:
