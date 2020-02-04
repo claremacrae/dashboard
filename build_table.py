@@ -27,9 +27,9 @@ class BuildTable:
         stream.write(f"| {user_link_text} |\n")
 
     @staticmethod
-    def write_row(stream, branch_build):
+    def write_row(stream, branch_build, branch):
         links = [
-            F'{branch_build.repo_info.project_link()} / {branch_build.repo_info.branch_link()}',
+            F'{branch_build.repo_info.project_link()} / {branch_build.repo_info.branch_link(branch)}',
             branch_build.repo_info.network_link(),
             branch_build.travis_build_info.status(branch_build.repo_info),
             branch_build.appveyor_build_info.status(branch_build.repo_info),
@@ -48,4 +48,5 @@ class BuildTable:
                     if not user_name_row_written:
                         self.write_user_row(stream, build)
                         user_name_row_written = True
-                    self.write_row(stream, build)
+                    for branch in [build.repo_info.branch]:
+                        self.write_row(stream, build, branch)
