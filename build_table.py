@@ -41,8 +41,8 @@ class BuildTable:
     def write_readme(self, all_builds):
         with open('README.md', 'w') as stream:
             self.write_header(stream)
-            for user_names in all_builds.builds.keys():
-                builds = all_builds.builds[user_names]
+            for user_name in all_builds.builds.keys():
+                builds = all_builds.builds[user_name]
                 user_name_row_written = False
                 for build in builds:
                     if not user_name_row_written:
