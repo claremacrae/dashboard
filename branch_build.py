@@ -53,23 +53,24 @@ class TravisBuildInfo:
 
 
 class AppveyorBuildInfo:
-    def __init__(self, repo_info, appveyor_token, custom_appveyor_user):
-        self.repo_info = repo_info
+    def __init__(self, appveyor_token, custom_appveyor_user):
         self.appveyor_token = appveyor_token
-        self.appveyor_project = repo_info.project.lower().replace('.', '-').replace('_', '-')
-        if custom_appveyor_user:
-            self.appveyor_user = custom_appveyor_user
-        else:
-            self.appveyor_user = repo_info.user
+        self.custom_appveyor_user = custom_appveyor_user
 
     def status(self, repo_info):
         if not self.appveyor_token:
             return '` `'
 
+        appveyor_project = repo_info.project.lower().replace('.', '-').replace('_', '-')
+        if self.custom_appveyor_user:
+            appveyor_user = self.custom_appveyor_user
+        else:
+            appveyor_user = repo_info.user
+
         return dashboard_utilities.hyperlinked_image(
             "Build status",
-            f"https://ci.appveyor.com/api/projects/status/{self.appveyor_token}/branch/{self.repo_info.branch}?svg=true",
-            f"https://ci.appveyor.com/project/{self.appveyor_user}/{self.appveyor_project}/branch/{self.repo_info.branch}")
+            f"https://ci.appveyor.com/api/projects/status/{self.appveyor_token}/branch/{repo_info.branch}?svg=true",
+            f"https://ci.appveyor.com/project/{appveyor_user}/{appveyor_project}/branch/{repo_info.branch}")
 
 
 class GitHubBuildInfo:
@@ -92,5 +93,5 @@ class BranchBuild:
     def __init__(self, user, project, branch, travis_com, appveyor_token, custom_appveyor_user):
         self.repo_info = RepoInfo(user, project, branch)
         self.travis_build_info = TravisBuildInfo(travis_com)
-        self.appveyor_build_info = AppveyorBuildInfo(self.repo_info, appveyor_token, custom_appveyor_user)
+        self.appveyor_build_info = AppveyorBuildInfo(appveyor_token, custom_appveyor_user)
         self.github_build_info = GitHubBuildInfo(self.repo_info)
