@@ -74,14 +74,14 @@ class AppveyorBuildInfo:
 
 
 class GitHubBuildInfo:
-    def __init__(self, repo_info):
-        self.repo_info = repo_info
+    def __init__(self):
+        pass
 
     def status(self, repo_info):
         return dashboard_utilities.hyperlinked_image(
             "Build Status",
-            f'https://github.com/{self.repo_info.user}/{self.repo_info.project}/workflows/build/badge.svg?branch={self.repo_info.branch}',
-            f'https://github.com/{self.repo_info.user}/{self.repo_info.project}/actions?query=branch%3A{self.repo_info.branch}')
+            f'https://github.com/{repo_info.user}/{repo_info.project}/workflows/build/badge.svg?branch={repo_info.branch}',
+            f'https://github.com/{repo_info.user}/{repo_info.project}/actions?query=branch%3A{repo_info.branch}')
 
 
 class BranchBuild:
@@ -94,4 +94,4 @@ class BranchBuild:
         self.repo_info = RepoInfo(user, project, branch)
         self.travis_build_info = TravisBuildInfo(travis_com)
         self.appveyor_build_info = AppveyorBuildInfo(appveyor_token, custom_appveyor_user)
-        self.github_build_info = GitHubBuildInfo(self.repo_info)
+        self.github_build_info = GitHubBuildInfo()
