@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-from branch_build import BranchBuild
+from branch_build import BranchBuild, AppveyorBuildInfo
 
 
 class Builds:
@@ -12,5 +12,5 @@ class Builds:
 
     def add_builds(self, user, project, branches, travis_com, appveyor_token=None, custom_appveyor_user=None):
         for branch in branches:
-            build = BranchBuild(user, project, branch, travis_com, appveyor_token, custom_appveyor_user)
+            build = BranchBuild(user, project, branch, travis_com, AppveyorBuildInfo(appveyor_token, custom_appveyor_user))
             self.add_build(build)

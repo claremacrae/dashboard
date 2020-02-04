@@ -53,7 +53,7 @@ class TravisBuildInfo:
 
 
 class AppveyorBuildInfo:
-    def __init__(self, appveyor_token, custom_appveyor_user):
+    def __init__(self, appveyor_token=None, custom_appveyor_user=None):
         self.appveyor_token = appveyor_token
         self.custom_appveyor_user = custom_appveyor_user
 
@@ -90,8 +90,8 @@ class BranchBuild:
     for a particular branch in a particular repo
     """
 
-    def __init__(self, user, project, branch, travis_com, appveyor_token, custom_appveyor_user):
+    def __init__(self, user, project, branch, travis_com, appveyor_build_info):
         self.repo_info = RepoInfo(user, project, branch)
         self.travis_build_info = TravisBuildInfo(travis_com)
-        self.appveyor_build_info = AppveyorBuildInfo(appveyor_token, custom_appveyor_user)
+        self.appveyor_build_info = appveyor_build_info
         self.github_build_info = GitHubBuildInfo()
