@@ -86,8 +86,7 @@ class GitHubConfig:
 
 class BranchBuild:
     """
-    Class that represents a row in the dashboard to represent the current status of builds
-    for a particular branch in a particular repo
+    Class that represents a particular repository and all its active branches and its CI builds
     """
 
     def __init__(self, repo_info, travis_build_info, appveyor_build_info):
