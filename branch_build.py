@@ -29,8 +29,7 @@ class RepoInfo:
 
 
 class TravisBuildInfo:
-    def __init__(self, repo_info, travis_com):
-        self.repo_info = repo_info
+    def __init__(self, travis_com):
         # Travis info
         # see
         # https://devops.stackexchange.com/questions/1201/whats-the-difference-between-travis-ci-org-and-travis-ci-com
@@ -49,8 +48,8 @@ class TravisBuildInfo:
         # click on the branch of interest, and see its latest build.
         return dashboard_utilities.hyperlinked_image(
             "Build Status",
-            f"https://{self.travis_url_base_image}/{self.repo_info.user}/{self.repo_info.project}.svg?branch={self.repo_info.branch}",
-            f"https://{self.travis_url_base_target}/{self.repo_info.user}/{self.repo_info.project}/branches")
+            f"https://{self.travis_url_base_image}/{repo_info.user}/{repo_info.project}.svg?branch={repo_info.branch}",
+            f"https://{self.travis_url_base_target}/{repo_info.user}/{repo_info.project}/branches")
 
 
 class AppveyorBuildInfo:
@@ -92,6 +91,6 @@ class BranchBuild:
 
     def __init__(self, user, project, branch, travis_com, appveyor_token, custom_appveyor_user):
         self.repo_info = RepoInfo(user, project, branch)
-        self.travis_build_info = TravisBuildInfo(self.repo_info, travis_com)
+        self.travis_build_info = TravisBuildInfo(travis_com)
         self.appveyor_build_info = AppveyorBuildInfo(self.repo_info, appveyor_token, custom_appveyor_user)
         self.github_build_info = GitHubBuildInfo(self.repo_info)
