@@ -53,7 +53,6 @@ class BranchBuild:
 
     def __init__(self, user, project, branch, travis_com, appveyor_token, custom_appveyor_user):
         self.repo_info = RepoInfo(user, project, branch)
-        self.branch = branch
 
         self.travis_build_info = TravisBuildInfo(travis_com)
         # Travis info
@@ -70,8 +69,8 @@ class BranchBuild:
         self.appveyor_build_info = AppveyorBuildInfo(self.repo_info, appveyor_token, custom_appveyor_user)
 
     def branch_link(self):
-        text = self.branch
-        url = f"https://github.com/{self.repo_info.user}/{self.repo_info.project}/commits/{self.branch}"
+        text = self.repo_info.branch
+        url = f"https://github.com/{self.repo_info.user}/{self.repo_info.project}/commits/{self.repo_info.branch}"
         return dashboard_utilities.hyperlinked_text(text, url)
 
     def travis_status(self):
@@ -82,7 +81,7 @@ class BranchBuild:
         # click on the branch of interest, and see its latest build.
         return dashboard_utilities.hyperlinked_image(
             "Build Status",
-            f"https://{self.travis_url_base_image}/{self.repo_info.user}/{self.repo_info.project}.svg?branch={self.branch}",
+            f"https://{self.travis_url_base_image}/{self.repo_info.user}/{self.repo_info.project}.svg?branch={self.repo_info.branch}",
             f"https://{self.travis_url_base_target}/{self.repo_info.user}/{self.repo_info.project}/branches")
 
     def appveyor_status(self):
@@ -91,11 +90,11 @@ class BranchBuild:
 
         return dashboard_utilities.hyperlinked_image(
             "Build status",
-            f"https://ci.appveyor.com/api/projects/status/{self.appveyor_build_info.appveyor_token}/branch/{self.branch}?svg=true",
-            f"https://ci.appveyor.com/project/{self.appveyor_build_info.appveyor_user}/{self.appveyor_build_info.appveyor_project}/branch/{self.branch}")
+            f"https://ci.appveyor.com/api/projects/status/{self.appveyor_build_info.appveyor_token}/branch/{self.repo_info.branch}?svg=true",
+            f"https://ci.appveyor.com/project/{self.appveyor_build_info.appveyor_user}/{self.appveyor_build_info.appveyor_project}/branch/{self.repo_info.branch}")
 
     def github_status(self):
         return dashboard_utilities.hyperlinked_image(
             "Build Status",
-            f'https://github.com/{self.repo_info.user}/{self.repo_info.project}/workflows/build/badge.svg?branch={self.branch}',
-            f'https://github.com/{self.repo_info.user}/{self.repo_info.project}/actions?query=branch%3A{self.branch}')
+            f'https://github.com/{self.repo_info.user}/{self.repo_info.project}/workflows/build/badge.svg?branch={self.repo_info.branch}',
+            f'https://github.com/{self.repo_info.user}/{self.repo_info.project}/actions?query=branch%3A{self.repo_info.branch}')
