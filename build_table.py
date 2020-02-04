@@ -42,11 +42,14 @@ class BuildTable:
         with open('README.md', 'w') as stream:
             self.write_header(stream)
             for user_name in all_builds.builds.keys():
-                builds = all_builds.builds[user_name]
-                user_name_row_written = False
-                for build in builds:
-                    if not user_name_row_written:
-                        self.write_user_row(stream, build)
-                        user_name_row_written = True
-                    for branch in build.repo_info.branches:
-                        self.write_row(stream, build, branch)
+                self.write_all_repos_for_user(all_builds, stream, user_name)
+
+    def write_all_repos_for_user(self, all_builds, stream, user_name):
+        builds = all_builds.builds[user_name]
+        user_name_row_written = False
+        for build in builds:
+            if not user_name_row_written:
+                self.write_user_row(stream, build)
+                user_name_row_written = True
+            for branch in build.repo_info.branches:
+                self.write_row(stream, build, branch)
