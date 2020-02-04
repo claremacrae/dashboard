@@ -84,7 +84,7 @@ class GitHubConfig:
             f'https://github.com/{repo_info.user}/{repo_info.project}/actions?query=branch%3A{branch}')
 
 
-class BranchBuild:
+class RepoAndBuilds:
     """
     Class that represents a particular repository and all its active branches and its CI builds
     """
