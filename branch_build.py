@@ -40,7 +40,7 @@ class TravisConfig:
             self.travis_url_base_image = 'api.travis-ci.org'
             self.travis_url_base_target = 'travis-ci.org'
 
-    def status(self, repo_info):
+    def status(self, repo_info, branch):
         # There is currently no way that I can see for linking to the current build on the chosen branch.
         # See this, for requests from others for this: https://github.com/travis-ci/travis-ci/issues/5024
         # For the workaround I'm currently using, see https://stackoverflow.com/a/32946454/104370
@@ -48,7 +48,7 @@ class TravisConfig:
         # click on the branch of interest, and see its latest build.
         return dashboard_utilities.hyperlinked_image(
             "Build Status",
-            f"https://{self.travis_url_base_image}/{repo_info.user}/{repo_info.project}.svg?branch={repo_info.branch}",
+            f"https://{self.travis_url_base_image}/{repo_info.user}/{repo_info.project}.svg?branch={branch}",
             f"https://{self.travis_url_base_target}/{repo_info.user}/{repo_info.project}/branches")
 
 
@@ -57,7 +57,7 @@ class AppveyorConfig:
         self.appveyor_token = appveyor_token
         self.custom_appveyor_user = custom_appveyor_user
 
-    def status(self, repo_info):
+    def status(self, repo_info, branch):
         if not self.appveyor_token:
             return '` `'
 
@@ -69,19 +69,19 @@ class AppveyorConfig:
 
         return dashboard_utilities.hyperlinked_image(
             "Build status",
-            f"https://ci.appveyor.com/api/projects/status/{self.appveyor_token}/branch/{repo_info.branch}?svg=true",
-            f"https://ci.appveyor.com/project/{appveyor_user}/{appveyor_project}/branch/{repo_info.branch}")
+            f"https://ci.appveyor.com/api/projects/status/{self.appveyor_token}/branch/{branch}?svg=true",
+            f"https://ci.appveyor.com/project/{appveyor_user}/{appveyor_project}/branch/{branch}")
 
 
 class GitHubConfig:
     def __init__(self):
         pass
 
-    def status(self, repo_info):
+    def status(self, repo_info, branch):
         return dashboard_utilities.hyperlinked_image(
             "Build Status",
-            f'https://github.com/{repo_info.user}/{repo_info.project}/workflows/build/badge.svg?branch={repo_info.branch}',
-            f'https://github.com/{repo_info.user}/{repo_info.project}/actions?query=branch%3A{repo_info.branch}')
+            f'https://github.com/{repo_info.user}/{repo_info.project}/workflows/build/badge.svg?branch={branch}',
+            f'https://github.com/{repo_info.user}/{repo_info.project}/actions?query=branch%3A{branch}')
 
 
 class BranchBuild:

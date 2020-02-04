@@ -1,11 +1,11 @@
 class BuildBadges:
 
     @staticmethod
-    def write_row(stream, branch_build):
+    def write_row(stream, branch_build, branch):
         links = [
-            branch_build.travis_build_info.status(branch_build.repo_info),
-            branch_build.appveyor_build_info.status(branch_build.repo_info),
-            branch_build.github_build_info.status(branch_build.repo_info),
+            branch_build.travis_build_info.status(branch_build.repo_info, branch),
+            branch_build.appveyor_build_info.status(branch_build.repo_info, branch),
+            branch_build.github_build_info.status(branch_build.repo_info, branch),
         ]
         stream.write(F'\n')
         stream.write(F'{branch_build.repo_info.user}/{branch_build.repo_info.project}\n')
@@ -20,4 +20,4 @@ class BuildBadges:
                 for build in builds:
                     if build.repo_info.branch != 'master':
                         continue
-                    self.write_row(stream, build)
+                    self.write_row(stream, build, 'master')
