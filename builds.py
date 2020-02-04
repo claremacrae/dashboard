@@ -12,5 +12,6 @@ class Builds:
 
     def add_builds(self, user, project, branches, travis_com, appveyor_token=None, custom_appveyor_user=None):
         for branch in branches:
-            build = BranchBuild(RepoInfo(user, project, branch), TravisBuildInfo(travis_com), AppveyorBuildInfo(appveyor_token, custom_appveyor_user))
+            build = BranchBuild(RepoInfo(user, project, branch), TravisBuildInfo(travis_com),
+                                AppveyorBuildInfo(appveyor_token, custom_appveyor_user))
             self.add_build(build)
