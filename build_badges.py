@@ -8,7 +8,7 @@ class BuildBadges:
             branch_build.github_status(),
         ]
         stream.write(F'\n')
-        stream.write(F'{branch_build.repo_info.user}/{branch_build.project}\n')
+        stream.write(F'{branch_build.repo_info.user}/{branch_build.repo_info.project}\n')
         stream.write(F'\n')
         for link in links:
             stream.write(F'{link} \n')

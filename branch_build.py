@@ -11,7 +11,6 @@ class BranchBuild:
 
     def __init__(self, user, project, branch, travis_com, appveyor_token, custom_appveyor_user):
         self.repo_info = RepoInfo(user, project)
-        self.project = project
         self.branch = branch
 
         # Travis info
@@ -26,7 +25,7 @@ class BranchBuild:
 
         # Appveyor info
         self.appveyor_token = appveyor_token
-        self.appveyor_project = self.project.lower().replace('.', '-').replace('_', '-')
+        self.appveyor_project = self.repo_info.project.lower().replace('.', '-').replace('_', '-')
         if custom_appveyor_user:
             self.appveyor_user = custom_appveyor_user
         else:
@@ -38,18 +37,18 @@ class BranchBuild:
         return self.hyperlinked_text(text, url)
 
     def project_link(self):
-        text = self.project
-        url = f"https://github.com/{self.repo_info.user}/{self.project}/"
+        text = self.repo_info.project
+        url = f"https://github.com/{self.repo_info.user}/{self.repo_info.project}/"
         return self.hyperlinked_text(text, url)
 
     def network_link(self):
         text = 'network'
-        url = f"https://github.com/{self.repo_info.user}/{self.project}/network"
+        url = f"https://github.com/{self.repo_info.user}/{self.repo_info.project}/network"
         return self.hyperlinked_text(text, url)
 
     def branch_link(self):
         text = self.branch
-        url = f"https://github.com/{self.repo_info.user}/{self.project}/commits/{self.branch}"
+        url = f"https://github.com/{self.repo_info.user}/{self.repo_info.project}/commits/{self.branch}"
         return self.hyperlinked_text(text, url)
 
     @staticmethod
@@ -68,8 +67,8 @@ class BranchBuild:
         # click on the branch of interest, and see its latest build.
         return self.hyperlinked_image(
             "Build Status",
-            f"https://{self.travis_url_base_image}/{self.repo_info.user}/{self.project}.svg?branch={self.branch}",
-            f"https://{self.travis_url_base_target}/{self.repo_info.user}/{self.project}/branches")
+            f"https://{self.travis_url_base_image}/{self.repo_info.user}/{self.repo_info.project}.svg?branch={self.branch}",
+            f"https://{self.travis_url_base_target}/{self.repo_info.user}/{self.repo_info.project}/branches")
 
     def appveyor_status(self):
         if not self.appveyor_token:
@@ -83,5 +82,5 @@ class BranchBuild:
     def github_status(self):
         return self.hyperlinked_image(
             "Build Status",
-            f'https://github.com/{self.repo_info.user}/{self.project}/workflows/build/badge.svg?branch={self.branch}',
-            f'https://github.com/{self.repo_info.user}/{self.project}/actions?query=branch%3A{self.branch}')
+            f'https://github.com/{self.repo_info.user}/{self.repo_info.project}/workflows/build/badge.svg?branch={self.branch}',
+            f'https://github.com/{self.repo_info.user}/{self.repo_info.project}/actions?query=branch%3A{self.branch}')
