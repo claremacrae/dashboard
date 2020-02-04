@@ -20,22 +20,22 @@ def add_official_approval_test_repos(builds):
     builds.add_builds('claremacrae', repo, ['master'], TravisConfig(True),
                       AppveyorConfig('37smtsp3a694okv8'))  # 'setup_sanitizers'
 
-    repo1 = 'ApprovalTests.cpp.StarterProject'
-    builds.add_builds('approvals', repo1, ['master'], TravisConfig(False), AppveyorConfig('qx0546k6ii57919w', 'isidore'))
-    builds.add_builds('claremacrae', repo1, ['master'], TravisConfig(True), AppveyorConfig('ytjgybf5r9fviifm'))
+    repo = 'ApprovalTests.cpp.StarterProject'
+    builds.add_builds('approvals', repo, ['master'], TravisConfig(False), AppveyorConfig('qx0546k6ii57919w', 'isidore'))
+    builds.add_builds('claremacrae', repo, ['master'], TravisConfig(True), AppveyorConfig('ytjgybf5r9fviifm'))
 
-    repo2 = 'ApprovalTests.cpp.Qt'
-    builds.add_builds('approvals', repo2, ['master'], TravisConfig(True), AppveyorConfig('pf8et0nk1mdajskf', 'isidore'))
-    builds.add_builds('claremacrae', repo2, ['master'], TravisConfig(True), AppveyorConfig('g60qbttap7m5nul2'))
+    repo = 'ApprovalTests.cpp.Qt'
+    builds.add_builds('approvals', repo, ['master'], TravisConfig(True), AppveyorConfig('pf8et0nk1mdajskf', 'isidore'))
+    builds.add_builds('claremacrae', repo, ['master'], TravisConfig(True), AppveyorConfig('g60qbttap7m5nul2'))
 
-    repo3 = 'ApprovalTests.cpp.Qt.StarterProject'
-    builds.add_builds('approvals', repo3, ['master'], TravisConfig(False), AppveyorConfig('tpitsul9axlv93uk', 'isidore'))
-    builds.add_builds('claremacrae', repo3, ['master'], TravisConfig(True), AppveyorConfig('xe2iwuto0sc342a7'))
+    repo = 'ApprovalTests.cpp.Qt.StarterProject'
+    builds.add_builds('approvals', repo, ['master'], TravisConfig(False), AppveyorConfig('tpitsul9axlv93uk', 'isidore'))
+    builds.add_builds('claremacrae', repo, ['master'], TravisConfig(True), AppveyorConfig('xe2iwuto0sc342a7'))
 
 
 def add_my_experimental_approvals_repos(builds):
-    repo4 = 'ApprovalTests.cpp.Nursery'
-    builds.add_builds('claremacrae', repo4, ['master'], TravisConfig(True), AppveyorConfig('iqtnpa83t13os98v'))
+    repo = 'ApprovalTests.cpp.Nursery'
+    builds.add_builds('claremacrae', repo, ['master'], TravisConfig(True), AppveyorConfig('iqtnpa83t13os98v'))
     repos = [
         'ApprovalTests.cpp.Builds',
         'ApprovalTests.cpp.CMakeSamples',
@@ -43,8 +43,8 @@ def add_my_experimental_approvals_repos(builds):
         # 'ApprovalTests.cpp.Scripts',
         'SuperBuildApprovalTests',
     ]
-    for repo5 in repos:
-        builds.add_builds('claremacrae', repo5, ['master'], TravisConfig(True), AppveyorConfig())
+    for repo in repos:
+        builds.add_builds('claremacrae', repo, ['master'], TravisConfig(True), AppveyorConfig())
 
 
 def add_my_random_repos(builds):
