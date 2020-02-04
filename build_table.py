@@ -32,7 +32,7 @@ class BuildTable:
             F'{branch_build.repo_info.project_link()} / {branch_build.repo_info.branch_link()}',
             branch_build.repo_info.network_link(),
             branch_build.travis_status(),
-            branch_build.appveyor_status(),
+            branch_build.appveyor_build_info.appveyor_status(),
             branch_build.github_status(),
         ]
         line = ' | '.join(links)

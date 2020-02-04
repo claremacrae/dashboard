@@ -4,7 +4,7 @@ class BuildBadges:
     def write_row(stream, branch_build):
         links = [
             branch_build.travis_status(),
-            branch_build.appveyor_status(),
+            branch_build.appveyor_build_info.appveyor_status(),
             branch_build.github_status(),
         ]
         stream.write(F'\n')
