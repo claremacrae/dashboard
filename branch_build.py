@@ -41,7 +41,7 @@ class TravisBuildInfo:
             self.travis_url_base_image = 'api.travis-ci.org'
             self.travis_url_base_target = 'travis-ci.org'
 
-    def travis_status(self):
+    def status(self):
         # There is currently no way that I can see for linking to the current build on the chosen branch.
         # See this, for requests from others for this: https://github.com/travis-ci/travis-ci/issues/5024
         # For the workaround I'm currently using, see https://stackoverflow.com/a/32946454/104370
@@ -63,7 +63,7 @@ class AppveyorBuildInfo:
         else:
             self.appveyor_user = repo_info.user
 
-    def appveyor_status(self):
+    def status(self):
         if not self.appveyor_token:
             return '` `'
 
@@ -77,7 +77,7 @@ class GitHubBuildInfo:
     def __init__(self, repo_info):
         self.repo_info = repo_info
 
-    def github_status(self):
+    def status(self):
         return dashboard_utilities.hyperlinked_image(
             "Build Status",
             f'https://github.com/{self.repo_info.user}/{self.repo_info.project}/workflows/build/badge.svg?branch={self.repo_info.branch}',
