@@ -21,6 +21,11 @@ class RepoInfo:
         url = f"https://github.com/{self.user}/{self.project}/network"
         return dashboard_utilities.hyperlinked_text(text, url)
 
+    def branch_link(self):
+        text = self.branch
+        url = f"https://github.com/{self.user}/{self.project}/commits/{self.branch}"
+        return dashboard_utilities.hyperlinked_text(text, url)
+
 
 class TravisBuildInfo:
     def __init__(self, travis_com):
@@ -58,11 +63,6 @@ class BranchBuild:
 
         # Appveyor info
         self.appveyor_build_info = AppveyorBuildInfo(self.repo_info, appveyor_token, custom_appveyor_user)
-
-    def branch_link(self):
-        text = self.repo_info.branch
-        url = f"https://github.com/{self.repo_info.user}/{self.repo_info.project}/commits/{self.repo_info.branch}"
-        return dashboard_utilities.hyperlinked_text(text, url)
 
     def travis_status(self):
         # There is currently no way that I can see for linking to the current build on the chosen branch.
