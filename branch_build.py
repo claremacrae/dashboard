@@ -28,7 +28,7 @@ class RepoInfo:
         return dashboard_utilities.hyperlinked_text(text, url)
 
 
-class TravisBuildInfo:
+class TravisConfig:
     def __init__(self, travis_com):
         # Travis info
         # see
