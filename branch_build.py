@@ -4,6 +4,19 @@ class RepoInfo:
         self.project = project
 
 
+class TravisBuildInfo:
+    def __init__(self, travis_com):
+        # Travis info
+        # see
+        # https://devops.stackexchange.com/questions/1201/whats-the-difference-between-travis-ci-org-and-travis-ci-com
+        if travis_com:
+            self.travis_url_base_image = 'travis-ci.com'
+            self.travis_url_base_target = self.travis_url_base_image
+        else:
+            self.travis_url_base_image = 'api.travis-ci.org'
+            self.travis_url_base_target = 'travis-ci.org'
+
+
 class AppveyorBuildInfo:
     def __init__(self, repo_info, appveyor_token, custom_appveyor_user):
         self.appveyor_token = appveyor_token
@@ -24,6 +37,7 @@ class BranchBuild:
         self.repo_info = RepoInfo(user, project)
         self.branch = branch
 
+        self.travis_build_info = TravisBuildInfo(travis_com)
         # Travis info
         # see
         # https://devops.stackexchange.com/questions/1201/whats-the-difference-between-travis-ci-org-and-travis-ci-com
