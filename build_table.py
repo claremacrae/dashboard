@@ -23,14 +23,14 @@ class BuildTable:
 
     @staticmethod
     def write_user_row(stream, build):
-        user_link_text = F'**Account: {build.user_link()}**'
+        user_link_text = F'**Account: {build.repo_info.user_link()}**'
         stream.write(f"| {user_link_text} |\n")
 
     @staticmethod
     def write_row(stream, branch_build):
         links = [
-            F'{branch_build.project_link()} / {branch_build.branch_link()}',
-            branch_build.network_link(),
+            F'{branch_build.repo_info.project_link()} / {branch_build.branch_link()}',
+            branch_build.repo_info.network_link(),
             branch_build.travis_status(),
             branch_build.appveyor_status(),
             branch_build.github_status(),

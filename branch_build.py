@@ -5,6 +5,21 @@ class RepoInfo:
         self.user = user
         self.project = project
 
+    def user_link(self):
+        text = self.user
+        url = f"https://github.com/{self.user}?tab=repositories"
+        return dashboard_utilities.hyperlinked_text(text, url)
+
+    def project_link(self):
+        text = self.project
+        url = f"https://github.com/{self.user}/{self.project}/"
+        return dashboard_utilities.hyperlinked_text(text, url)
+
+    def network_link(self):
+        text = 'network'
+        url = f"https://github.com/{self.user}/{self.project}/network"
+        return dashboard_utilities.hyperlinked_text(text, url)
+
 
 class TravisBuildInfo:
     def __init__(self, travis_com):
@@ -52,21 +67,6 @@ class BranchBuild:
 
         # Appveyor info
         self.appveyor_build_info = AppveyorBuildInfo(self.repo_info, appveyor_token, custom_appveyor_user)
-
-    def user_link(self):
-        text = self.repo_info.user
-        url = f"https://github.com/{self.repo_info.user}?tab=repositories"
-        return dashboard_utilities.hyperlinked_text(text, url)
-
-    def project_link(self):
-        text = self.repo_info.project
-        url = f"https://github.com/{self.repo_info.user}/{self.repo_info.project}/"
-        return dashboard_utilities.hyperlinked_text(text, url)
-
-    def network_link(self):
-        text = 'network'
-        url = f"https://github.com/{self.repo_info.user}/{self.repo_info.project}/network"
-        return dashboard_utilities.hyperlinked_text(text, url)
 
     def branch_link(self):
         text = self.branch
