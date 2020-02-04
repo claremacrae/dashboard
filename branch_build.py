@@ -1,3 +1,8 @@
+class RepoInfo:
+    def __init__(self, user, project):
+        self.user = user
+        self.project = project
+
 class BranchBuild:
     """
     Class that represents a row in the dashboard to represent the current status of builds
@@ -5,6 +10,7 @@ class BranchBuild:
     """
 
     def __init__(self, user, project, branch, travis_com, appveyor_token, custom_appveyor_user):
+        self.repo_info = RepoInfo(user, project)
         self.user = user
         self.project = project
         self.branch = branch
