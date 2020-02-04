@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-from branch_build import BranchBuild, RepoInfo
+from branch_build import BranchBuild, RepoInfo, AppveyorConfig
 
 
 class Builds:
@@ -10,7 +10,7 @@ class Builds:
     def add_build(self, build):
         self.builds[build.repo_info.user].append(build)
 
-    def add_builds(self, user, project, branches, travis_build_info, appveyor_build_info):
+    def add_builds(self, user, project, branches, travis_build_info, appveyor_build_info = AppveyorConfig()):
         for branch in branches:
             build = BranchBuild(RepoInfo(user, project, branch), travis_build_info,
                                 appveyor_build_info)

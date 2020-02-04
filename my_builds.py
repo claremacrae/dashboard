@@ -40,7 +40,7 @@ def add_my_experimental_approvals_repos(builds):
         'ApprovalTests.cpp.Demos',
     ]
     for repo in repos:
-        builds.add_builds('claremacrae', repo, ['master'], TravisConfig(True), AppveyorConfig())
+        builds.add_builds('claremacrae', repo, ['master'], TravisConfig(True))
 
     builds.add_builds('claremacrae', 'ApprovalTests.cpp.Nursery', ['master'], TravisConfig(True),
                       AppveyorConfig('iqtnpa83t13os98v'))
@@ -50,16 +50,16 @@ def add_my_experimental_approvals_repos(builds):
         'SuperBuildApprovalTests',
     ]
     for repo in repos:
-        builds.add_builds('claremacrae', repo, ['master'], TravisConfig(True), AppveyorConfig())
+        builds.add_builds('claremacrae', repo, ['master'], TravisConfig(True))
 
 
 def add_my_random_repos(builds):
-    builds.add_builds('claremacrae', 'approval-tests-setup', ['master'], TravisConfig(True), AppveyorConfig())
+    builds.add_builds('claremacrae', 'approval-tests-setup', ['master'], TravisConfig(True))
     builds.add_builds('claremacrae', 'ci_playground', ['trunk'], TravisConfig(True), AppveyorConfig('cbksrgvypq5vksy2'))
     builds.add_builds('claremacrae', 'cpp_snippets', ['master'], TravisConfig(True), AppveyorConfig('hqf8xh615dyp3u4l'))
 
 
 def add_boost_ut_repos(builds):
     repo = 'ut'
-    builds.add_builds('boost-experimental', repo, ['master'], TravisConfig(False), AppveyorConfig())
+    builds.add_builds('boost-experimental', repo, ['master'], TravisConfig(False))
     builds.add_builds('claremacrae', repo, ['master', 'clare_learning'], TravisConfig(True), AppveyorConfig('ab4jv9x8kveev0n4'))
