@@ -33,7 +33,7 @@ class BuildTable:
             branch_build.repo_info.network_link(),
             branch_build.travis_build_info.travis_status(),
             branch_build.appveyor_build_info.appveyor_status(),
-            branch_build.github_status(),
+            branch_build.github_build_info.github_status(),
         ]
         line = ' | '.join(links)
         stream.write(F'| {line} |' + '\n')

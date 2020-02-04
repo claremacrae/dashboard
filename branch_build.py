@@ -72,6 +72,17 @@ class AppveyorBuildInfo:
             f"https://ci.appveyor.com/project/{self.appveyor_user}/{self.appveyor_project}/branch/{self.repo_info.branch}")
 
 
+class GitHubBuildInfo:
+    def __init__(self, repo_info):
+        self.repo_info = repo_info
+
+    def github_status(self):
+        return dashboard_utilities.hyperlinked_image(
+            "Build Status",
+            f'https://github.com/{self.repo_info.user}/{self.repo_info.project}/workflows/build/badge.svg?branch={self.repo_info.branch}',
+            f'https://github.com/{self.repo_info.user}/{self.repo_info.project}/actions?query=branch%3A{self.repo_info.branch}')
+
+
 class BranchBuild:
     """
     Class that represents a row in the dashboard to represent the current status of builds
@@ -86,8 +97,4 @@ class BranchBuild:
         # Appveyor info
         self.appveyor_build_info = AppveyorBuildInfo(self.repo_info, appveyor_token, custom_appveyor_user)
 
-    def github_status(self):
-        return dashboard_utilities.hyperlinked_image(
-            "Build Status",
-            f'https://github.com/{self.repo_info.user}/{self.repo_info.project}/workflows/build/badge.svg?branch={self.repo_info.branch}',
-            f'https://github.com/{self.repo_info.user}/{self.repo_info.project}/actions?query=branch%3A{self.repo_info.branch}')
+        self.github_build_info = GitHubBuildInfo(self.repo_info)

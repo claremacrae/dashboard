@@ -5,7 +5,7 @@ class BuildBadges:
         links = [
             branch_build.travis_build_info.travis_status(),
             branch_build.appveyor_build_info.appveyor_status(),
-            branch_build.github_status(),
+            branch_build.github_build_info.github_status(),
         ]
         stream.write(F'\n')
         stream.write(F'{branch_build.repo_info.user}/{branch_build.repo_info.project}\n')
