@@ -35,7 +35,6 @@ def add_official_approval_test_repos(builds):
 
 def add_my_experimental_approvals_repos(builds):
     repos = [
-        'ApprovalTests.cpp.Builds',
         'ApprovalTests.cpp.CMakeSamples',
         'ApprovalTests.cpp.Demos',
     ]

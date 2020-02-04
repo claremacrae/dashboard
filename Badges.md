@@ -47,12 +47,6 @@ claremacrae/ApprovalTests.cpp.Qt.StarterProject
 [![Build status](https://ci.appveyor.com/api/projects/status/xe2iwuto0sc342a7/branch/master?svg=true)](https://ci.appveyor.com/project/claremacrae/approvaltests-cpp-qt-starterproject/branch/master) 
 [![Build Status](https://github.com/claremacrae/ApprovalTests.cpp.Qt.StarterProject/workflows/build/badge.svg?branch=master)](https://github.com/claremacrae/ApprovalTests.cpp.Qt.StarterProject/actions?query=branch%3Amaster) 
 
-claremacrae/ApprovalTests.cpp.Builds
-
-[![Build Status](https://travis-ci.com/claremacrae/ApprovalTests.cpp.Builds.svg?branch=master)](https://travis-ci.com/claremacrae/ApprovalTests.cpp.Builds/branches) 
-` ` 
-[![Build Status](https://github.com/claremacrae/ApprovalTests.cpp.Builds/workflows/build/badge.svg?branch=master)](https://github.com/claremacrae/ApprovalTests.cpp.Builds/actions?query=branch%3Amaster) 
-
 claremacrae/ApprovalTests.cpp.CMakeSamples
 
 [![Build Status](https://travis-ci.com/claremacrae/ApprovalTests.cpp.CMakeSamples.svg?branch=master)](https://travis-ci.com/claremacrae/ApprovalTests.cpp.CMakeSamples/branches) 
