@@ -1,5 +1,6 @@
 import dashboard_utilities
 
+
 class RepoInfo:
     def __init__(self, user, project, branch):
         self.user = user
