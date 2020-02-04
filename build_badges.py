@@ -1,7 +1,8 @@
 class BuildBadges:
 
     @staticmethod
-    def write_row(stream, branch_build, branch):
+    def write_row(stream, branch_build):
+        branch = branch_build.repo_info.branches[0]
         links = [
             branch_build.travis_build_info.status(branch_build.repo_info, branch),
             branch_build.appveyor_build_info.status(branch_build.repo_info, branch),
@@ -18,4 +19,4 @@ class BuildBadges:
             for user_names in all_builds.builds.keys():
                 builds = all_builds.builds[user_names]
                 for build in builds:
-                    self.write_row(stream, build, build.repo_info.branches[0])
+                    self.write_row(stream, build)
