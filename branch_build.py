@@ -1,9 +1,10 @@
 import dashboard_utilities
 
 class RepoInfo:
-    def __init__(self, user, project):
+    def __init__(self, user, project, branch):
         self.user = user
         self.project = project
+        self.branch = branch
 
     def user_link(self):
         text = self.user
@@ -51,7 +52,7 @@ class BranchBuild:
     """
 
     def __init__(self, user, project, branch, travis_com, appveyor_token, custom_appveyor_user):
-        self.repo_info = RepoInfo(user, project)
+        self.repo_info = RepoInfo(user, project, branch)
         self.branch = branch
 
         self.travis_build_info = TravisBuildInfo(travis_com)
