@@ -40,6 +40,11 @@ def add_my_experimental_approvals_repos(builds):
         'ApprovalTests.cpp.Builds',
         'ApprovalTests.cpp.CMakeSamples',
         'ApprovalTests.cpp.Demos',
+    ]
+    for repo in repos:
+        builds.add_builds('claremacrae', repo, ['master'], TravisConfig(True), AppveyorConfig())
+
+    repos = [
         # 'ApprovalTests.cpp.Scripts',
         'SuperBuildApprovalTests',
     ]
