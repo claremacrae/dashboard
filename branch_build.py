@@ -1,3 +1,5 @@
+import dashboard_utilities
+
 class RepoInfo:
     def __init__(self, user, project):
         self.user = user
@@ -54,30 +56,22 @@ class BranchBuild:
     def user_link(self):
         text = self.repo_info.user
         url = f"https://github.com/{self.repo_info.user}?tab=repositories"
-        return self.hyperlinked_text(text, url)
+        return dashboard_utilities.hyperlinked_text(text, url)
 
     def project_link(self):
         text = self.repo_info.project
         url = f"https://github.com/{self.repo_info.user}/{self.repo_info.project}/"
-        return self.hyperlinked_text(text, url)
+        return dashboard_utilities.hyperlinked_text(text, url)
 
     def network_link(self):
         text = 'network'
         url = f"https://github.com/{self.repo_info.user}/{self.repo_info.project}/network"
-        return self.hyperlinked_text(text, url)
+        return dashboard_utilities.hyperlinked_text(text, url)
 
     def branch_link(self):
         text = self.branch
         url = f"https://github.com/{self.repo_info.user}/{self.repo_info.project}/commits/{self.branch}"
-        return self.hyperlinked_text(text, url)
-
-    @staticmethod
-    def hyperlinked_image(link_label, image_url, target_url):
-        return f'[![{link_label}]({image_url})]({target_url})'
-
-    @staticmethod
-    def hyperlinked_text(link_label, target_url):
-        return f'[{link_label}]({target_url})'
+        return dashboard_utilities.hyperlinked_text(text, url)
 
     def travis_status(self):
         # There is currently no way that I can see for linking to the current build on the chosen branch.
@@ -85,7 +79,7 @@ class BranchBuild:
         # For the workaround I'm currently using, see https://stackoverflow.com/a/32946454/104370
         # We now link to to all branches for which there are Travis builds, allowing the user to
         # click on the branch of interest, and see its latest build.
-        return self.hyperlinked_image(
+        return dashboard_utilities.hyperlinked_image(
             "Build Status",
             f"https://{self.travis_url_base_image}/{self.repo_info.user}/{self.repo_info.project}.svg?branch={self.branch}",
             f"https://{self.travis_url_base_target}/{self.repo_info.user}/{self.repo_info.project}/branches")
@@ -94,13 +88,13 @@ class BranchBuild:
         if not self.appveyor_build_info.appveyor_token:
             return '` `'
 
-        return self.hyperlinked_image(
+        return dashboard_utilities.hyperlinked_image(
             "Build status",
             f"https://ci.appveyor.com/api/projects/status/{self.appveyor_build_info.appveyor_token}/branch/{self.branch}?svg=true",
             f"https://ci.appveyor.com/project/{self.appveyor_build_info.appveyor_user}/{self.appveyor_build_info.appveyor_project}/branch/{self.branch}")
 
     def github_status(self):
-        return self.hyperlinked_image(
+        return dashboard_utilities.hyperlinked_image(
             "Build Status",
             f'https://github.com/{self.repo_info.user}/{self.repo_info.project}/workflows/build/badge.svg?branch={self.branch}',
             f'https://github.com/{self.repo_info.user}/{self.repo_info.project}/actions?query=branch%3A{self.branch}')
