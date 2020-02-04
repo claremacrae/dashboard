@@ -23,7 +23,7 @@ class RepoInfo:
         return dashboard_utilities.hyperlinked_text(text, url)
 
     def branch_link(self, branch):
-        text = self.branch
+        text = branch
         url = f"https://github.com/{self.user}/{self.project}/commits/{branch}"
         return dashboard_utilities.hyperlinked_text(text, url)
 
