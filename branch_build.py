@@ -73,7 +73,7 @@ class AppveyorConfig:
             f"https://ci.appveyor.com/project/{appveyor_user}/{appveyor_project}/branch/{repo_info.branch}")
 
 
-class GitHubBuildInfo:
+class GitHubConfig:
     def __init__(self):
         pass
 
@@ -94,4 +94,4 @@ class BranchBuild:
         self.repo_info = repo_info
         self.travis_build_info = travis_build_info
         self.appveyor_build_info = appveyor_build_info
-        self.github_build_info = GitHubBuildInfo()
+        self.github_build_info = GitHubConfig()
