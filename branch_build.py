@@ -90,8 +90,8 @@ class BranchBuild:
     for a particular branch in a particular repo
     """
 
-    def __init__(self, user, project, branch, travis_build_info, appveyor_build_info):
-        self.repo_info = RepoInfo(user, project, branch)
+    def __init__(self, repo_info, travis_build_info, appveyor_build_info):
+        self.repo_info = repo_info
         self.travis_build_info = travis_build_info
         self.appveyor_build_info = appveyor_build_info
         self.github_build_info = GitHubBuildInfo()
