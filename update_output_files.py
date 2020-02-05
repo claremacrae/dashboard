@@ -1,6 +1,6 @@
 from build_table import BuildTable
 from build_badges import BuildBadges
-from builds import AllRepos
+from all_repos import AllRepos
 from my_builds import add_all_builds
 
 
