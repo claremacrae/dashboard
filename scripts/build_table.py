@@ -1,4 +1,4 @@
-from repo_and_builds import TravisConfig, AppveyorConfig
+from scripts.repo_and_builds import TravisConfig, AppveyorConfig
 
 
 class BuildTable:
@@ -42,7 +42,7 @@ class BuildTable:
         stream.write(F'| {line} |' + '\n')
 
     def write_readme(self, all_repos):
-        with open('README.md', 'w') as stream:
+        with open('../README.md', 'w') as stream:
             self.write_header(stream)
             for user_name in all_repos.builds.keys():
                 self.write_all_repos_for_user(all_repos, stream, user_name)

@@ -1,4 +1,4 @@
-import dashboard_utilities
+from scripts import dashboard_utilities
 
 
 class RepoInfo:

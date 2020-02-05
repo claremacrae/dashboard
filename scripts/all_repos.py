@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-from repo_and_builds import RepoAndBuilds, RepoInfo, AppveyorConfig, TravisConfig
+from scripts.repo_and_builds import RepoAndBuilds, RepoInfo, AppveyorConfig, TravisConfig
 
 
 class AllRepos:

@@ -1,4 +1,4 @@
-from repo_and_builds import AppveyorConfig, TravisConfig
+from scripts.repo_and_builds import AppveyorConfig, TravisConfig
 
 
 def add_all_repos(builds):

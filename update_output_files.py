@@ -1,7 +1,7 @@
-from build_table import BuildTable
-from build_badges import BuildBadges
-from all_repos import AllRepos
-from my_builds import add_all_repos
+from scripts.build_table import BuildTable
+from scripts.build_badges import BuildBadges
+from scripts.all_repos import AllRepos
+from scripts.my_builds import add_all_repos
 
 
 def create_readme(builds):
