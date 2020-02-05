@@ -1,6 +1,6 @@
 from build_table import BuildTable
 from build_badges import BuildBadges
-from builds import Builds
+from builds import AllRepos
 from my_builds import add_all_builds
 
 
@@ -17,7 +17,7 @@ def create_badges(builds):
 def update_output_files():
     # See also https://travis-ci.com/dashboard
 
-    builds = Builds()
+    builds = AllRepos()
     add_all_builds(builds)
 
     create_readme(builds)

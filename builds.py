@@ -3,7 +3,7 @@ from collections import defaultdict
 from repo_and_builds import RepoAndBuilds, RepoInfo, AppveyorConfig, TravisConfig
 
 
-class Builds:
+class AllRepos:
     def __init__(self):
         self.builds = defaultdict(list)
 
