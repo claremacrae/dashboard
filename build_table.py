@@ -49,6 +49,9 @@ class BuildTable:
 
     def write_all_repos_for_user(self, all_repos, stream, user_name):
         type = 'Source'
+        self.write_all_repos_of_type_for_user(all_repos, stream, type, user_name)
+
+    def write_all_repos_of_type_for_user(self, all_repos, stream, type, user_name):
         builds = all_repos.builds[user_name]
         builds = [build for build in builds if build.repo_info.type == type]
         self.write_user_row(stream, builds[0])
