@@ -18,6 +18,9 @@ class BuildBadges:
     def write_badges(self, all_repos):
         with open('Badges.md', 'w') as stream:
             for user_name in all_repos.builds.keys():
-                builds = all_repos.builds[user_name]
-                for build in builds:
-                    self.write_row(stream, build)
+                self.write_all_repos_for_user(all_repos, stream, user_name)
+
+    def write_all_repos_for_user(self, all_repos, stream, user_name):
+        builds = all_repos.builds[user_name]
+        for build in builds:
+            self.write_row(stream, build)
