@@ -12,8 +12,11 @@ class AllRepos:
 
     def add_source_repo(self, user, project, branches, travis_build_info=TravisConfig(True),
                         appveyor_build_info=AppveyorConfig()):
-        type = 'Source'
-        self.__add_repo(appveyor_build_info, branches, project, travis_build_info, type, user)
+        self.__add_repo(appveyor_build_info, branches, project, travis_build_info, 'Source', user)
+
+    def add_fork_repo(self, user, project, branches, travis_build_info=TravisConfig(True),
+                        appveyor_build_info=AppveyorConfig()):
+        self.__add_repo(appveyor_build_info, branches, project, travis_build_info, 'Fork', user)
 
     def __add_repo(self, appveyor_build_info, branches, project, travis_build_info, type, user):
         repo = RepoAndBuilds(RepoInfo(user, project, branches, type), travis_build_info,
