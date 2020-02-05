@@ -1,7 +1,7 @@
 from repo_and_builds import AppveyorConfig, TravisConfig
 
 
-def add_all_builds(builds):
+def add_all_repos(builds):
     add_official_approval_test_repos(builds)
 
     add_my_experimental_approvals_repos(builds)
