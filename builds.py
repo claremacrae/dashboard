@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-from branch_build import RepoAndBuilds, RepoInfo, AppveyorConfig, TravisConfig
+from repo_and_builds import RepoAndBuilds, RepoInfo, AppveyorConfig, TravisConfig
 
 
 class Builds:

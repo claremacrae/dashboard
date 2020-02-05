@@ -1,4 +1,4 @@
-from branch_build import AppveyorConfig, TravisConfig
+from repo_and_builds import AppveyorConfig, TravisConfig
 
 
 def add_all_builds(builds):
