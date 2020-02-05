@@ -9,11 +9,13 @@ class BuildTable:
 
     @staticmethod
     def write_table_title_rows(stream):
+        travis_main_url = 'https://travis-ci.com/claremacrae/'
+        appveyor_main_url = 'https://ci.appveyor.com/projects'
         titles = [
             'project / branch',
             'network',
-            '[Travis](https://travis-ci.com/claremacrae/)',
-            '[Appveyor](https://ci.appveyor.com/projects)',
+            ('[Travis](%s)' % travis_main_url),
+            ('[Appveyor](%s)' % appveyor_main_url),
             'GitHub']
         stream.write(f"| {' | '.join(titles)} |\n")
         divider = '| '
