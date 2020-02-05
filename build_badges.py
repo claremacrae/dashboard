@@ -22,5 +22,8 @@ class BuildBadges:
 
     def write_all_repos_for_user(self, all_repos, stream, user_name):
         builds = all_repos.builds[user_name]
+        builds = [build for build in builds if build.repo_info.type == 'Source']
+        if not builds:
+            return
         for build in builds:
             self.write_row(stream, build)
