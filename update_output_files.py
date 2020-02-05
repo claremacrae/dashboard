@@ -15,8 +15,6 @@ def create_badges(builds):
 
 
 def update_output_files():
-    # See also https://travis-ci.com/dashboard
-
     builds = AllRepos()
     add_all_builds(builds)
 

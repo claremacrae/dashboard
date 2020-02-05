@@ -42,7 +42,7 @@ class TravisConfig:
 
     @staticmethod
     def main_url():
-        return 'https://travis-ci.com/claremacrae/'
+        return 'https://travis-ci.com/dashboard'
 
     def status(self, repo_info, branch):
         # There is currently no way that I can see for linking to the current build on the chosen branch.

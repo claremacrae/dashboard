@@ -2,7 +2,7 @@
 # dashboard
 A space to check build-statuses of projects I'm working on
 
-| project / branch | network | [Travis](https://travis-ci.com/claremacrae/) | [Appveyor](https://ci.appveyor.com/projects) | GitHub |
+| project / branch | network | [Travis](https://travis-ci.com/dashboard) | [Appveyor](https://ci.appveyor.com/projects) | GitHub |
 |  --- | --- | --- | --- | --- |
 | **Account: [approvals](https://github.com/approvals?tab=repositories)** |
 | [ApprovalTests.cpp](https://github.com/approvals/ApprovalTests.cpp/) / [master](https://github.com/approvals/ApprovalTests.cpp/commits/master) | [network](https://github.com/approvals/ApprovalTests.cpp/network) | [![Build Status](https://api.travis-ci.org/approvals/ApprovalTests.cpp.svg?branch=master)](https://travis-ci.org/approvals/ApprovalTests.cpp/branches) | [![Build status](https://ci.appveyor.com/api/projects/status/lf3i76ije89oihi5/branch/master?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-cpp/branch/master) | [![Build Status](https://github.com/approvals/ApprovalTests.cpp/workflows/build/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp/actions?query=branch%3Amaster) |
