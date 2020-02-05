@@ -40,6 +40,10 @@ class TravisConfig:
             self.travis_url_base_image = 'api.travis-ci.org'
             self.travis_url_base_target = 'travis-ci.org'
 
+    @staticmethod
+    def main_url():
+        return 'https://travis-ci.com/claremacrae/'
+
     def status(self, repo_info, branch):
         # There is currently no way that I can see for linking to the current build on the chosen branch.
         # See this, for requests from others for this: https://github.com/travis-ci/travis-ci/issues/5024
@@ -56,6 +60,10 @@ class AppveyorConfig:
     def __init__(self, appveyor_token=None, custom_appveyor_user=None):
         self.appveyor_token = appveyor_token
         self.custom_appveyor_user = custom_appveyor_user
+
+    @staticmethod
+    def main_url():
+        return 'https://ci.appveyor.com/projects'
 
     def status(self, repo_info, branch):
         if not self.appveyor_token:

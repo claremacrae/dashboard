@@ -1,3 +1,6 @@
+from repo_and_builds import TravisConfig, AppveyorConfig
+
+
 class BuildTable:
     @staticmethod
     def write_header(stream):
@@ -9,13 +12,11 @@ class BuildTable:
 
     @staticmethod
     def write_table_title_rows(stream):
-        travis_main_url = 'https://travis-ci.com/claremacrae/'
-        appveyor_main_url = 'https://ci.appveyor.com/projects'
         titles = [
             'project / branch',
             'network',
-            (F'[Travis]({travis_main_url})'),
-            (F'[Appveyor]({appveyor_main_url})'),
+            (F'[Travis]({TravisConfig.main_url()})'),
+            (F'[Appveyor]({AppveyorConfig.main_url()})'),
             'GitHub']
         stream.write(f"| {' | '.join(titles)} |\n")
         divider = '| '
