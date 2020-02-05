@@ -14,7 +14,7 @@ class AllRepos:
                         appveyor_build_info=AppveyorConfig()):
         self.__add_repo(appveyor_build_info, branches, project, travis_build_info, 'Source', user)
 
-    def add_fork_repo(self, user, project, branches, travis_build_info=TravisConfig(True),
+    def add_forked_repo(self, user, project, branches, travis_build_info=TravisConfig(True),
                         appveyor_build_info=AppveyorConfig()):
         self.__add_repo(appveyor_build_info, branches, project, travis_build_info, 'Fork', user)
 
