@@ -1,7 +1,7 @@
 from build_table import BuildTable
 from build_badges import BuildBadges
 from all_repos import AllRepos
-from my_builds import add_all_builds
+from my_builds import add_all_repos
 
 
 def create_readme(builds):
@@ -16,7 +16,7 @@ def create_badges(builds):
 
 def update_output_files():
     builds = AllRepos()
-    add_all_builds(builds)
+    add_all_repos(builds)
 
     create_readme(builds)
     create_badges(builds)
