@@ -15,8 +15,8 @@ class BuildTable:
         titles = [
             'project / branch',
             'network',
-            (F'[Travis]({TravisConfig.main_url()})'),
-            (F'[Appveyor]({AppveyorConfig.main_url()})'),
+            F'[Travis]({TravisConfig.main_url()})',
+            F'[Appveyor]({AppveyorConfig.main_url()})',
             'GitHub']
         stream.write(f"| {' | '.join(titles)} |\n")
         divider = '| '
