@@ -4,12 +4,11 @@ from scripts.repo_and_builds import AppveyorConfig, TravisConfig, GitHubConfig
 def add_all_repos(builds):
     add_official_approval_test_repos(builds)
     add_my_experimental_approvals_repos(builds)
-
-    # builds.add_builds('catchorg', 'Catch2', ['master'], False)
-    # builds.add_builds('claremacrae', 'Catch2', ['master'], False, '8m77qos96rmcn6jg')
-
     add_my_random_repos(builds)
+
+    # Other things I've forked - alphabetical by account name
     # add_boost_ut_repos(builds)
+    # add_boost_catch_repos(builds)
     add_boost_doctest_repos(builds)
 
 
@@ -62,6 +61,13 @@ def add_my_random_repos(builds):
                            AppveyorConfig('cbksrgvypq5vksy2'))
     builds.add_source_repo('claremacrae', 'cpp_snippets', ['master'], TravisConfig(True),
                            AppveyorConfig('hqf8xh615dyp3u4l'))
+
+
+def add_boost_catch_repos(builds):
+    repo = 'Catch2'
+    builds.add_source_repo('catchorg', repo, ['master'], TravisConfig(False))
+    builds.add_forked_repo('claremacrae', repo, ['master'], TravisConfig(False),
+                           AppveyorConfig('8m77qos96rmcn6jg'))
 
 
 def add_boost_ut_repos(builds):
