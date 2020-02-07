@@ -58,9 +58,3 @@ claremacrae/cpp_snippets
 [![Build Status](https://travis-ci.com/claremacrae/cpp_snippets.svg?branch=master)](https://travis-ci.com/claremacrae/cpp_snippets/branches) 
 [![Build status](https://ci.appveyor.com/api/projects/status/hqf8xh615dyp3u4l/branch/master?svg=true)](https://ci.appveyor.com/project/claremacrae/cpp-snippets/branch/master) 
 [![Build Status](https://github.com/claremacrae/cpp_snippets/workflows/build/badge.svg?branch=master)](https://github.com/claremacrae/cpp_snippets/actions?query=branch%3Amaster) 
-
-boost-experimental/ut
-
-[![Build Status](https://api.travis-ci.org/boost-experimental/ut.svg?branch=master)](https://travis-ci.org/boost-experimental/ut/branches) 
-` ` 
-[![Build Status](https://github.com/boost-experimental/ut/workflows/build/badge.svg?branch=master)](https://github.com/boost-experimental/ut/actions?query=branch%3Amaster) 
