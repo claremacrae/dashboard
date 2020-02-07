@@ -83,13 +83,14 @@ class AppveyorConfig:
 
 
 class GitHubConfig:
-    def __init__(self):
+    def __init__(self, workflow_name = 'build'):
+        self.workflow_name = workflow_name
         pass
 
     def status(self, repo_info, branch):
         return dashboard_utilities.hyperlinked_image(
             "Build Status",
-            f'https://github.com/{repo_info.user}/{repo_info.project}/workflows/build/badge.svg?branch={branch}',
+            f'https://github.com/{repo_info.user}/{repo_info.project}/workflows/{self.workflow_name}/badge.svg?branch={branch}',
             f'https://github.com/{repo_info.user}/{repo_info.project}/actions?query=branch%3A{branch}')
 
 
@@ -98,8 +99,8 @@ class RepoAndBuilds:
     Class that represents a particular repository and all its active branches and its CI builds
     """
 
-    def __init__(self, repo_info, travis_build_info, appveyor_build_info):
+    def __init__(self, repo_info, travis_build_info, appveyor_build_info, github_build_info):
         self.repo_info = repo_info
         self.travis_build_info = travis_build_info
         self.appveyor_build_info = appveyor_build_info
-        self.github_build_info = GitHubConfig()
+        self.github_build_info = github_build_info
