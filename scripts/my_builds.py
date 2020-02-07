@@ -76,5 +76,5 @@ def add_boost_ut_repos(builds):
 def add_boost_doctest_repos(builds):
     repo = 'doctest'
     builds.add_source_repo('onqtam', repo, ['master'], TravisConfig(False))
-    builds.add_forked_repo('claremacrae', repo, ['master'], TravisConfig(True),
+    builds.add_forked_repo('claremacrae', repo, ['master', 'fix_github_ci'], TravisConfig(True),
                            AppveyorConfig('y3ylbpuv79souy6e'))
