@@ -63,4 +63,4 @@ onqtam/doctest
 
 [![Build Status](https://api.travis-ci.org/onqtam/doctest.svg?branch=master)](https://travis-ci.org/onqtam/doctest/branches) 
 ` ` 
-[![Build Status](https://github.com/onqtam/doctest/workflows/build/badge.svg?branch=master)](https://github.com/onqtam/doctest/actions?query=branch%3Amaster) 
+[![Build Status](https://github.com/onqtam/doctest/workflows/CI/badge.svg?branch=master)](https://github.com/onqtam/doctest/actions?query=branch%3Amaster) 
