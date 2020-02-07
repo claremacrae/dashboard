@@ -12,6 +12,7 @@ def add_all_repos(builds):
     add_my_random_repos(builds)
 
     # add_boost_ut_repos(builds)
+    add_boost_doctest_repos(builds)
 
 
 def add_official_approval_test_repos(builds):
@@ -70,3 +71,10 @@ def add_boost_ut_repos(builds):
     builds.add_source_repo('boost-experimental', repo, ['master'], TravisConfig(False))
     builds.add_forked_repo('claremacrae', repo, ['master', 'clare_learning'], TravisConfig(True),
                            AppveyorConfig('ab4jv9x8kveev0n4'))
+
+
+def add_boost_doctest_repos(builds):
+    repo = 'doctest'
+    builds.add_source_repo('onqtam', repo, ['master'], TravisConfig(False))
+    builds.add_forked_repo('claremacrae', repo, ['master'], TravisConfig(True),
+                           AppveyorConfig('y3ylbpuv79souy6e'))
