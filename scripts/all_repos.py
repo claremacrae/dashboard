@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-from scripts.repo_and_builds import RepoAndBuilds, RepoInfo, AppveyorBuildConfig, TravisConfig, GitHubBuildConfig
+from scripts.repo_and_builds import RepoAndBuilds, RepoInfo, AppveyorBuildConfig, TravisBuildConfig, GitHubBuildConfig
 
 
 class AllRepos:
@@ -10,11 +10,11 @@ class AllRepos:
     def __store_repo(self, repo):
         self.builds[repo.repo_info.user].append(repo)
 
-    def add_source_repo(self, user, project, branches, travis_build_info=TravisConfig(True),
+    def add_source_repo(self, user, project, branches, travis_build_info=TravisBuildConfig(True),
                         appveyor_build_info=AppveyorBuildConfig(), github_build_info=GitHubBuildConfig()):
         self.__add_repo(appveyor_build_info, branches, project, travis_build_info, github_build_info, 'Source', user)
 
-    def add_forked_repo(self, user, project, branches, travis_build_info=TravisConfig(True),
+    def add_forked_repo(self, user, project, branches, travis_build_info=TravisBuildConfig(True),
                         appveyor_build_info=AppveyorBuildConfig(), github_build_info=GitHubBuildConfig()):
         self.__add_repo(appveyor_build_info, branches, project, travis_build_info, github_build_info, 'Fork', user)
 

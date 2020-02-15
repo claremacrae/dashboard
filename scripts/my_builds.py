@@ -1,4 +1,4 @@
-from scripts.repo_and_builds import AppveyorBuildConfig, TravisConfig, GitHubBuildConfig
+from scripts.repo_and_builds import AppveyorBuildConfig, TravisBuildConfig, GitHubBuildConfig
 
 
 def add_all_repos(builds):
@@ -14,25 +14,25 @@ def add_all_repos(builds):
 
 def add_official_approval_test_repos(builds):
     repo = 'ApprovalTests.cpp'
-    builds.add_source_repo('approvals', repo, ['master'], TravisConfig(False),
+    builds.add_source_repo('approvals', repo, ['master'], TravisBuildConfig(False),
                            AppveyorBuildConfig('lf3i76ije89oihi5', 'isidore'))
-    builds.add_forked_repo('claremacrae', repo, ['master'], TravisConfig(True),
+    builds.add_forked_repo('claremacrae', repo, ['master'], TravisBuildConfig(True),
                            AppveyorBuildConfig('37smtsp3a694okv8'))  # 'setup_sanitizers'
 
     repo = 'ApprovalTests.cpp.StarterProject'
-    builds.add_source_repo('approvals', repo, ['master'], TravisConfig(False),
+    builds.add_source_repo('approvals', repo, ['master'], TravisBuildConfig(False),
                            AppveyorBuildConfig('qx0546k6ii57919w', 'isidore'))
-    builds.add_forked_repo('claremacrae', repo, ['master'], TravisConfig(True), AppveyorBuildConfig('ytjgybf5r9fviifm'))
+    builds.add_forked_repo('claremacrae', repo, ['master'], TravisBuildConfig(True), AppveyorBuildConfig('ytjgybf5r9fviifm'))
 
     repo = 'ApprovalTests.cpp.Qt'
-    builds.add_source_repo('approvals', repo, ['master'], TravisConfig(True),
+    builds.add_source_repo('approvals', repo, ['master'], TravisBuildConfig(True),
                            AppveyorBuildConfig('pf8et0nk1mdajskf', 'isidore'))
-    builds.add_forked_repo('claremacrae', repo, ['master'], TravisConfig(True), AppveyorBuildConfig('g60qbttap7m5nul2'))
+    builds.add_forked_repo('claremacrae', repo, ['master'], TravisBuildConfig(True), AppveyorBuildConfig('g60qbttap7m5nul2'))
 
     repo = 'ApprovalTests.cpp.Qt.StarterProject'
-    builds.add_source_repo('approvals', repo, ['master'], TravisConfig(False),
+    builds.add_source_repo('approvals', repo, ['master'], TravisBuildConfig(False),
                            AppveyorBuildConfig('tpitsul9axlv93uk', 'isidore'))
-    builds.add_forked_repo('claremacrae', repo, ['master'], TravisConfig(True), AppveyorBuildConfig('xe2iwuto0sc342a7'))
+    builds.add_forked_repo('claremacrae', repo, ['master'], TravisBuildConfig(True), AppveyorBuildConfig('xe2iwuto0sc342a7'))
 
 
 def add_my_experimental_approvals_repos(builds):
@@ -43,7 +43,7 @@ def add_my_experimental_approvals_repos(builds):
     for repo in repos:
         builds.add_source_repo('claremacrae', repo, ['master'])
 
-    builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.Nursery', ['master'], TravisConfig(True),
+    builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.Nursery', ['master'], TravisBuildConfig(True),
                            AppveyorBuildConfig('iqtnpa83t13os98v'))
 
     repos = [
@@ -57,28 +57,28 @@ def add_my_experimental_approvals_repos(builds):
 def add_my_random_repos(builds):
     # clone of other people's work - using CMake's FetchContent:
     # builds.add_builds('claremacrae', 'approval-tests-setup', ['master'])
-    builds.add_source_repo('claremacrae', 'ci_playground', ['trunk'], TravisConfig(True),
+    builds.add_source_repo('claremacrae', 'ci_playground', ['trunk'], TravisBuildConfig(True),
                            AppveyorBuildConfig('cbksrgvypq5vksy2'))
-    builds.add_source_repo('claremacrae', 'cpp_snippets', ['master'], TravisConfig(True),
+    builds.add_source_repo('claremacrae', 'cpp_snippets', ['master'], TravisBuildConfig(True),
                            AppveyorBuildConfig('hqf8xh615dyp3u4l'))
 
 
 def add_boost_catch_repos(builds):
     repo = 'Catch2'
-    builds.add_source_repo('catchorg', repo, ['master'], TravisConfig(False))
-    builds.add_forked_repo('claremacrae', repo, ['master'], TravisConfig(False),
+    builds.add_source_repo('catchorg', repo, ['master'], TravisBuildConfig(False))
+    builds.add_forked_repo('claremacrae', repo, ['master'], TravisBuildConfig(False),
                            AppveyorBuildConfig('8m77qos96rmcn6jg'))
 
 
 def add_boost_ut_repos(builds):
     repo = 'ut'
-    builds.add_source_repo('boost-experimental', repo, ['master'], TravisConfig(False))
-    builds.add_forked_repo('claremacrae', repo, ['master', 'clare_learning'], TravisConfig(True),
+    builds.add_source_repo('boost-experimental', repo, ['master'], TravisBuildConfig(False))
+    builds.add_forked_repo('claremacrae', repo, ['master', 'clare_learning'], TravisBuildConfig(True),
                            AppveyorBuildConfig('ab4jv9x8kveev0n4'))
 
 
 def add_doctest_repos(builds):
     repo = 'doctest'
-    builds.add_source_repo('onqtam', repo, ['master', 'dev'], TravisConfig(False), github_build_info=GitHubBuildConfig('CI'))
-    builds.add_forked_repo('claremacrae', repo, ['master', 'dev', 'fix_github_ci'], TravisConfig(True),
+    builds.add_source_repo('onqtam', repo, ['master', 'dev'], TravisBuildConfig(False), github_build_info=GitHubBuildConfig('CI'))
+    builds.add_forked_repo('claremacrae', repo, ['master', 'dev', 'fix_github_ci'], TravisBuildConfig(True),
                            AppveyorBuildConfig('y3ylbpuv79souy6e'), GitHubBuildConfig('CI'))

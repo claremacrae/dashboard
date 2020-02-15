@@ -1,4 +1,4 @@
-from scripts.repo_and_builds import TravisConfig, AppveyorBuildConfig
+from scripts.repo_and_builds import TravisBuildConfig, AppveyorBuildConfig
 
 
 class BuildTable:
@@ -15,7 +15,7 @@ class BuildTable:
         titles = [
             'project / branch',
             'network',
-            F'[Travis]({TravisConfig.main_url()})',
+            F'[Travis]({TravisBuildConfig.main_url()})',
             F'[Appveyor]({AppveyorBuildConfig.main_url()})',
             'GitHub']
         stream.write(f"| {' | '.join(titles)} |\n")
