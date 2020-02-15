@@ -82,7 +82,7 @@ class AppveyorConfig:
             f"https://ci.appveyor.com/project/{appveyor_user}/{appveyor_project}/branch/{branch}")
 
 
-class GitHubConfig:
+class GitHubBuildConfig:
     def __init__(self, workflow_name = 'build'):
         self.workflow_name = workflow_name
 

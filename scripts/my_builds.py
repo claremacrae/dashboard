@@ -1,4 +1,4 @@
-from scripts.repo_and_builds import AppveyorConfig, TravisConfig, GitHubConfig
+from scripts.repo_and_builds import AppveyorConfig, TravisConfig, GitHubBuildConfig
 
 
 def add_all_repos(builds):
@@ -79,6 +79,6 @@ def add_boost_ut_repos(builds):
 
 def add_doctest_repos(builds):
     repo = 'doctest'
-    builds.add_source_repo('onqtam', repo, ['master', 'dev'], TravisConfig(False), github_build_info=GitHubConfig('CI'))
+    builds.add_source_repo('onqtam', repo, ['master', 'dev'], TravisConfig(False), github_build_info=GitHubBuildConfig('CI'))
     builds.add_forked_repo('claremacrae', repo, ['master', 'dev', 'fix_github_ci'], TravisConfig(True),
-                           AppveyorConfig('y3ylbpuv79souy6e'), GitHubConfig('CI'))
+                           AppveyorConfig('y3ylbpuv79souy6e'), GitHubBuildConfig('CI'))
