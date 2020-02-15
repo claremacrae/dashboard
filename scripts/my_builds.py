@@ -1,4 +1,4 @@
-from scripts.repo_and_builds import AppveyorBuildConfig, TravisBuildConfig, GitHubBuildConfig
+from scripts.build_configs import TravisBuildConfig, AppveyorBuildConfig, GitHubBuildConfig
 
 
 def add_all_repos(builds):
