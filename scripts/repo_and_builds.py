@@ -85,7 +85,6 @@ class AppveyorConfig:
 class GitHubConfig:
     def __init__(self, workflow_name = 'build'):
         self.workflow_name = workflow_name
-        pass
 
     def status(self, repo_info, branch):
         return dashboard_utilities.hyperlinked_image(
