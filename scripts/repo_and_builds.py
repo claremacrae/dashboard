@@ -57,7 +57,7 @@ class TravisConfig:
             f"https://{self.travis_url_base_target}/{repo_info.user}/{repo_info.project}/branches")
 
 
-class AppveyorConfig:
+class AppveyorBuildConfig:
     def __init__(self, appveyor_token=None, custom_appveyor_user=None):
         self.appveyor_token = appveyor_token
         self.custom_appveyor_user = custom_appveyor_user
