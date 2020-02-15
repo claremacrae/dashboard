@@ -1,7 +1,7 @@
 from collections import defaultdict
 
 from scripts.repo_and_builds import RepoAndBuilds, RepoInfo
-from scripts.build_configs import TravisBuildConfig, AppveyorBuildConfig, GitHubBuildConfig
+from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig, GitHubBuildConfig
 
 
 class AllRepos:

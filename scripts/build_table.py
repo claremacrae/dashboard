@@ -1,4 +1,4 @@
-from scripts.build_configs import TravisBuildConfig, AppveyorBuildConfig
+from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig
 
 
 class BuildTable:
