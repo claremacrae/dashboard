@@ -9,7 +9,7 @@ def add_all_repos(builds):
     # Other things I've forked - alphabetical by account name
     # add_boost_ut_repos(builds)
     # add_boost_catch_repos(builds)
-    add_boost_doctest_repos(builds)
+    add_doctest_repos(builds)
 
 
 def add_official_approval_test_repos(builds):
@@ -77,7 +77,7 @@ def add_boost_ut_repos(builds):
                            AppveyorConfig('ab4jv9x8kveev0n4'))
 
 
-def add_boost_doctest_repos(builds):
+def add_doctest_repos(builds):
     repo = 'doctest'
     builds.add_source_repo('onqtam', repo, ['master', 'dev'], TravisConfig(False), github_build_info=GitHubConfig('CI'))
     builds.add_forked_repo('claremacrae', repo, ['master', 'dev', 'fix_github_ci'], TravisConfig(True),
