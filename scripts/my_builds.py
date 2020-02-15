@@ -22,17 +22,20 @@ def add_official_approval_test_repos(builds):
     repo = 'ApprovalTests.cpp.StarterProject'
     builds.add_source_repo('approvals', repo, ['master'], TravisBuildConfig(False),
                            AppveyorBuildConfig('qx0546k6ii57919w', 'isidore'))
-    builds.add_forked_repo('claremacrae', repo, ['master'], TravisBuildConfig(True), AppveyorBuildConfig('ytjgybf5r9fviifm'))
+    builds.add_forked_repo('claremacrae', repo, ['master'], TravisBuildConfig(True),
+                           AppveyorBuildConfig('ytjgybf5r9fviifm'))
 
     repo = 'ApprovalTests.cpp.Qt'
     builds.add_source_repo('approvals', repo, ['master'], TravisBuildConfig(True),
                            AppveyorBuildConfig('pf8et0nk1mdajskf', 'isidore'))
-    builds.add_forked_repo('claremacrae', repo, ['master'], TravisBuildConfig(True), AppveyorBuildConfig('g60qbttap7m5nul2'))
+    builds.add_forked_repo('claremacrae', repo, ['master'], TravisBuildConfig(True),
+                           AppveyorBuildConfig('g60qbttap7m5nul2'))
 
     repo = 'ApprovalTests.cpp.Qt.StarterProject'
     builds.add_source_repo('approvals', repo, ['master'], TravisBuildConfig(False),
                            AppveyorBuildConfig('tpitsul9axlv93uk', 'isidore'))
-    builds.add_forked_repo('claremacrae', repo, ['master'], TravisBuildConfig(True), AppveyorBuildConfig('xe2iwuto0sc342a7'))
+    builds.add_forked_repo('claremacrae', repo, ['master'], TravisBuildConfig(True),
+                           AppveyorBuildConfig('xe2iwuto0sc342a7'))
 
 
 def add_my_experimental_approvals_repos(builds):
@@ -79,6 +82,7 @@ def add_boost_ut_repos(builds):
 
 def add_doctest_repos(builds):
     repo = 'doctest'
-    builds.add_source_repo('onqtam', repo, ['master', 'dev'], TravisBuildConfig(False), github_build_info=GitHubBuildConfig('CI'))
+    builds.add_source_repo('onqtam', repo, ['master', 'dev'], TravisBuildConfig(False),
+                           github_build_info=GitHubBuildConfig('CI'))
     builds.add_forked_repo('claremacrae', repo, ['master', 'dev', 'fix_github_ci'], TravisBuildConfig(True),
                            AppveyorBuildConfig('y3ylbpuv79souy6e'), GitHubBuildConfig('CI'))

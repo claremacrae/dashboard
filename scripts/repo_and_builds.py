@@ -83,7 +83,7 @@ class AppveyorBuildConfig:
 
 
 class GitHubBuildConfig:
-    def __init__(self, workflow_name = 'build'):
+    def __init__(self, workflow_name='build'):
         self.workflow_name = workflow_name
 
     def status(self, repo_info, branch):
