@@ -1,7 +1,6 @@
-from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig
+from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig, RepoAndBuilds
 
 from scripts.all_repos import AllRepos
-from scripts.repo_and_builds import RepoAndBuilds
 from typing import TextIO
 
 class BuildTable:

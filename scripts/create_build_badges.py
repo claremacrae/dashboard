@@ -1,6 +1,6 @@
 from typing import TextIO
 from scripts.all_repos import AllRepos
-from scripts.repo_and_builds import RepoAndBuilds
+from scripts.ci_configs import RepoAndBuilds
 
 
 class BuildBadges:

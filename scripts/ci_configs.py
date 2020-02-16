@@ -66,3 +66,16 @@ class GitHubBuildConfig:
             "Build Status",
             f'https://github.com/{repo_info.user}/{repo_info.project}/workflows/{self.workflow_name}/badge.svg?branch={branch}',
             f'https://github.com/{repo_info.user}/{repo_info.project}/actions?query=branch%3A{branch}')
+
+
+class RepoAndBuilds:
+    """
+    Class that represents a particular repository and all its active branches and its CI builds
+    """
+
+    def __init__(self, repo_info: RepoInfo, travis_build_info: TravisBuildConfig,
+                 appveyor_build_info: AppveyorBuildConfig, github_build_info: GitHubBuildConfig) -> None:
+        self.repo_info = repo_info
+        self.travis_build_info = travis_build_info
+        self.appveyor_build_info = appveyor_build_info
+        self.github_build_info = github_build_info

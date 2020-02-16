@@ -1,10 +1,11 @@
 from collections import defaultdict
 
-from scripts.repo_and_builds import RepoAndBuilds, RepoInfo
-from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig, GitHubBuildConfig
-
+from scripts.repo_and_builds import RepoInfo
+from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig, GitHubBuildConfig, RepoAndBuilds
 
 from typing import DefaultDict, List
+
+
 class AllRepos:
     def __init__(self) -> None:
         self.builds: DefaultDict[str, list] = defaultdict(list)
