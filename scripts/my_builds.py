@@ -9,7 +9,7 @@ def add_all_repos(builds: AllRepos) -> None:
 
     # Other things I've forked - alphabetical by account name
     # add_boost_ut_repos(builds)
-    # add_boost_catch_repos(builds)
+    # add_catch_repos(builds)
     add_doctest_repos(builds)
 
 
@@ -67,7 +67,7 @@ def add_my_random_repos(builds: AllRepos) -> None:
                            AppveyorBuildConfig('hqf8xh615dyp3u4l'))
 
 
-def add_boost_catch_repos(builds):
+def add_catch_repos(builds):
     repo = 'Catch2'
     builds.add_source_repo('catchorg', repo, ['master'], TravisBuildConfig(False))
     builds.add_forked_repo('claremacrae', repo, ['master'], TravisBuildConfig(False),
