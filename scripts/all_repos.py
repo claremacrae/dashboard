@@ -9,7 +9,7 @@ class AllRepos:
     def __init__(self) -> None:
         self.builds: DefaultDict[str, list] = defaultdict(list)
 
-    def builds_for_user_and_type(self, user_name: str, repo_type: str):
+    def builds_for_user_and_type(self, repo_type: str, user_name: str):
         builds = self.builds[user_name]
         return [build for build in builds if build.repo_info.type == repo_type]
 

@@ -27,7 +27,7 @@ class BuildBadges:
                 self.write_all_repos_for_user(all_repos, stream, user_name)
 
     def write_all_repos_for_user(self, all_repos: AllRepos, stream: TextIO, user_name: str) -> None:
-        builds = all_repos.builds_for_user_and_type(user_name, 'Source')
+        builds = all_repos.builds_for_user_and_type('Source', user_name)
         if not builds:
             return
         for build in builds:
