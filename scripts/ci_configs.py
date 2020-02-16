@@ -62,10 +62,12 @@ class GitHubBuildConfig:
         self.workflow_name = workflow_name
 
     def status(self, repo_info: GitHubRepoInfo, branch: str) -> str:
+        user = repo_info.user
+        project = repo_info.project
         return dashboard_utilities.hyperlinked_image(
             "Build Status",
-            f'https://github.com/{repo_info.user}/{repo_info.project}/workflows/{self.workflow_name}/badge.svg?branch={branch}',
-            f'https://github.com/{repo_info.user}/{repo_info.project}/actions?query=branch%3A{branch}')
+            f'https://github.com/{user}/{project}/workflows/{self.workflow_name}/badge.svg?branch={branch}',
+            f'https://github.com/{user}/{project}/actions?query=branch%3A{branch}')
 
 
 class RepoAndBuilds:
