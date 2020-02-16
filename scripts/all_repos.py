@@ -1,22 +1,28 @@
 from collections import defaultdict
 
-from scripts.repo_and_builds import RepoAndBuilds, RepoInfo
-from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig, GitHubBuildConfig
+from scripts.repo_info import RepoInfo
+from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig, GitHubBuildConfig, RepoAndBuilds
+
+from typing import DefaultDict, List
 
 
 class AllRepos:
-    def __init__(self):
-        self.builds = defaultdict(list)
+    def __init__(self) -> None:
+        self.builds: DefaultDict[str, list] = defaultdict(list)
 
     def __store_repo(self, repo):
         self.builds[repo.repo_info.user].append(repo)
 
-    def add_source_repo(self, user, project, branches, travis_build_info=TravisBuildConfig(True),
-                        appveyor_build_info=AppveyorBuildConfig(), github_build_info=GitHubBuildConfig()):
+    def add_source_repo(self, user: str, project: str, branches: List[str],
+                        travis_build_info: TravisBuildConfig = TravisBuildConfig(True),
+                        appveyor_build_info: AppveyorBuildConfig = AppveyorBuildConfig(),
+                        github_build_info: GitHubBuildConfig = GitHubBuildConfig()) -> None:
         self.__add_repo(appveyor_build_info, branches, project, travis_build_info, github_build_info, 'Source', user)
 
-    def add_forked_repo(self, user, project, branches, travis_build_info=TravisBuildConfig(True),
-                        appveyor_build_info=AppveyorBuildConfig(), github_build_info=GitHubBuildConfig()):
+    def add_forked_repo(self, user: str, project: str, branches: List[str],
+                        travis_build_info: TravisBuildConfig = TravisBuildConfig(True),
+                        appveyor_build_info: AppveyorBuildConfig = AppveyorBuildConfig(),
+                        github_build_info: GitHubBuildConfig = GitHubBuildConfig()) -> None:
         self.__add_repo(appveyor_build_info, branches, project, travis_build_info, github_build_info, 'Fork', user)
 
     def __add_repo(self, appveyor_build_info, branches, project, travis_build_info, github_build_info, type, user):

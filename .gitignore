@@ -1,3 +1,5 @@
 .idea
 __pycache__
 *.pyc
+.mypy_cache/
+/monkeytype.sqlite3

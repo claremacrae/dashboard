@@ -1,7 +1,9 @@
 from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig, GitHubBuildConfig
 
+from scripts.all_repos import AllRepos
 
-def add_all_repos(builds):
+
+def add_all_repos(builds: AllRepos) -> None:
     add_official_approval_test_repos(builds)
     add_my_experimental_approvals_repos(builds)
     add_my_random_repos(builds)
@@ -12,7 +14,7 @@ def add_all_repos(builds):
     add_doctest_repos(builds)
 
 
-def add_official_approval_test_repos(builds):
+def add_official_approval_test_repos(builds: AllRepos) -> None:
     repo = 'ApprovalTests.cpp'
     builds.add_source_repo('approvals', repo, ['master'], TravisBuildConfig(False),
                            AppveyorBuildConfig('lf3i76ije89oihi5', 'isidore'))
@@ -38,7 +40,7 @@ def add_official_approval_test_repos(builds):
                            AppveyorBuildConfig('xe2iwuto0sc342a7'))
 
 
-def add_my_experimental_approvals_repos(builds):
+def add_my_experimental_approvals_repos(builds: AllRepos) -> None:
     repos = [
         'ApprovalTests.cpp.CMakeSamples',
         'ApprovalTests.cpp.Demos',
@@ -57,7 +59,7 @@ def add_my_experimental_approvals_repos(builds):
         builds.add_source_repo('claremacrae', repo, ['master'])
 
 
-def add_my_random_repos(builds):
+def add_my_random_repos(builds: AllRepos) -> None:
     # clone of other people's work - using CMake's FetchContent:
     # builds.add_builds('claremacrae', 'approval-tests-setup', ['master'])
     builds.add_source_repo('claremacrae', 'ci_playground', ['trunk'], TravisBuildConfig(True),
@@ -80,7 +82,7 @@ def add_boost_ut_repos(builds):
                            AppveyorBuildConfig('ab4jv9x8kveev0n4'))
 
 
-def add_doctest_repos(builds):
+def add_doctest_repos(builds: AllRepos) -> None:
     repo = 'doctest'
     builds.add_source_repo('onqtam', repo, ['master', 'dev'], TravisBuildConfig(False),
                            github_build_info=GitHubBuildConfig('CI'))

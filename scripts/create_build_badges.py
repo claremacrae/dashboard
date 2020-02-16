@@ -1,7 +1,12 @@
+from typing import TextIO
+from scripts.all_repos import AllRepos
+from scripts.ci_configs import RepoAndBuilds
+
+
 class BuildBadges:
 
     @staticmethod
-    def write_row(stream, branch_build):
+    def write_row(stream: TextIO, branch_build: RepoAndBuilds) -> None:
         repo_info = branch_build.repo_info
         branch = repo_info.branches[0]
         links = [
@@ -15,12 +20,12 @@ class BuildBadges:
         for link in links:
             stream.write(F'{link} \n')
 
-    def write_badges(self, all_repos):
+    def write_badges(self, all_repos: AllRepos) -> None:
         with open('Badges.md', 'w') as stream:
             for user_name in all_repos.builds.keys():
                 self.write_all_repos_for_user(all_repos, stream, user_name)
 
-    def write_all_repos_for_user(self, all_repos, stream, user_name):
+    def write_all_repos_for_user(self, all_repos: AllRepos, stream: TextIO, user_name: str) -> None:
         builds = all_repos.builds[user_name]
         builds = [build for build in builds if build.repo_info.type == 'Source']
         if not builds:
