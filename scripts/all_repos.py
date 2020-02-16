@@ -11,7 +11,7 @@ class AllRepos:
 
     def builds_for_user_and_type(self, repo_type: str, user_name: str) -> List[RepoAndBuilds]:
         builds = self.builds[user_name]
-        return [build for build in builds if build.repo_info.type == repo_type]
+        return [build for build in builds if build.repo_info.repo_type == repo_type]
 
     def __store_repo(self, repo):
         self.builds[repo.repo_info.user].append(repo)

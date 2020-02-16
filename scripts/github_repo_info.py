@@ -8,11 +8,11 @@ class GitHubRepoInfo:
     Class that represents a particular repository and all its active branches
     """
 
-    def __init__(self, user: str, project: str, branches: List[str], type: str) -> None:
+    def __init__(self, user: str, project: str, branches: List[str], repo_type: str) -> None:
         self.user = user
         self.project = project
         self.branches = branches
-        self.type = type
+        self.repo_type = repo_type
 
     def user_account_url(self) -> str:
         return f"https://github.com/{self.user}"
