@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-from scripts.repo_and_builds import RepoInfo
+from scripts.repo_info import RepoInfo
 from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig, GitHubBuildConfig, RepoAndBuilds
 
 from typing import DefaultDict, List
