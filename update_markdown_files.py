@@ -6,17 +6,17 @@ from scripts.all_repos import AllRepos
 from scripts.my_builds import add_all_repos
 
 
-def create_readme(builds):
+def create_readme(builds: AllRepos) -> None:
     table = BuildTable()
     table.write_readme(builds)
 
 
-def create_badges(builds):
+def create_badges(builds: AllRepos) -> None:
     table = BuildBadges()
     table.write_badges(builds)
 
 
-def update_output_files():
+def update_output_files() -> None:
     builds = AllRepos()
     add_all_repos(builds)
 
