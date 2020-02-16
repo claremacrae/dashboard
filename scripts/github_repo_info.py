@@ -14,7 +14,7 @@ class GitHubRepoInfo:
         self.branches = branches
         self.type = type
 
-    def user_link(self) -> str:
+    def user_repos_link(self) -> str:
         text = self.user
         url = f"https://github.com/{self.user}?tab=repositories"
         return dashboard_utilities.hyperlinked_text(text, url)

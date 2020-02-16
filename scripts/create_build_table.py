@@ -29,7 +29,7 @@ class BuildTable:
 
     @staticmethod
     def write_user_row(stream: TextIO, build: RepoAndBuilds) -> None:
-        user_link_text = F'**Account: {build.repo_info.user_link()} - {build.repo_info.type.lower()}s**'
+        user_link_text = F'**Account: {build.repo_info.user_repos_link()} - {build.repo_info.type.lower()}s**'
         stream.write(f"| {user_link_text} |\n")
 
     @staticmethod
