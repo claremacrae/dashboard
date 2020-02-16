@@ -3,7 +3,7 @@ from typing import List
 from scripts import dashboard_utilities
 
 
-class RepoInfo:
+class GitHubRepoInfo:
     def __init__(self, user: str, project: str, branches: List[str], type: str) -> None:
         self.user = user
         self.project = project

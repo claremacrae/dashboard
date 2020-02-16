@@ -2,7 +2,7 @@ from collections import defaultdict
 from typing import DefaultDict, List
 
 from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig, GitHubBuildConfig, RepoAndBuilds
-from scripts.repo_info import RepoInfo
+from scripts.repo_info import GitHubRepoInfo
 
 
 class AllRepos:
@@ -25,6 +25,6 @@ class AllRepos:
         self.__add_repo(appveyor_build_info, branches, project, travis_build_info, github_build_info, 'Fork', user)
 
     def __add_repo(self, appveyor_build_info, branches, project, travis_build_info, github_build_info, type, user):
-        repo = RepoAndBuilds(RepoInfo(user, project, branches, type), travis_build_info,
+        repo = RepoAndBuilds(GitHubRepoInfo(user, project, branches, type), travis_build_info,
                              appveyor_build_info, github_build_info)
         self.__store_repo(repo)
