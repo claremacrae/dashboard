@@ -2,7 +2,7 @@ from collections import defaultdict
 from typing import DefaultDict, List
 
 from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig, GitHubBuildConfig, RepoAndBuilds
-from scripts.repo_info import GitHubRepoInfo
+from scripts.github_repo_info import GitHubRepoInfo
 
 
 class AllRepos:
