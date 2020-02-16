@@ -1,7 +1,7 @@
-from scripts import dashboard_utilities
-
-from scripts.repo_info import RepoInfo
 from typing import Optional
+
+from scripts import dashboard_utilities
+from scripts.repo_info import RepoInfo
 
 
 class TravisBuildConfig:

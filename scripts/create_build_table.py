@@ -1,7 +1,8 @@
-from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig, RepoAndBuilds
+from typing import TextIO
 
 from scripts.all_repos import AllRepos
-from typing import TextIO
+from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig, RepoAndBuilds
+
 
 class BuildTable:
     @staticmethod

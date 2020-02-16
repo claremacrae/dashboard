@@ -1,6 +1,6 @@
-from scripts import dashboard_utilities
-
 from typing import List
+
+from scripts import dashboard_utilities
 
 
 class RepoInfo:
@@ -29,5 +29,3 @@ class RepoInfo:
         text = branch
         url = f"https://github.com/{self.user}/{self.project}/commits/{branch}"
         return dashboard_utilities.hyperlinked_text(text, url)
-
-

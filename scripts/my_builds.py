@@ -1,6 +1,5 @@
-from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig, GitHubBuildConfig
-
 from scripts.all_repos import AllRepos
+from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig, GitHubBuildConfig
 
 
 def add_all_repos(builds: AllRepos) -> None:

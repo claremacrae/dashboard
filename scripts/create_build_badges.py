@@ -1,4 +1,5 @@
 from typing import TextIO
+
 from scripts.all_repos import AllRepos
 from scripts.ci_configs import RepoAndBuilds
 
