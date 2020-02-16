@@ -24,7 +24,7 @@ class AllRepos:
                         github_build_info: GitHubBuildConfig = GitHubBuildConfig()) -> None:
         self.__add_repo(appveyor_build_info, branches, project, travis_build_info, github_build_info, 'Fork', user)
 
-    def __add_repo(self, appveyor_build_info, branches, project, travis_build_info, github_build_info, type, user):
-        repo = RepoAndBuilds(GitHubRepoInfo(user, project, branches, type), travis_build_info,
+    def __add_repo(self, appveyor_build_info, branches, project, travis_build_info, github_build_info, repo_type, user):
+        repo = RepoAndBuilds(GitHubRepoInfo(user, project, branches, repo_type), travis_build_info,
                              appveyor_build_info, github_build_info)
         self.__store_repo(repo)
