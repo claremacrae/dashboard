@@ -1,8 +1,11 @@
 from scripts import dashboard_utilities
 
+from scripts.repo_and_builds import RepoInfo
+from typing import Optional
+
 
 class TravisBuildConfig:
-    def __init__(self, travis_com):
+    def __init__(self, travis_com: bool) -> None:
         # Travis info
         # see
         # https://devops.stackexchange.com/questions/1201/whats-the-difference-between-travis-ci-org-and-travis-ci-com
@@ -14,10 +17,10 @@ class TravisBuildConfig:
             self.travis_url_base_target = 'travis-ci.org'
 
     @staticmethod
-    def main_url():
+    def main_url() -> str:
         return 'https://travis-ci.com/dashboard'
 
-    def status(self, repo_info, branch):
+    def status(self, repo_info: RepoInfo, branch: str) -> str:
         # There is currently no way that I can see for linking to the current build on the chosen branch.
         # See this, for requests from others for this: https://github.com/travis-ci/travis-ci/issues/5024
         # For the workaround I'm currently using, see https://stackoverflow.com/a/32946454/104370
@@ -30,15 +33,15 @@ class TravisBuildConfig:
 
 
 class AppveyorBuildConfig:
-    def __init__(self, appveyor_token=None, custom_appveyor_user=None):
+    def __init__(self, appveyor_token: Optional[str] = None, custom_appveyor_user: Optional[str] = None) -> None:
         self.appveyor_token = appveyor_token
         self.custom_appveyor_user = custom_appveyor_user
 
     @staticmethod
-    def main_url():
+    def main_url() -> str:
         return 'https://ci.appveyor.com/projects'
 
-    def status(self, repo_info, branch):
+    def status(self, repo_info: RepoInfo, branch: str) -> str:
         if not self.appveyor_token:
             return '` `'
 
@@ -55,10 +58,10 @@ class AppveyorBuildConfig:
 
 
 class GitHubBuildConfig:
-    def __init__(self, workflow_name='build'):
+    def __init__(self, workflow_name: str = 'build') -> None:
         self.workflow_name = workflow_name
 
-    def status(self, repo_info, branch):
+    def status(self, repo_info: RepoInfo, branch: str) -> str:
         return dashboard_utilities.hyperlinked_image(
             "Build Status",
             f'https://github.com/{repo_info.user}/{repo_info.project}/workflows/{self.workflow_name}/badge.svg?branch={branch}',
