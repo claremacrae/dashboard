@@ -4,10 +4,10 @@ from scripts.repo_and_builds import RepoAndBuilds, RepoInfo
 from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig, GitHubBuildConfig
 
 
-from typing import List
+from typing import DefaultDict, List
 class AllRepos:
     def __init__(self) -> None:
-        self.builds = defaultdict(list)
+        self.builds: DefaultDict[str, list] = defaultdict(list)
 
     def __store_repo(self, repo):
         self.builds[repo.repo_info.user].append(repo)

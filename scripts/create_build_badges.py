@@ -1,4 +1,4 @@
-from io import TextIOWrapper
+from typing import TextIO
 from scripts.all_repos import AllRepos
 from scripts.repo_and_builds import RepoAndBuilds
 
@@ -6,7 +6,7 @@ from scripts.repo_and_builds import RepoAndBuilds
 class BuildBadges:
 
     @staticmethod
-    def write_row(stream: TextIOWrapper, branch_build: RepoAndBuilds) -> None:
+    def write_row(stream: TextIO, branch_build: RepoAndBuilds) -> None:
         repo_info = branch_build.repo_info
         branch = repo_info.branches[0]
         links = [
@@ -25,7 +25,7 @@ class BuildBadges:
             for user_name in all_repos.builds.keys():
                 self.write_all_repos_for_user(all_repos, stream, user_name)
 
-    def write_all_repos_for_user(self, all_repos: AllRepos, stream: TextIOWrapper, user_name: str) -> None:
+    def write_all_repos_for_user(self, all_repos: AllRepos, stream: TextIO, user_name: str) -> None:
         builds = all_repos.builds[user_name]
         builds = [build for build in builds if build.repo_info.type == 'Source']
         if not builds:
