@@ -4,6 +4,10 @@ from scripts import dashboard_utilities
 
 
 class GitHubRepoInfo:
+    """
+    Class that represents a particular repository and all its active branches
+    """
+
     def __init__(self, user: str, project: str, branches: List[str], type: str) -> None:
         self.user = user
         self.project = project
