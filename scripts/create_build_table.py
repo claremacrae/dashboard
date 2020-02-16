@@ -54,10 +54,10 @@ class BuildTable:
         self.write_all_repos_of_type_for_user(all_repos, stream, 'Fork', user_name)
         self.write_all_repos_of_type_for_user(all_repos, stream, 'Source', user_name)
 
-    def write_all_repos_of_type_for_user(self, all_repos: AllRepos, stream: TextIO, type: str,
+    def write_all_repos_of_type_for_user(self, all_repos: AllRepos, stream: TextIO, repo_type: str,
                                          user_name: str) -> None:
         builds = all_repos.builds[user_name]
-        builds = [build for build in builds if build.repo_info.type == type]
+        builds = [build for build in builds if build.repo_info.type == repo_type]
         if not builds:
             return
         self.write_user_row(stream, builds[0])
