@@ -24,12 +24,12 @@ class TravisBuildConfig:
         # There is currently no way that I can see for linking to the current build on the chosen branch.
         # See this, for requests from others for this: https://github.com/travis-ci/travis-ci/issues/5024
         # For the workaround I'm currently using, see https://stackoverflow.com/a/32946454/104370
-        # We now link to to all branches for which there are Travis builds, allowing the user to
-        # click on the branch of interest, and see its latest build.
+        # We now link to to all builds, allowing us to see all recent builds, in case the current build
+        # has not yet completed.
         return dashboard_utilities.hyperlinked_image(
             "Build Status",
             f"https://{self.travis_url_base_image}/{repo_info.user}/{repo_info.project}.svg?branch={branch}",
-            f"https://{self.travis_url_base_target}/{repo_info.user}/{repo_info.project}/branches")
+            f"https://{self.travis_url_base_target}/{repo_info.user}/{repo_info.project}/builds")
 
 
 class AppveyorBuildConfig:
