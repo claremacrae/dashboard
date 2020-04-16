@@ -86,5 +86,5 @@ def add_doctest_repos(builds: AllRepos) -> None:
     repo = 'doctest'
     builds.add_source_repo('onqtam', repo, ['master', 'dev'], TravisBuildConfig(False),
                            github_build_info=GitHubBuildConfig('CI'))
-    builds.add_forked_repo('claremacrae', repo, ['master', 'dev', 'fix_github_ci'], TravisBuildConfig(True),
+    builds.add_forked_repo('claremacrae', repo, ['master', 'dev'], TravisBuildConfig(True),
                            AppveyorBuildConfig('y3ylbpuv79souy6e'), GitHubBuildConfig('CI'))
