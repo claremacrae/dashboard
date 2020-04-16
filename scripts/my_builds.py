@@ -10,7 +10,7 @@ def add_all_repos(builds: AllRepos) -> None:
     # Other things I've forked - alphabetical by account name
     # add_boost_ut_repos(builds)
     # add_catch_repos(builds)
-    add_doctest_repos(builds)
+    # add_doctest_repos(builds)
 
 
 def add_official_approval_test_repos(builds: AllRepos) -> None:
