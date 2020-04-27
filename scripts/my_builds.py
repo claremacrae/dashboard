@@ -18,7 +18,7 @@ def add_official_approval_test_repos(builds: AllRepos) -> None:
     builds.add_source_repo('approvals', repo, ['master', 'Options'],
                            TravisBuildConfig(False),
                            AppveyorBuildConfig('lf3i76ije89oihi5', 'isidore'))
-    builds.add_forked_repo('claremacrae', repo, ['master'], TravisBuildConfig(True),
+    builds.add_forked_repo('claremacrae', repo, ['master', 'alepez_fmt-everything'], TravisBuildConfig(True),
                            AppveyorBuildConfig('37smtsp3a694okv8'))  # 'setup_sanitizers'
 
     repo = 'ApprovalTests.cpp.StarterProject'
