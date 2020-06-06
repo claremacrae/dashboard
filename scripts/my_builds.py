@@ -34,7 +34,7 @@ def add_official_approval_test_repos(builds: AllRepos) -> None:
                            AppveyorBuildConfig('g60qbttap7m5nul2'))
 
     repo = 'ApprovalTests.cpp.Qt.StarterProject'
-    builds.add_source_repo('approvals', repo, ['master'], TravisBuildConfig(False),
+    builds.add_source_repo('approvals', repo, ['master'], TravisBuildConfig(True),
                            AppveyorBuildConfig('tpitsul9axlv93uk', 'isidore'))
     builds.add_forked_repo('claremacrae', repo, ['master'], TravisBuildConfig(True),
                            AppveyorBuildConfig('xe2iwuto0sc342a7'))
