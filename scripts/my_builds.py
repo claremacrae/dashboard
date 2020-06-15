@@ -41,10 +41,10 @@ def add_official_approval_test_repos(builds: AllRepos) -> None:
 
 
 def add_my_experimental_approvals_repos(builds: AllRepos) -> None:
-    builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.CMakeSamples', ['master'])
+    builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.CMakeSamples', ['main'])
     builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.Demos', ['master'], TravisBuildConfig(True),
                            AppveyorBuildConfig('22e9j3e5pyviumrj'))
-    builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.Nursery', ['master'], TravisBuildConfig(True),
+    builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.Nursery', ['main'], TravisBuildConfig(True),
                            AppveyorBuildConfig('iqtnpa83t13os98v'))
 
     repos = [
@@ -60,7 +60,7 @@ def add_my_random_repos(builds: AllRepos) -> None:
     # builds.add_builds('claremacrae', 'approval-tests-setup', ['master'])
     builds.add_source_repo('claremacrae', 'ci_playground', ['trunk'], TravisBuildConfig(True),
                            AppveyorBuildConfig('cbksrgvypq5vksy2'))
-    builds.add_source_repo('claremacrae', 'cpp_snippets', ['master'], TravisBuildConfig(True),
+    builds.add_source_repo('claremacrae', 'cpp_snippets', ['main'], TravisBuildConfig(True),
                            AppveyorBuildConfig('hqf8xh615dyp3u4l'))
 
 

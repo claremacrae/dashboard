@@ -25,9 +25,9 @@ approvals/ApprovalTests.cpp.Qt.StarterProject
 
 claremacrae/ApprovalTests.cpp.CMakeSamples
 
-[![Build Status](https://travis-ci.com/claremacrae/ApprovalTests.cpp.CMakeSamples.svg?branch=master)](https://travis-ci.com/claremacrae/ApprovalTests.cpp.CMakeSamples/builds) 
+[![Build Status](https://travis-ci.com/claremacrae/ApprovalTests.cpp.CMakeSamples.svg?branch=main)](https://travis-ci.com/claremacrae/ApprovalTests.cpp.CMakeSamples/builds) 
 ` ` 
-[![Build Status](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/workflows/build/badge.svg?branch=master)](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/actions?query=branch%3Amaster) 
+[![Build Status](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/workflows/build/badge.svg?branch=main)](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/actions?query=branch%3Amain) 
 
 claremacrae/ApprovalTests.cpp.Demos
 
@@ -37,9 +37,9 @@ claremacrae/ApprovalTests.cpp.Demos
 
 claremacrae/ApprovalTests.cpp.Nursery
 
-[![Build Status](https://travis-ci.com/claremacrae/ApprovalTests.cpp.Nursery.svg?branch=master)](https://travis-ci.com/claremacrae/ApprovalTests.cpp.Nursery/builds) 
-[![Build status](https://ci.appveyor.com/api/projects/status/iqtnpa83t13os98v/branch/master?svg=true)](https://ci.appveyor.com/project/claremacrae/approvaltests-cpp-nursery/branch/master) 
-[![Build Status](https://github.com/claremacrae/ApprovalTests.cpp.Nursery/workflows/build/badge.svg?branch=master)](https://github.com/claremacrae/ApprovalTests.cpp.Nursery/actions?query=branch%3Amaster) 
+[![Build Status](https://travis-ci.com/claremacrae/ApprovalTests.cpp.Nursery.svg?branch=main)](https://travis-ci.com/claremacrae/ApprovalTests.cpp.Nursery/builds) 
+[![Build status](https://ci.appveyor.com/api/projects/status/iqtnpa83t13os98v/branch/main?svg=true)](https://ci.appveyor.com/project/claremacrae/approvaltests-cpp-nursery/branch/main) 
+[![Build Status](https://github.com/claremacrae/ApprovalTests.cpp.Nursery/workflows/build/badge.svg?branch=main)](https://github.com/claremacrae/ApprovalTests.cpp.Nursery/actions?query=branch%3Amain) 
 
 claremacrae/SuperBuildApprovalTests
 
@@ -55,6 +55,6 @@ claremacrae/ci_playground
 
 claremacrae/cpp_snippets
 
-[![Build Status](https://travis-ci.com/claremacrae/cpp_snippets.svg?branch=master)](https://travis-ci.com/claremacrae/cpp_snippets/builds) 
-[![Build status](https://ci.appveyor.com/api/projects/status/hqf8xh615dyp3u4l/branch/master?svg=true)](https://ci.appveyor.com/project/claremacrae/cpp-snippets/branch/master) 
-[![Build Status](https://github.com/claremacrae/cpp_snippets/workflows/build/badge.svg?branch=master)](https://github.com/claremacrae/cpp_snippets/actions?query=branch%3Amaster) 
+[![Build Status](https://travis-ci.com/claremacrae/cpp_snippets.svg?branch=main)](https://travis-ci.com/claremacrae/cpp_snippets/builds) 
+[![Build status](https://ci.appveyor.com/api/projects/status/hqf8xh615dyp3u4l/branch/main?svg=true)](https://ci.appveyor.com/project/claremacrae/cpp-snippets/branch/main) 
+[![Build Status](https://github.com/claremacrae/cpp_snippets/workflows/build/badge.svg?branch=main)](https://github.com/claremacrae/cpp_snippets/actions?query=branch%3Amain) 
