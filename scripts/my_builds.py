@@ -15,7 +15,7 @@ def add_all_repos(builds: AllRepos) -> None:
 
 def add_official_approval_test_repos(builds: AllRepos) -> None:
     repo = 'ApprovalTests.cpp'
-    builds.add_source_repo('approvals', repo, ['master', 'release_qt_approvals'],
+    builds.add_source_repo('approvals', repo, ['master', 'separate_implementations'],
                            TravisBuildConfig(False),
                            AppveyorBuildConfig('lf3i76ije89oihi5', 'isidore'))
     builds.add_forked_repo('claremacrae', repo, ['master'], TravisBuildConfig(True),
