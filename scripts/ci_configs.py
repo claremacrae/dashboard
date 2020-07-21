@@ -13,7 +13,7 @@ class TravisBuildConfig:
             self.travis_url_base_image = 'travis-ci.com'
             self.travis_url_base_target = self.travis_url_base_image
         else:
-            self.travis_url_base_image = 'api.travis-ci.org'
+            self.travis_url_base_image = 'travis-ci.org'
             self.travis_url_base_target = 'travis-ci.org'
 
     @staticmethod
