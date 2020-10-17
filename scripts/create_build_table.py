@@ -1,7 +1,7 @@
 from typing import TextIO
 
 from scripts.all_repos import AllRepos
-from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig, RepoAndBuilds
+from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig, RepoAndBuilds, GitHubBuildConfig
 from scripts.dashboard_utilities import hyperlinked_text
 
 
@@ -19,9 +19,9 @@ class BuildTable:
         titles = [
             'project / branch',
             'network',
-            F'{hyperlinked_text("Travis", TravisBuildConfig.main_url())} / {hyperlinked_text("Links", "/links/travis.md")}',
-            F'{hyperlinked_text("Appveyor", AppveyorBuildConfig.main_url())} / {hyperlinked_text("Links", "/links/appveyor.md")}',
-            F'GitHub / {hyperlinked_text("Links", "/links/github_actions.md")}']
+            TravisBuildConfig.column_title(),
+            AppveyorBuildConfig.column_title(),
+            GitHubBuildConfig.column_title()]
         stream.write(f"| {' | '.join(titles)} |\n")
         divider = '| '
         for _ in titles:

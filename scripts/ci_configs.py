@@ -1,6 +1,7 @@
 from typing import Optional
 
 from scripts import dashboard_utilities
+from scripts.dashboard_utilities import hyperlinked_text
 from scripts.github_repo_info import GitHubRepoInfo
 
 
@@ -19,6 +20,10 @@ class TravisBuildConfig:
     @staticmethod
     def main_url() -> str:
         return 'https://travis-ci.com/dashboard'
+
+    @staticmethod
+    def column_title() -> str:
+        return F'{hyperlinked_text("Travis", TravisBuildConfig.main_url())} / {hyperlinked_text("Links", "/links/travis.md")}'
 
     def status(self, repo_info: GitHubRepoInfo, branch: str) -> str:
         # There is currently no way that I can see for linking to the current build on the chosen branch.
@@ -41,6 +46,10 @@ class AppveyorBuildConfig:
     def main_url() -> str:
         return 'https://ci.appveyor.com/projects'
 
+    @staticmethod
+    def column_title() -> str:
+        return F'{hyperlinked_text("Appveyor", AppveyorBuildConfig.main_url())} / {hyperlinked_text("Links", "/links/appveyor.md")}'
+
     def status(self, repo_info: GitHubRepoInfo, branch: str) -> str:
         if not self.appveyor_token:
             return '` `'
@@ -60,6 +69,10 @@ class AppveyorBuildConfig:
 class GitHubBuildConfig:
     def __init__(self, workflow_name: str = 'build') -> None:
         self.workflow_name = workflow_name
+
+    @staticmethod
+    def column_title() -> str:
+        return F'GitHub / {hyperlinked_text("Links", "/links/github_actions.md")}'
 
     def status(self, repo_info: GitHubRepoInfo, branch: str) -> str:
         user = repo_info.user
