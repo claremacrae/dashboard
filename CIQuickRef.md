@@ -5,6 +5,7 @@
 
   * [GitHub Actions](#github-actions)
     * [GitHub Actions Docs](#github-actions-docs)
+    * [Searches](#searches)
     * [Examples](#examples)
   * [Appveyor](#appveyor)
   * [Travis](#travis)<!-- endToc -->
@@ -13,9 +14,7 @@
 
 - [actions/checkout: Action for checking out a repo](https://github.com/actions/checkout)
 - [Releases · actions/runner](https://github.com/actions/runner/releases)
-- [Search · search_term path:/.github/workflows/](https://github.com/search?q=search_term+path%3A%2F.github%2Fworkflows%2F+extension%3Ayml&type=Code)
 - [GitHub Actions, the missing notes](https://skypjack.github.io/2019-10-23-gh-greets-qt/)
-- [github actions qt5 - Google Search](https://www.google.com/search?client=safari&rls=en&q=github+actions+qt5&ie=UTF-8&oe=UTF-8)
 - [Usage on GitHub Actions with xvfb · Issue #147 · juliangruber/browser-run](https://github.com/juliangruber/browser-run/issues/147)
 - [GitHub Marketplace · Actions to improve your workflow](https://github.com/marketplace?type=actions)
 - [actions/starter-workflows: Accelerating new GitHub Actions workflows](https://github.com/actions/starter-workflows)
@@ -29,6 +28,11 @@
 - [Using environment variables - GitHub Help](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/using-environment-variables)
 - [Development tools for GitHub Actions - GitHub Help](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/development-tools-for-github-actions)
 - [Software installed on GitHub-hosted runners - GitHub Help](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/software-installed-on-github-hosted-runners)
+
+### Searches
+
+- [Search · search_term path:/.github/workflows/](https://github.com/search?q=search_term+path%3A%2F.github%2Fworkflows%2F+extension%3Ayml&type=Code)
+- [github actions qt5 - Google Search](https://www.google.com/search?client=safari&rls=en&q=github+actions+qt5&ie=UTF-8&oe=UTF-8)
 
 ### Examples
 
