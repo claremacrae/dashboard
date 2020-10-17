@@ -4,20 +4,18 @@
 ## Contents
 
   * [General](#general)
-  * [GitHub Actions / Reference](#github-actions--reference)
+  * [GitHub Actions  Reference](#github-actions--reference)
+  * [Specific Actions](#specific-actions)
   * [Searches](#searches)
   * [Examples](#examples)<!-- endToc -->
 
 ## General
 
-- [actions/checkout: Action for checking out a repo](https://github.com/actions/checkout)
-- [Releases · actions/runner](https://github.com/actions/runner/releases)
 - [GitHub Actions, the missing notes](https://skypjack.github.io/2019-10-23-gh-greets-qt/)
 - [Usage on GitHub Actions with xvfb · Issue #147 · juliangruber/browser-run](https://github.com/juliangruber/browser-run/issues/147)
 - [GitHub Marketplace · Actions to improve your workflow](https://github.com/marketplace?type=actions)
-- [actions/starter-workflows: Accelerating new GitHub Actions workflows](https://github.com/actions/starter-workflows)
 
-## GitHub Actions / [Reference](https://docs.github.com/en/free-pro-team@latest/actions/reference)
+## GitHub Actions  [Reference](https://docs.github.com/en/free-pro-team@latest/actions/reference)
 
 - [Workflow syntax for GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions)
 - [Specifications for GitHub-hosted runners](https://docs.github.com/en/free-pro-team@latest/actions/reference/specifications-for-github-hosted-runners)
@@ -25,6 +23,12 @@
 - [Contexts and expression syntax for GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/reference/context-and-expression-syntax-for-github-actions)
 - [environment variables](https://docs.github.com/en/free-pro-team@latest/actions/reference/environment-variables)
 - [Workflow commands for GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-commands-for-github-actions)
+
+## Specific Actions
+
+- [actions/checkout](https://github.com/actions/checkout): Action for checking out a repo
+- [actions/runner](https://github.com/actions/runner): The runner is the application that runs a job from a GitHub Actions workflow
+- [actions/starter-workflows](https://github.com/actions/starter-workflows): Accelerating new GitHub Actions workflows
 
 ## Searches
 
