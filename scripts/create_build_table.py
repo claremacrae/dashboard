@@ -19,8 +19,8 @@ class BuildTable:
         titles = [
             'project / branch',
             'network',
-            F'[Travis]({TravisBuildConfig.main_url()}) / {hyperlinked_text("Links", "/links/travis.md")}',
-            F'[Appveyor]({AppveyorBuildConfig.main_url()}) / {hyperlinked_text("Links", "/links/appveyor.md")}',
+            F'{hyperlinked_text("Travis", TravisBuildConfig.main_url())} / {hyperlinked_text("Links", "/links/travis.md")}',
+            F'{hyperlinked_text("Appveyor", AppveyorBuildConfig.main_url())} / {hyperlinked_text("Links", "/links/appveyor.md")}',
             F'GitHub / {hyperlinked_text("Links", "/links/github_actions.md")}']
         stream.write(f"| {' | '.join(titles)} |\n")
         divider = '| '
