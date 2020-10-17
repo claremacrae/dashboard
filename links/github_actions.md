@@ -21,7 +21,7 @@
 - [Specifications for GitHub-hosted runners](https://docs.github.com/en/free-pro-team@latest/actions/reference/specifications-for-github-hosted-runners)
     - [Supported software](https://docs.github.com/en/free-pro-team@latest/actions/reference/specifications-for-github-hosted-runners#supported-software)
 - [Contexts and expression syntax for GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/reference/context-and-expression-syntax-for-github-actions)
-- [environment variables](https://docs.github.com/en/free-pro-team@latest/actions/reference/environment-variables)
+- [Environment variables](https://docs.github.com/en/free-pro-team@latest/actions/reference/environment-variables)
 - [Workflow commands for GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-commands-for-github-actions)
 
 ## Specific Actions
