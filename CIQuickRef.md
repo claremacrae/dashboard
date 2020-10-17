@@ -4,7 +4,7 @@
 ## Contents
 
   * [GitHub Actions](#github-actions)
-    * [GitHub Actions Docs](#github-actions-docs)
+    * [GitHub Actions / Reference](#github-actions--reference)
     * [Searches](#searches)
     * [Examples](#examples)
   * [Appveyor](#appveyor)
