@@ -3,13 +3,15 @@ approvals/ApprovalTests.cpp
 
 [![Build Status](https://travis-ci.org/approvals/ApprovalTests.cpp.svg?branch=master)](https://travis-ci.org/approvals/ApprovalTests.cpp/builds) 
 [![Build status](https://ci.appveyor.com/api/projects/status/lf3i76ije89oihi5/branch/master?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-cpp/branch/master) 
-[![Build Status](https://github.com/approvals/ApprovalTests.cpp/workflows/build/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp/actions?query=branch%3Amaster+workflow%3Abuild)  [![Build Status](https://github.com/approvals/ApprovalTests.cpp/workflows/python-tests/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp/actions?query=branch%3Amaster+workflow%3Apython-tests) 
+[![Build Status](https://github.com/approvals/ApprovalTests.cpp/workflows/build/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp/actions?query=branch%3Amaster+workflow%3Abuild) 
+[![Build Status](https://github.com/approvals/ApprovalTests.cpp/workflows/python-tests/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp/actions?query=branch%3Amaster+workflow%3Apython-tests) 
 
 approvals/ApprovalTests.cpp.StarterProject
 
 [![Build Status](https://travis-ci.org/approvals/ApprovalTests.cpp.StarterProject.svg?branch=master)](https://travis-ci.org/approvals/ApprovalTests.cpp.StarterProject/builds) 
 [![Build status](https://ci.appveyor.com/api/projects/status/qx0546k6ii57919w/branch/master?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-cpp-starterproject/branch/master) 
-[![Build Status](https://github.com/approvals/ApprovalTests.cpp.StarterProject/workflows/build/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp.StarterProject/actions?query=branch%3Amaster+workflow%3Abuild)  [![Build Status](https://github.com/approvals/ApprovalTests.cpp.StarterProject/workflows/build_vs/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp.StarterProject/actions?query=branch%3Amaster+workflow%3Abuild_vs) 
+[![Build Status](https://github.com/approvals/ApprovalTests.cpp.StarterProject/workflows/build/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp.StarterProject/actions?query=branch%3Amaster+workflow%3Abuild) 
+[![Build Status](https://github.com/approvals/ApprovalTests.cpp.StarterProject/workflows/build_vs/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp.StarterProject/actions?query=branch%3Amaster+workflow%3Abuild_vs) 
 
 approvals/ApprovalTests.cpp.Qt
 

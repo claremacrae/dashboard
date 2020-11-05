@@ -19,7 +19,8 @@ class BuildBadges:
         stream.write(F'{repo_info.user}/{repo_info.project}\n')
         stream.write(F'\n')
         for link in links:
-            stream.write(F'{link} \n')
+            wrapped_link = link.replace('  ', ' \n')
+            stream.write(F'{wrapped_link} \n')
 
     def write_badges(self, all_repos: AllRepos) -> None:
         with open('Badges.md', 'w') as stream:
