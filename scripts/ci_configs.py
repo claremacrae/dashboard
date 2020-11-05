@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, List
 
 from scripts import dashboard_utilities
 from scripts.dashboard_utilities import hyperlinked_text
@@ -67,8 +67,8 @@ class AppveyorBuildConfig:
 
 
 class GitHubBuildConfig:
-    def __init__(self, workflow_name: str = 'build') -> None:
-        self.workflow_names = [workflow_name]
+    def __init__(self, workflow_names: List[str] = ['build']) -> None:
+        self.workflow_names = workflow_names
 
     @staticmethod
     def column_title() -> str:
