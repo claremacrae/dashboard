@@ -68,7 +68,7 @@ class AppveyorBuildConfig:
 
 class GitHubBuildConfig:
     def __init__(self, workflow_name: str = 'build') -> None:
-        self.workflow_name = workflow_name
+        self.workflow_names = [workflow_name]
 
     @staticmethod
     def column_title() -> str:
@@ -78,8 +78,7 @@ class GitHubBuildConfig:
         user = repo_info.user
         project = repo_info.project
         result = ''
-        workflow_names = [self.workflow_name]
-        for workflow_name in workflow_names:
+        for workflow_name in self.workflow_names:
             result += dashboard_utilities.hyperlinked_image(
                 "Build Status",
                 f'https://github.com/{user}/{project}/workflows/{workflow_name}/badge.svg?branch={branch}',
