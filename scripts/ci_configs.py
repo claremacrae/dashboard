@@ -78,11 +78,12 @@ class GitHubBuildConfig:
         user = repo_info.user
         project = repo_info.project
         result = ''
-        workflow_name = self.workflow_name
-        result += dashboard_utilities.hyperlinked_image(
-            "Build Status",
-            f'https://github.com/{user}/{project}/workflows/{workflow_name}/badge.svg?branch={branch}',
-            f'https://github.com/{user}/{project}/actions?query=branch%3A{branch}')
+        workflow_names = [self.workflow_name]
+        for workflow_name in workflow_names:
+            result += dashboard_utilities.hyperlinked_image(
+                "Build Status",
+                f'https://github.com/{user}/{project}/workflows/{workflow_name}/badge.svg?branch={branch}',
+                f'https://github.com/{user}/{project}/actions?query=branch%3A{branch}')
         return result
 
 class RepoAndBuilds:
