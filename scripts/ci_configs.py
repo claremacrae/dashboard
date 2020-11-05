@@ -84,7 +84,7 @@ class GitHubBuildConfig:
             result += dashboard_utilities.hyperlinked_image(
                 "Build Status",
                 f'https://github.com/{user}/{project}/workflows/{workflow_name}/badge.svg?branch={branch}',
-                f'https://github.com/{user}/{project}/actions?query=branch%3A{branch}')
+                f'https://github.com/{user}/{project}/actions?query=branch%3A{branch}+workflow%3A{workflow_name}')
         return result
 
 class RepoAndBuilds:
