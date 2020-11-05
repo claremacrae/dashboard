@@ -3,7 +3,7 @@ approvals/ApprovalTests.cpp
 
 [![Build Status](https://travis-ci.org/approvals/ApprovalTests.cpp.svg?branch=master)](https://travis-ci.org/approvals/ApprovalTests.cpp/builds) 
 [![Build status](https://ci.appveyor.com/api/projects/status/lf3i76ije89oihi5/branch/master?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-cpp/branch/master) 
-[![Build Status](https://github.com/approvals/ApprovalTests.cpp/workflows/build/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp/actions?query=branch%3Amaster+workflow%3Abuild) 
+[![Build Status](https://github.com/approvals/ApprovalTests.cpp/workflows/build/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp/actions?query=branch%3Amaster+workflow%3Abuild) [![Build Status](https://github.com/approvals/ApprovalTests.cpp/workflows/python-tests/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp/actions?query=branch%3Amaster+workflow%3Apython-tests) 
 
 approvals/ApprovalTests.cpp.StarterProject
 
