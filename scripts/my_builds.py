@@ -18,8 +18,11 @@ def add_official_approval_test_repos(builds: AllRepos) -> None:
     builds.add_source_repo('approvals', repo, ['master'],
                            TravisBuildConfig(False),
                            AppveyorBuildConfig('lf3i76ije89oihi5', 'isidore'))
-    builds.add_forked_repo('claremacrae', repo, ['master', 'github_action_python_builds'], TravisBuildConfig(True),
+    builds.add_forked_repo('claremacrae', repo, ['master'], TravisBuildConfig(True),
                            AppveyorBuildConfig('37smtsp3a694okv8'))  # 'setup_sanitizers'
+    builds.add_forked_repo('claremacrae', repo, ['github_action_python_builds'], TravisBuildConfig(True),
+                           AppveyorBuildConfig('37smtsp3a694okv8'),
+                           GitHubBuildConfig(['build', 'python-tests']))  # 'setup_sanitizers'
 
     repo = 'ApprovalTests.cpp.StarterProject'
     gh_workflows = ['build', 'build_vs']
