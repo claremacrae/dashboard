@@ -79,6 +79,8 @@ class GitHubBuildConfig:
         project = repo_info.project
         result = ''
         for workflow_name in self.workflow_names:
+            if len(result) > 0:
+                result += " "
             result += dashboard_utilities.hyperlinked_image(
                 "Build Status",
                 f'https://github.com/{user}/{project}/workflows/{workflow_name}/badge.svg?branch={branch}',
