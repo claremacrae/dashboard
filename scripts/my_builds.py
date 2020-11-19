@@ -19,7 +19,7 @@ def add_official_approval_test_repos(builds: AllRepos) -> None:
     builds.add_source_repo('approvals', repo, ['master'],
                            TravisBuildConfig(False),
                            AppveyorBuildConfig('lf3i76ije89oihi5', 'isidore'), GitHubBuildConfig(gh_workflows))
-    builds.add_forked_repo('claremacrae', repo, ['master'], TravisBuildConfig(True),
+    builds.add_forked_repo('claremacrae', repo, ['master', 'gitub_actions_setenv'], TravisBuildConfig(True),
                            AppveyorBuildConfig('37smtsp3a694okv8'),
                            GitHubBuildConfig(gh_workflows))  # 'setup_sanitizers'
 
