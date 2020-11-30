@@ -23,6 +23,7 @@
 - [Contexts and expression syntax for GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/reference/context-and-expression-syntax-for-github-actions)
 - [Environment variables](https://docs.github.com/en/free-pro-team@latest/actions/reference/environment-variables)
 - [Workflow commands for GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-commands-for-github-actions)
+- [Workflow Schema](https://json.schemastore.org/github-workflow)
 
 ## Specific Actions
 
