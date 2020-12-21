@@ -1,4 +1,4 @@
-from typing import Optional, List
+from typing import Optional, List, Union
 
 from scripts import dashboard_utilities
 from scripts.dashboard_utilities import hyperlinked_text
@@ -98,3 +98,10 @@ class RepoAndBuilds:
         self.travis_build_info = travis_build_info
         self.appveyor_build_info = appveyor_build_info
         self.github_build_info = github_build_info
+
+    def all_builds(self) -> List[Union[TravisBuildConfig, AppveyorBuildConfig, GitHubBuildConfig]]:
+        return [
+            self.travis_build_info,
+            self.appveyor_build_info,
+            self.github_build_info,
+        ]
