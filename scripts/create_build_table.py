@@ -35,10 +35,14 @@ class BuildTable:
 
     @staticmethod
     def write_row(stream: TextIO, branch_build: RepoAndBuilds, branch: str) -> None:
+        if branch_build.travis_build_info:
+            travis_status = branch_build.travis_build_info.status(branch_build.repo_info, branch)
+        else:
+            travis_status = ''
         links = [
             F'{branch_build.repo_info.project_link()} / {branch_build.repo_info.branch_link(branch)}',
             branch_build.repo_info.network_link(),
-            branch_build.travis_build_info.status(branch_build.repo_info, branch),
+            travis_status,
             branch_build.appveyor_build_info.status(branch_build.repo_info, branch),
             branch_build.github_build_info.status(branch_build.repo_info, branch),
         ]
