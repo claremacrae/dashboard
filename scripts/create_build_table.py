@@ -35,8 +35,9 @@ class BuildTable:
 
     @staticmethod
     def write_row(stream: TextIO, branch_build: RepoAndBuilds, branch: str) -> None:
-        if branch_build.travis_build_info:
-            travis_status = branch_build.travis_build_info.status(branch_build.repo_info, branch)
+        build = branch_build.travis_build_info
+        if build:
+            travis_status = build.status(branch_build.repo_info, branch)
         else:
             travis_status = ''
         links = [
