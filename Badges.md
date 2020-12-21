@@ -27,8 +27,6 @@ approvals/ApprovalTests.cpp.Qt.StarterProject
 
 claremacrae/ApprovalTests.cpp.CMakeSamples
 
-[![Build Status](https://travis-ci.com/claremacrae/ApprovalTests.cpp.CMakeSamples.svg?branch=main)](https://travis-ci.com/claremacrae/ApprovalTests.cpp.CMakeSamples/builds) 
-` ` 
 [![Build Status](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/workflows/build/badge.svg?branch=main)](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/actions?query=branch%3Amain+workflow%3Abuild) 
 
 claremacrae/ApprovalTests.cpp.Demos
