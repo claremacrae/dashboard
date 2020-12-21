@@ -45,7 +45,7 @@ def add_official_approval_test_repos(builds: AllRepos) -> None:
 
 def add_my_experimental_approvals_repos(builds: AllRepos) -> None:
     builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.CMakeSamples', ['main'])
-    builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.Demos', ['master'], TravisBuildConfig(True),
+    builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.Demos', ['main'], TravisBuildConfig(True),
                            AppveyorBuildConfig('22e9j3e5pyviumrj'))
     builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.Nursery', ['main'], None,
                            None)
