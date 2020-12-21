@@ -33,8 +33,6 @@ claremacrae/ApprovalTests.cpp.CMakeSamples
 
 claremacrae/ApprovalTests.cpp.Demos
 
-[![Build Status](https://travis-ci.com/claremacrae/ApprovalTests.cpp.Demos.svg?branch=main)](https://travis-ci.com/claremacrae/ApprovalTests.cpp.Demos/builds)
-[![Build status](https://ci.appveyor.com/api/projects/status/22e9j3e5pyviumrj/branch/main?svg=true)](https://ci.appveyor.com/project/claremacrae/approvaltests-cpp-demos/branch/main)
 [![Build Status](https://github.com/claremacrae/ApprovalTests.cpp.Demos/workflows/build/badge.svg?branch=main)](https://github.com/claremacrae/ApprovalTests.cpp.Demos/actions?query=branch%3Amain+workflow%3Abuild)
 
 claremacrae/ApprovalTests.cpp.Nursery
