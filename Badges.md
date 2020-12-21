@@ -39,7 +39,6 @@ claremacrae/ApprovalTests.cpp.Demos
 
 claremacrae/ApprovalTests.cpp.Nursery
 
-[![Build status](https://ci.appveyor.com/api/projects/status/iqtnpa83t13os98v/branch/main?svg=true)](https://ci.appveyor.com/project/claremacrae/approvaltests-cpp-nursery/branch/main) 
 [![Build Status](https://github.com/claremacrae/ApprovalTests.cpp.Nursery/workflows/build/badge.svg?branch=main)](https://github.com/claremacrae/ApprovalTests.cpp.Nursery/actions?query=branch%3Amain+workflow%3Abuild) 
 
 claremacrae/SuperBuildApprovalTests
