@@ -36,10 +36,7 @@ class BuildTable:
     @staticmethod
     def write_row(stream: TextIO, branch_build: RepoAndBuilds, branch: str) -> None:
         build = branch_build.travis_build_info
-        if build:
-            travis_status = build.status(branch_build.repo_info, branch)
-        else:
-            travis_status = ''
+        travis_status = BuildTable.get_status(build, branch_build, branch)
         links = [
             F'{branch_build.repo_info.project_link()} / {branch_build.repo_info.branch_link(branch)}',
             branch_build.repo_info.network_link(),
@@ -49,6 +46,14 @@ class BuildTable:
         ]
         line = ' | '.join(links)
         stream.write(F'| {line} |' + '\n')
+
+    @staticmethod
+    def get_status(build, branch_build, branch):
+        if build:
+            travis_status = build.status(branch_build.repo_info, branch)
+        else:
+            travis_status = ''
+        return travis_status
 
     def write_readme(self, all_repos: AllRepos) -> None:
         with open('README.md', 'w') as stream:
