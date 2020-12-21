@@ -47,10 +47,10 @@ class BuildTable:
     @staticmethod
     def get_status(build, branch_build, branch):
         if build:
-            travis_status = build.status(branch_build.repo_info, branch)
+            status = build.status(branch_build.repo_info, branch)
         else:
-            travis_status = ''
-        return travis_status
+            status = ''
+        return status
 
     def write_readme(self, all_repos: AllRepos) -> None:
         with open('README.md', 'w') as stream:
