@@ -3,11 +3,13 @@
 <!-- toc -->
 ## Contents
 
-  * [General](#general)
-  * [GitHub Actions  Reference](#github-actions--reference)
-  * [Specific Actions](#specific-actions)
-  * [Searches](#searches)
-  * [Examples](#examples)<!-- endToc -->
+* [General](#general)
+* [GitHub Actions  Reference](#github-actions--reference)
+* [Schema](#schema)
+* [Specific Actions](#specific-actions)
+* [Searches](#searches)
+* [Examples](#examples)
+* [Composite run steps](#composite-run-steps)<!-- endToc -->
 
 ## General
 
@@ -19,16 +21,21 @@
 
 - [Workflow syntax for GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions)
 - [Specifications for GitHub-hosted runners](https://docs.github.com/en/free-pro-team@latest/actions/reference/specifications-for-github-hosted-runners)
-    - [Supported software](https://docs.github.com/en/free-pro-team@latest/actions/reference/specifications-for-github-hosted-runners#supported-software)
+  - [Supported software](https://docs.github.com/en/free-pro-team@latest/actions/reference/specifications-for-github-hosted-runners#supported-software)
 - [Contexts and expression syntax for GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/reference/context-and-expression-syntax-for-github-actions)
 - [Environment variables](https://docs.github.com/en/free-pro-team@latest/actions/reference/environment-variables)
 - [Workflow commands for GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-commands-for-github-actions)
+
+## Schema
+
 - [Workflow Schema](https://json.schemastore.org/github-workflow)
+- [Action Schema](https://json.schemastore.org/github-action)
 
 ## Specific Actions
 
 - [actions/checkout](https://github.com/actions/checkout): Action for checking out a repo
-- [actions/runner](https://github.com/actions/runner): The runner is the application that runs a job from a GitHub Actions workflow
+- [actions/runner](https://github.com/actions/runner): The runner is the application that runs a job from a GitHub
+  Actions workflow
 - [actions/starter-workflows](https://github.com/actions/starter-workflows): Accelerating new GitHub Actions workflows
 
 ## Searches
@@ -41,5 +48,14 @@
 - [doctest/main.yml at master · onqtam/doctest](https://github.com/onqtam/doctest/blob/master/.github/workflows/main.yml)
 - [reproc/main.yml at master · DaanDeMeyer/reproc](https://github.com/DaanDeMeyer/reproc/blob/master/.github/workflows/main.yml)
 
+## Composite run steps
 
-
+-
+Docs: [Creating a composite run steps action](https://docs.github.com/en/free-pro-team@latest/actions/creating-actions/creating-a-composite-run-steps-action)
+- Stack Overflow
+  - [Reuse composite run steps action in same repo](https://stackoverflow.com/a/64079155/104370)
+  - [How to us snippets in github action workflow file to avoid duplicates?
+    ](https://stackoverflow.com/questions/60544181/how-to-us-snippets-in-github-action-workflow-file-to-avoid-duplicates)
+- Video: [GitHub Actions - Composite Run Steps FIRST LOOK](https://www.youtube.com/watch?v=OqJyrZUUGTw)
+- Issue: [Next Steps for Fully Functioning Composite Actions](https://github.com/actions/runner/issues/646) - include
+  examples of what you **can** do
