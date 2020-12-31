@@ -64,7 +64,7 @@ def add_my_random_repos(builds: AllRepos) -> None:
     builds.add_source_repo('claremacrae', 'ci_playground', ['trunk'], TravisBuildConfig(True),
                            AppveyorBuildConfig('cbksrgvypq5vksy2'))
     builds.add_source_repo('claremacrae', 'cpp_snippets', ['main'], TravisBuildConfig(True),
-                           AppveyorBuildConfig('hqf8xh615dyp3u4l'))
+                           AppveyorBuildConfig('hqf8xh615dyp3u4l'), None)
 
 
 def add_catch_repos(builds):
