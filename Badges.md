@@ -39,9 +39,6 @@ claremacrae/ApprovalTests.cpp.Nursery
 
 claremacrae/SuperBuildApprovalTests
 
-[![Build Status](https://travis-ci.com/claremacrae/SuperBuildApprovalTests.svg?branch=main)](https://travis-ci.com/claremacrae/SuperBuildApprovalTests/builds) 
-` ` 
-[![Build Status](https://github.com/claremacrae/SuperBuildApprovalTests/workflows/build/badge.svg?branch=main)](https://github.com/claremacrae/SuperBuildApprovalTests/actions?query=branch%3Amain+workflow%3Abuild) 
 
 claremacrae/ci_playground
 

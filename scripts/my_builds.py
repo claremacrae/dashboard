@@ -55,7 +55,7 @@ def add_my_experimental_approvals_repos(builds: AllRepos) -> None:
         'SuperBuildApprovalTests',
     ]
     for repo in repos:
-        builds.add_source_repo('claremacrae', repo, ['main'])
+        builds.add_source_repo('claremacrae', repo, ['main'], None, None, None)
 
 
 def add_my_random_repos(builds: AllRepos) -> None:
