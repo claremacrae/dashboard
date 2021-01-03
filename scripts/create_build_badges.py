@@ -17,8 +17,8 @@ class BuildBadges:
             if not build:
                 continue
             link = build.status(repo_info, branch)
-            wrapped_link = link.replace('  ', ' \n')
-            stream.write(F'{wrapped_link} \n')
+            wrapped_link = link.replace('  ', '\n')
+            stream.write(F'{wrapped_link}\n')
 
     def write_badges(self, all_repos: AllRepos) -> None:
         with open('Badges.md', 'w') as stream:
