@@ -25,6 +25,10 @@ approvals/ApprovalTests.cpp.Qt.StarterProject
 [![Build status](https://ci.appveyor.com/api/projects/status/tpitsul9axlv93uk/branch/master?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-cpp-qt-starterproject/branch/master)
 [![Build Status](https://github.com/approvals/ApprovalTests.cpp.Qt.StarterProject/workflows/build/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp.Qt.StarterProject/actions?query=branch%3Amaster+workflow%3Abuild)
 
+approvals/ApprovalTests.Python
+
+[![Build Status](https://github.com/approvals/ApprovalTests.Python/workflows/Test/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.Python/actions?query=branch%3Amaster+workflow%3ATest)
+
 claremacrae/ApprovalTests.cpp.CMakeSamples
 
 [![Build Status](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/workflows/build/badge.svg?branch=main)](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/actions?query=branch%3Amain+workflow%3Abuild)

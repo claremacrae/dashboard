@@ -4,6 +4,7 @@ from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig, GitHubBui
 
 def add_all_repos(builds: AllRepos) -> None:
     add_official_approval_test_repos_cpp(builds)
+    add_official_approval_test_repos_python(builds)
     add_my_experimental_approvals_repos(builds)
     add_my_random_repos(builds)
 
@@ -41,6 +42,16 @@ def add_official_approval_test_repos_cpp(builds: AllRepos) -> None:
                            AppveyorBuildConfig('tpitsul9axlv93uk', 'isidore'))
     builds.add_forked_repo('claremacrae', repo, ['master'], TravisBuildConfig(True),
                            AppveyorBuildConfig('xe2iwuto0sc342a7'))
+
+
+def add_official_approval_test_repos_python(builds: AllRepos) -> None:
+    repo = 'ApprovalTests.Python'
+    # TODO add badge for "Upload Python Package"
+    # ![Upload Python Package](https://github.com/approvals/ApprovalTests.Python/workflows/Upload%20Python%20Package/badge.svg)
+    gh_workflows = ['Test']
+    builds.add_source_repo('approvals', repo, ['master'],
+                           None,
+                           None, GitHubBuildConfig(gh_workflows))
 
 
 def add_my_experimental_approvals_repos(builds: AllRepos) -> None:
