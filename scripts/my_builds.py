@@ -3,7 +3,7 @@ from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig, GitHubBui
 
 
 def add_all_repos(builds: AllRepos) -> None:
-    add_official_approval_test_repos(builds)
+    add_official_approval_test_repos_cpp(builds)
     add_my_experimental_approvals_repos(builds)
     add_my_random_repos(builds)
 
@@ -13,7 +13,7 @@ def add_all_repos(builds: AllRepos) -> None:
     # add_doctest_repos(builds)
 
 
-def add_official_approval_test_repos(builds: AllRepos) -> None:
+def add_official_approval_test_repos_cpp(builds: AllRepos) -> None:
     repo = 'ApprovalTests.cpp'
     gh_workflows = ['build', 'python-tests']
     builds.add_source_repo('approvals', repo, ['master'],
