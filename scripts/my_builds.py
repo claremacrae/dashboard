@@ -40,10 +40,11 @@ def add_official_approval_test_repos_cpp(builds: AllRepos) -> None:
 
 def add_official_approval_test_repos_python(builds: AllRepos) -> None:
     repo = 'ApprovalTests.Python'
-    gh_workflows = ['Test', 'on-push-do-doco', 'Upload Python Package']
     # TODO Reinsate branch name 'master'
     # TODO Indicate that 'Upload Python Package' is not associated with a branch
-    builds.add_source_repo('approvals', repo, [''], None, GitHubBuildConfig(gh_workflows))
+    git_hub_build_config = GitHubBuildConfig(['Test', 'on-push-do-doco'])
+    git_hub_build_config.add_workflow('Upload Python Package')
+    builds.add_source_repo('approvals', repo, [''], None, git_hub_build_config)
 
 
 def add_my_experimental_approvals_repos(builds: AllRepos) -> None:
