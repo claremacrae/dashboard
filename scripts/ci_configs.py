@@ -52,6 +52,8 @@ class GitHubBuildConfig:
             if len(result) > 0:
                 result += "  "
             encoded_workflow_name = encode_string(workflow_name)
+            # TODO Provide a first-class concept to indicate whether a workflow is associated with a branch
+            # TODO Remove the repetition of code
             if len(branch) > 0:
                 result += dashboard_utilities.hyperlinked_image(
                     "Build Status",
