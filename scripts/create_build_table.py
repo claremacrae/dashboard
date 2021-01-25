@@ -1,8 +1,7 @@
 from typing import TextIO
 
 from scripts.all_repos import AllRepos
-from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig, RepoAndBuilds, GitHubBuildConfig
-from scripts.dashboard_utilities import hyperlinked_text
+from scripts.ci_configs import AppveyorBuildConfig, RepoAndBuilds, GitHubBuildConfig
 
 
 class BuildTable:

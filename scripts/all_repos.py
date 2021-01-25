@@ -1,7 +1,7 @@
 from collections import defaultdict
 from typing import DefaultDict, List, Union
 
-from scripts.ci_configs import TravisBuildConfig, AppveyorBuildConfig, GitHubBuildConfig, RepoAndBuilds
+from scripts.ci_configs import AppveyorBuildConfig, GitHubBuildConfig, RepoAndBuilds
 from scripts.github_repo_info import GitHubRepoInfo
 
 
