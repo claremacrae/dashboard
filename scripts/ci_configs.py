@@ -46,7 +46,7 @@ class GitHubWorkflow:
             result += f'?branch={branch}'
         return result
 
-    def badge_target_url(self, user:str, project:str, branch: str):
+    def badge_target_url(self, user: str, project: str, branch: str):
         encoded_workflow_name = self.name
         if ' ' in self.name:
             encoded_workflow_name = '%22' + self.name.replace(' ', '+') + '%22'
@@ -56,7 +56,7 @@ class GitHubWorkflow:
         result += f'workflow%3A{encoded_workflow_name}'
         return result
 
-    def badge(self, user:str, project:str, branch: str):
+    def badge(self, user: str, project: str, branch: str):
         return dashboard_utilities.hyperlinked_image(
             "Build Status",
             self.badge_image_url(user, project, branch),
@@ -71,7 +71,7 @@ class GitHubBuildConfig:
         for workflow in workflow_names:
             self.add_workflow(workflow, tied_to_branch)
 
-    def add_workflow(self, workflow_name: str, tied_to_branch: bool ):
+    def add_workflow(self, workflow_name: str, tied_to_branch: bool):
         self.workflows.append(GitHubWorkflow(workflow_name, tied_to_branch))
 
     @staticmethod
