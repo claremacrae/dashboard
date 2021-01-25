@@ -39,6 +39,13 @@ class GitHubWorkflow:
         self.name = name
         self.tied_to_branch = tied_to_branch
 
+    def badge_image_url(self, user: str, project: str, branch: str):
+        encoded_workflow_name = encode_string(self.name)
+        if self.tied_to_branch > 0:
+            return f'https://github.com/{user}/{project}/workflows/{encoded_workflow_name}/badge.svg?branch={branch}'
+        else:
+            return f'https://github.com/{user}/{project}/workflows/{encoded_workflow_name}/badge.svg'
+
     def badge(self, user:str, project:str, branch: str):
         result = ''
         encoded_workflow_name = encode_string(self.name)
@@ -46,14 +53,14 @@ class GitHubWorkflow:
         if self.tied_to_branch > 0:
             result += dashboard_utilities.hyperlinked_image(
                 "Build Status",
-                f'https://github.com/{user}/{project}/workflows/{encoded_workflow_name}/badge.svg?branch={branch}',
+                self.badge_image_url(user, project, branch),
                 f'https://github.com/{user}/{project}/actions?query=branch%3A{branch}+workflow%3A{encoded_workflow_name}')
         else:
             # TODO Only add %22 if workflow name has quotes
             # TODO in /actions link, replace spaces with +, not %20
             result += dashboard_utilities.hyperlinked_image(
                 "Build Status",
-                f'https://github.com/{user}/{project}/workflows/{encoded_workflow_name}/badge.svg',
+                self.badge_image_url(user, project, branch),
                 f'https://github.com/{user}/{project}/actions?query=workflow%3A%22{encoded_workflow_name}%22')
 
         return result
