@@ -31,6 +31,5 @@ class AllRepos:
     def add_repo(self, appveyor_build_info: AppveyorBuildConfig, branches: List[str], project: str,
                  travis_build_info: TravisBuildConfig, github_build_info: GitHubBuildConfig, repo_type: str,
                  user: str) -> None:
-        repo = RepoAndBuilds(GitHubRepoInfo(user, project, branches, repo_type), travis_build_info,
-                             appveyor_build_info, github_build_info)
+        repo = RepoAndBuilds(GitHubRepoInfo(user, project, branches, repo_type), appveyor_build_info, github_build_info)
         self.__store_repo(repo)
