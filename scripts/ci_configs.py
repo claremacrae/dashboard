@@ -57,13 +57,10 @@ class GitHubWorkflow:
         return result
 
     def badge(self, user:str, project:str, branch: str):
-        result = ''
-        result += dashboard_utilities.hyperlinked_image(
+        return dashboard_utilities.hyperlinked_image(
             "Build Status",
             self.badge_image_url(user, project, branch),
             self.badge_target_url(user, project, branch))
-
-        return result
 
 
 class GitHubBuildConfig:
