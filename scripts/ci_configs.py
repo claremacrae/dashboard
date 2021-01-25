@@ -85,7 +85,6 @@ class GitHubBuildConfig:
         project = repo_info.project
         result = ''
         for workflow in self.workflows:
-            workflow_name = workflow.name
             if len(result) > 0:
                 result += "  "
             result += workflow.badge(user, project, branch)
