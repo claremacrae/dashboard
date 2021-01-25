@@ -35,7 +35,9 @@ class AppveyorBuildConfig:
 
 
 class GitHubBuildConfig:
-    def __init__(self, workflow_names: List[str] = ['build']) -> None:
+    def __init__(self, workflow_names=None) -> None:
+        if workflow_names is None:
+            workflow_names = ['build']
         self.workflow_names = workflow_names
 
     @staticmethod
