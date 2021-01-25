@@ -1,7 +1,7 @@
 from typing import Optional, List, Union
 
 from scripts import dashboard_utilities
-from scripts.dashboard_utilities import hyperlinked_text
+from scripts.dashboard_utilities import hyperlinked_text, encode_string
 from scripts.github_repo_info import GitHubRepoInfo
 
 
@@ -49,10 +49,11 @@ class GitHubBuildConfig:
         for workflow_name in self.workflow_names:
             if len(result) > 0:
                 result += "  "
+            encoded_workflow_name = encode_string(workflow_name)
             result += dashboard_utilities.hyperlinked_image(
                 "Build Status",
-                f'https://github.com/{user}/{project}/workflows/{workflow_name}/badge.svg?branch={branch}',
-                f'https://github.com/{user}/{project}/actions?query=branch%3A{branch}+workflow%3A{workflow_name}')
+                f'https://github.com/{user}/{project}/workflows/{encoded_workflow_name}/badge.svg?branch={branch}',
+                f'https://github.com/{user}/{project}/actions?query=branch%3A{branch}+workflow%3A{encoded_workflow_name}')
         return result
 
 class RepoAndBuilds:
