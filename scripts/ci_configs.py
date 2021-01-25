@@ -50,13 +50,11 @@ class GitHubWorkflow:
         encoded_workflow_name = self.name
         if ' ' in self.name:
             encoded_workflow_name = '%22' + encode_string(self.name) + '%22'
-        # TODO Remove the repetition of code
         # TODO in /actions link, replace spaces with +, not %20
         result = f'https://github.com/{user}/{project}/actions?query='
         if self.tied_to_branch > 0:
-            result += f'branch%3A{branch}+workflow%3A{encoded_workflow_name}'
-        else:
-            result += f'workflow%3A{encoded_workflow_name}'
+            result += f'branch%3A{branch}+'
+        result += f'workflow%3A{encoded_workflow_name}'
         return result
 
     def badge(self, user:str, project:str, branch: str):
