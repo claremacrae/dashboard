@@ -47,13 +47,15 @@ class GitHubWorkflow:
         return result
 
     def badge_target_url(self, user: str, project: str, branch: str):
-        encoded_workflow_name = self.name
-        if ' ' in self.name:
-            encoded_workflow_name = '%22' + self.name.replace(' ', '+') + '%22'
         result = f'https://github.com/{user}/{project}/actions?query='
         if self.tied_to_branch > 0:
             result += f'branch%3A{branch}+'
+
+        encoded_workflow_name = self.name
+        if ' ' in self.name:
+            encoded_workflow_name = '%22' + self.name.replace(' ', '+') + '%22'
         result += f'workflow%3A{encoded_workflow_name}'
+
         return result
 
     def badge(self, user: str, project: str, branch: str):
