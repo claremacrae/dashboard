@@ -39,6 +39,26 @@ class GitHubWorkflow:
         self.name = name
         self.tied_to_branch = tied_to_branch
 
+    def badge(self, user:str, project:str, branch: str):
+        result = ''
+        encoded_workflow_name = encode_string(self.name)
+        # TODO Remove the repetition of code
+        if self.tied_to_branch > 0:
+            result += dashboard_utilities.hyperlinked_image(
+                "Build Status",
+                f'https://github.com/{user}/{project}/workflows/{encoded_workflow_name}/badge.svg?branch={branch}',
+                f'https://github.com/{user}/{project}/actions?query=branch%3A{branch}+workflow%3A{encoded_workflow_name}')
+        else:
+            # TODO Only add %22 if workflow name has quotes
+            # TODO in /actions link, replace spaces with +, not %20
+            result += dashboard_utilities.hyperlinked_image(
+                "Build Status",
+                f'https://github.com/{user}/{project}/workflows/{encoded_workflow_name}/badge.svg',
+                f'https://github.com/{user}/{project}/actions?query=workflow%3A%22{encoded_workflow_name}%22')
+
+        return result
+
+
 class GitHubBuildConfig:
     def __init__(self, workflow_names=None, tied_to_branch: bool = True) -> None:
         if workflow_names is None:
@@ -62,21 +82,9 @@ class GitHubBuildConfig:
             workflow_name = workflow.name
             if len(result) > 0:
                 result += "  "
-            encoded_workflow_name = encode_string(workflow_name)
-            # TODO Remove the repetition of code
-            if workflow.tied_to_branch > 0:
-                result += dashboard_utilities.hyperlinked_image(
-                    "Build Status",
-                    f'https://github.com/{user}/{project}/workflows/{encoded_workflow_name}/badge.svg?branch={branch}',
-                    f'https://github.com/{user}/{project}/actions?query=branch%3A{branch}+workflow%3A{encoded_workflow_name}')
-            else:
-                # TODO Only add %22 if workflow name has quotes
-                # TODO in /actions link, replace spaces with +, not %20
-                result += dashboard_utilities.hyperlinked_image(
-                    "Build Status",
-                    f'https://github.com/{user}/{project}/workflows/{encoded_workflow_name}/badge.svg',
-                    f'https://github.com/{user}/{project}/actions?query=workflow%3A%22{encoded_workflow_name}%22')
+            result += workflow.badge(user, project, branch)
         return result
+
 
 class RepoAndBuilds:
     """
