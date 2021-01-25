@@ -5,38 +5,6 @@ from scripts.dashboard_utilities import hyperlinked_text
 from scripts.github_repo_info import GitHubRepoInfo
 
 
-class TravisBuildConfig:
-    def __init__(self, travis_com: bool) -> None:
-        # Travis info
-        # see
-        # https://devops.stackexchange.com/questions/1201/whats-the-difference-between-travis-ci-org-and-travis-ci-com
-        if travis_com:
-            self.travis_url_base_image = 'travis-ci.com'
-            self.travis_url_base_target = self.travis_url_base_image
-        else:
-            self.travis_url_base_image = 'travis-ci.org'
-            self.travis_url_base_target = 'travis-ci.org'
-
-    @staticmethod
-    def main_url() -> str:
-        return 'https://travis-ci.com/dashboard'
-
-    @staticmethod
-    def column_title() -> str:
-        return F'{hyperlinked_text("Travis", TravisBuildConfig.main_url())} / {hyperlinked_text("Links", "/links/travis.md")}'
-
-    def status(self, repo_info: GitHubRepoInfo, branch: str) -> str:
-        # There is currently no way that I can see for linking to the current build on the chosen branch.
-        # See this, for requests from others for this: https://github.com/travis-ci/travis-ci/issues/5024
-        # For the workaround I'm currently using, see https://stackoverflow.com/a/32946454/104370
-        # We now link to to all builds, allowing us to see all recent builds, in case the current build
-        # has not yet completed.
-        return dashboard_utilities.hyperlinked_image(
-            "Build Status",
-            f"https://{self.travis_url_base_image}/{repo_info.user}/{repo_info.project}.svg?branch={branch}",
-            f"https://{self.travis_url_base_target}/{repo_info.user}/{repo_info.project}/builds")
-
-
 class AppveyorBuildConfig:
     def __init__(self, appveyor_token: Optional[str] = None, custom_appveyor_user: Optional[str] = None) -> None:
         self.appveyor_token = appveyor_token
