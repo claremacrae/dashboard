@@ -17,13 +17,11 @@ class AllRepos:
         self.builds[repo.repo_info.user].append(repo)
 
     def add_source_repo(self, user: str, project: str, branches: List[str],
-                        travis_build_info: Union[TravisBuildConfig, None] = TravisBuildConfig(True),
                         appveyor_build_info: Union[AppveyorBuildConfig, None] = AppveyorBuildConfig(),
                         github_build_info: GitHubBuildConfig = GitHubBuildConfig()) -> None:
         self.add_repo(appveyor_build_info, branches, project, github_build_info, 'Source', user)
 
     def add_forked_repo(self, user: str, project: str, branches: List[str],
-                        travis_build_info: TravisBuildConfig = TravisBuildConfig(True),
                         appveyor_build_info: AppveyorBuildConfig = AppveyorBuildConfig(),
                         github_build_info: GitHubBuildConfig = GitHubBuildConfig()) -> None:
         self.add_repo(appveyor_build_info, branches, project, github_build_info, 'Fork', user)
