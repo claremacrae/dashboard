@@ -42,11 +42,9 @@ claremacrae/SuperBuildApprovalTests
 
 claremacrae/ci_playground
 
-[![Build Status](https://travis-ci.com/claremacrae/ci_playground.svg?branch=trunk)](https://travis-ci.com/claremacrae/ci_playground/builds)
 [![Build status](https://ci.appveyor.com/api/projects/status/cbksrgvypq5vksy2/branch/trunk?svg=true)](https://ci.appveyor.com/project/claremacrae/ci-playground/branch/trunk)
 [![Build Status](https://github.com/claremacrae/ci_playground/workflows/build/badge.svg?branch=trunk)](https://github.com/claremacrae/ci_playground/actions?query=branch%3Atrunk+workflow%3Abuild)
 
 claremacrae/cpp_snippets
 
-[![Build Status](https://travis-ci.com/claremacrae/cpp_snippets.svg?branch=main)](https://travis-ci.com/claremacrae/cpp_snippets/builds)
 [![Build status](https://ci.appveyor.com/api/projects/status/hqf8xh615dyp3u4l/branch/main?svg=true)](https://ci.appveyor.com/project/claremacrae/cpp-snippets/branch/main)
