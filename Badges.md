@@ -25,6 +25,7 @@ approvals/ApprovalTests.Python
 
 [![Build Status](https://github.com/approvals/ApprovalTests.Python/workflows/Test/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.Python/actions?query=branch%3Amaster+workflow%3ATest)
 [![Build Status](https://github.com/approvals/ApprovalTests.Python/workflows/on-push-do-doco/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.Python/actions?query=branch%3Amaster+workflow%3Aon-push-do-doco)
+![Upload Python Package](https://github.com/approvals/ApprovalTests.Python/workflows/Upload%20Python%20Package/badge.svg)
 
 claremacrae/ApprovalTests.cpp.CMakeSamples
 
