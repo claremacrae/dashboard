@@ -41,11 +41,10 @@ class GitHubWorkflow:
 
     def badge_image_url(self, user: str, project: str, branch: str):
         encoded_workflow_name = encode_string(self.name)
-        # TODO Remove the repetition of code
+        result = f'https://github.com/{user}/{project}/workflows/{encoded_workflow_name}/badge.svg'
         if self.tied_to_branch > 0:
-            return f'https://github.com/{user}/{project}/workflows/{encoded_workflow_name}/badge.svg?branch={branch}'
-        else:
-            return f'https://github.com/{user}/{project}/workflows/{encoded_workflow_name}/badge.svg'
+            result += f'?branch={branch}'
+        return result
 
     def badge_target_url(self, user:str, project:str, branch: str):
         encoded_workflow_name = encode_string(self.name)
