@@ -24,6 +24,7 @@ approvals/ApprovalTests.cpp.Qt.StarterProject
 approvals/ApprovalTests.Python
 
 [![Build Status](https://github.com/approvals/ApprovalTests.Python/workflows/Test/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.Python/actions?query=branch%3Amaster+workflow%3ATest)
+[![Build Status](https://github.com/approvals/ApprovalTests.Python/workflows/on-push-do-doco/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.Python/actions?query=branch%3Amaster+workflow%3Aon-push-do-doco)
 
 claremacrae/ApprovalTests.cpp.CMakeSamples
 

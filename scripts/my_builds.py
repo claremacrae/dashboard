@@ -42,7 +42,7 @@ def add_official_approval_test_repos_python(builds: AllRepos) -> None:
     repo = 'ApprovalTests.Python'
     # TODO add badge for "Upload Python Package"
     # ![Upload Python Package](https://github.com/approvals/ApprovalTests.Python/workflows/Upload%20Python%20Package/badge.svg)
-    gh_workflows = ['Test']
+    gh_workflows = ['Test', 'on-push-do-doco']
     builds.add_source_repo('approvals', repo, ['master'], None, GitHubBuildConfig(gh_workflows))
 
 
