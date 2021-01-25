@@ -34,11 +34,20 @@ class AppveyorBuildConfig:
             f"https://ci.appveyor.com/project/{appveyor_user}/{appveyor_project}/branch/{branch}")
 
 
+class GitHubWorkflow:
+    def __init__(self, name: str):
+        self.name = name
+
 class GitHubBuildConfig:
     def __init__(self, workflow_names=None) -> None:
         if workflow_names is None:
             workflow_names = ['build']
-        self.workflow_names = workflow_names
+        self.workflows = []
+        for workflow in workflow_names:
+            self.add_workflow(workflow)
+
+    def add_workflow(self, workflow_name: str):
+        self.workflows.append(GitHubWorkflow(workflow_name))
 
     @staticmethod
     def column_title() -> str:
@@ -48,7 +57,8 @@ class GitHubBuildConfig:
         user = repo_info.user
         project = repo_info.project
         result = ''
-        for workflow_name in self.workflow_names:
+        for workflow in self.workflows:
+            workflow_name = workflow.name
             if len(result) > 0:
                 result += "  "
             encoded_workflow_name = encode_string(workflow_name)
