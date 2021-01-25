@@ -20,16 +20,15 @@ class AllRepos:
                         travis_build_info: Union[TravisBuildConfig, None] = TravisBuildConfig(True),
                         appveyor_build_info: Union[AppveyorBuildConfig, None] = AppveyorBuildConfig(),
                         github_build_info: GitHubBuildConfig = GitHubBuildConfig()) -> None:
-        self.add_repo(appveyor_build_info, branches, project, travis_build_info, github_build_info, 'Source', user)
+        self.add_repo(appveyor_build_info, branches, project, github_build_info, 'Source', user)
 
     def add_forked_repo(self, user: str, project: str, branches: List[str],
                         travis_build_info: TravisBuildConfig = TravisBuildConfig(True),
                         appveyor_build_info: AppveyorBuildConfig = AppveyorBuildConfig(),
                         github_build_info: GitHubBuildConfig = GitHubBuildConfig()) -> None:
-        self.add_repo(appveyor_build_info, branches, project, travis_build_info, github_build_info, 'Fork', user)
+        self.add_repo(appveyor_build_info, branches, project, github_build_info, 'Fork', user)
 
     def add_repo(self, appveyor_build_info: AppveyorBuildConfig, branches: List[str], project: str,
-                 travis_build_info: TravisBuildConfig, github_build_info: GitHubBuildConfig, repo_type: str,
-                 user: str) -> None:
+                 github_build_info: GitHubBuildConfig, repo_type: str, user: str) -> None:
         repo = RepoAndBuilds(GitHubRepoInfo(user, project, branches, repo_type), appveyor_build_info, github_build_info)
         self.__store_repo(repo)
