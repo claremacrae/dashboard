@@ -27,6 +27,10 @@ approvals/ApprovalTests.Python
 [![Build Status](https://github.com/approvals/ApprovalTests.Python/workflows/on-push-do-doco/badge.svg)](https://github.com/approvals/ApprovalTests.Python/actions?query=workflow%3Aon-push-do-doco)
 [![Build Status](https://github.com/approvals/ApprovalTests.Python/workflows/Upload%20Python%20Package/badge.svg)](https://github.com/approvals/ApprovalTests.Python/actions?query=workflow%3A%22Upload+Python+Package%22)
 
+approvals/ApprovalTests.Python.PytestPlugin
+
+[![Build Status](https://github.com/approvals/ApprovalTests.Python.PytestPlugin/workflows/Test/badge.svg)](https://github.com/approvals/ApprovalTests.Python.PytestPlugin/actions?query=workflow%3ATest)
+
 claremacrae/ApprovalTests.cpp.CMakeSamples
 
 [![Build Status](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/workflows/build/badge.svg?branch=main)](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/actions?query=branch%3Amain+workflow%3Abuild)
