@@ -13,6 +13,7 @@ def add_all_repos(builds: AllRepos) -> None:
     # add_catch_repos(builds)
     # add_doctest_repos(builds)
 
+# TODO Allow language to be supplied, and group README by language
 
 def add_official_approval_test_repos_cpp(builds: AllRepos) -> None:
     repo = 'ApprovalTests.cpp'
