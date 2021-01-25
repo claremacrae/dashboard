@@ -23,8 +23,8 @@ approvals/ApprovalTests.cpp.Qt.StarterProject
 
 approvals/ApprovalTests.Python
 
-[![Build Status](https://github.com/approvals/ApprovalTests.Python/workflows/Test/badge.svg)](https://github.com/approvals/ApprovalTests.Python/actions?query=workflow%3A%22Test%22)
-[![Build Status](https://github.com/approvals/ApprovalTests.Python/workflows/on-push-do-doco/badge.svg)](https://github.com/approvals/ApprovalTests.Python/actions?query=workflow%3A%22on-push-do-doco%22)
+[![Build Status](https://github.com/approvals/ApprovalTests.Python/workflows/Test/badge.svg)](https://github.com/approvals/ApprovalTests.Python/actions?query=workflow%3ATest)
+[![Build Status](https://github.com/approvals/ApprovalTests.Python/workflows/on-push-do-doco/badge.svg)](https://github.com/approvals/ApprovalTests.Python/actions?query=workflow%3Aon-push-do-doco)
 [![Build Status](https://github.com/approvals/ApprovalTests.Python/workflows/Upload%20Python%20Package/badge.svg)](https://github.com/approvals/ApprovalTests.Python/actions?query=workflow%3A%22Upload%20Python%20Package%22)
 
 claremacrae/ApprovalTests.cpp.CMakeSamples
