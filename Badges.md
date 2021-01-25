@@ -1,27 +1,23 @@
 
 approvals/ApprovalTests.cpp
 
-[![Build Status](https://travis-ci.org/approvals/ApprovalTests.cpp.svg?branch=master)](https://travis-ci.org/approvals/ApprovalTests.cpp/builds)
 [![Build status](https://ci.appveyor.com/api/projects/status/lf3i76ije89oihi5/branch/master?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-cpp/branch/master)
 [![Build Status](https://github.com/approvals/ApprovalTests.cpp/workflows/build/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp/actions?query=branch%3Amaster+workflow%3Abuild)
 [![Build Status](https://github.com/approvals/ApprovalTests.cpp/workflows/python-tests/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp/actions?query=branch%3Amaster+workflow%3Apython-tests)
 
 approvals/ApprovalTests.cpp.StarterProject
 
-[![Build Status](https://travis-ci.org/approvals/ApprovalTests.cpp.StarterProject.svg?branch=master)](https://travis-ci.org/approvals/ApprovalTests.cpp.StarterProject/builds)
 [![Build status](https://ci.appveyor.com/api/projects/status/qx0546k6ii57919w/branch/master?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-cpp-starterproject/branch/master)
 [![Build Status](https://github.com/approvals/ApprovalTests.cpp.StarterProject/workflows/build/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp.StarterProject/actions?query=branch%3Amaster+workflow%3Abuild)
 [![Build Status](https://github.com/approvals/ApprovalTests.cpp.StarterProject/workflows/build_vs/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp.StarterProject/actions?query=branch%3Amaster+workflow%3Abuild_vs)
 
 approvals/ApprovalTests.cpp.Qt
 
-[![Build Status](https://travis-ci.com/approvals/ApprovalTests.cpp.Qt.svg?branch=master)](https://travis-ci.com/approvals/ApprovalTests.cpp.Qt/builds)
 [![Build status](https://ci.appveyor.com/api/projects/status/pf8et0nk1mdajskf/branch/master?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-cpp-qt/branch/master)
 [![Build Status](https://github.com/approvals/ApprovalTests.cpp.Qt/workflows/build/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp.Qt/actions?query=branch%3Amaster+workflow%3Abuild)
 
 approvals/ApprovalTests.cpp.Qt.StarterProject
 
-[![Build Status](https://travis-ci.com/approvals/ApprovalTests.cpp.Qt.StarterProject.svg?branch=master)](https://travis-ci.com/approvals/ApprovalTests.cpp.Qt.StarterProject/builds)
 [![Build status](https://ci.appveyor.com/api/projects/status/tpitsul9axlv93uk/branch/master?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-cpp-qt-starterproject/branch/master)
 [![Build Status](https://github.com/approvals/ApprovalTests.cpp.Qt.StarterProject/workflows/build/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp.Qt.StarterProject/actions?query=branch%3Amaster+workflow%3Abuild)
 

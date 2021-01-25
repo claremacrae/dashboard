@@ -18,29 +18,29 @@ def add_official_approval_test_repos_cpp(builds: AllRepos) -> None:
     repo = 'ApprovalTests.cpp'
     gh_workflows = ['build', 'python-tests']
     builds.add_source_repo('approvals', repo, ['master'],
-                           TravisBuildConfig(False),
+                           None,
                            AppveyorBuildConfig('lf3i76ije89oihi5', 'isidore'), GitHubBuildConfig(gh_workflows))
-    builds.add_forked_repo('claremacrae', repo, ['master'], TravisBuildConfig(True),
+    builds.add_forked_repo('claremacrae', repo, ['master'], None,
                            AppveyorBuildConfig('37smtsp3a694okv8'),
                            GitHubBuildConfig(gh_workflows))  # 'setup_sanitizers'
 
     repo = 'ApprovalTests.cpp.StarterProject'
     gh_workflows = ['build', 'build_vs']
-    builds.add_source_repo('approvals', repo, ['master'], TravisBuildConfig(False),
+    builds.add_source_repo('approvals', repo, ['master'], None,
                            AppveyorBuildConfig('qx0546k6ii57919w', 'isidore'), GitHubBuildConfig(gh_workflows))
-    builds.add_forked_repo('claremacrae', repo, ['master'], TravisBuildConfig(True),
+    builds.add_forked_repo('claremacrae', repo, ['master'], None,
                            AppveyorBuildConfig('ytjgybf5r9fviifm'), GitHubBuildConfig(gh_workflows))
 
     repo = 'ApprovalTests.cpp.Qt'
-    builds.add_source_repo('approvals', repo, ['master'], TravisBuildConfig(True),
+    builds.add_source_repo('approvals', repo, ['master'], None,
                            AppveyorBuildConfig('pf8et0nk1mdajskf', 'isidore'))
-    builds.add_forked_repo('claremacrae', repo, ['master'], TravisBuildConfig(True),
+    builds.add_forked_repo('claremacrae', repo, ['master'], None,
                            AppveyorBuildConfig('g60qbttap7m5nul2'))
 
     repo = 'ApprovalTests.cpp.Qt.StarterProject'
-    builds.add_source_repo('approvals', repo, ['master'], TravisBuildConfig(True),
+    builds.add_source_repo('approvals', repo, ['master'], None,
                            AppveyorBuildConfig('tpitsul9axlv93uk', 'isidore'))
-    builds.add_forked_repo('claremacrae', repo, ['master'], TravisBuildConfig(True),
+    builds.add_forked_repo('claremacrae', repo, ['master'], None,
                            AppveyorBuildConfig('xe2iwuto0sc342a7'))
 
 
