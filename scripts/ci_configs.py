@@ -49,8 +49,7 @@ class GitHubWorkflow:
     def badge_target_url(self, user:str, project:str, branch: str):
         encoded_workflow_name = self.name
         if ' ' in self.name:
-            encoded_workflow_name = '%22' + encode_string(self.name) + '%22'
-        # TODO in /actions link, replace spaces with +, not %20
+            encoded_workflow_name = '%22' + self.name.replace(' ', '+') + '%22'
         result = f'https://github.com/{user}/{project}/actions?query='
         if self.tied_to_branch > 0:
             result += f'branch%3A{branch}+'
