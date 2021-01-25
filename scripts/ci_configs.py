@@ -50,10 +50,16 @@ class GitHubBuildConfig:
             if len(result) > 0:
                 result += "  "
             encoded_workflow_name = encode_string(workflow_name)
-            result += dashboard_utilities.hyperlinked_image(
-                "Build Status",
-                f'https://github.com/{user}/{project}/workflows/{encoded_workflow_name}/badge.svg?branch={branch}',
-                f'https://github.com/{user}/{project}/actions?query=branch%3A{branch}+workflow%3A{encoded_workflow_name}')
+            if len(branch) > 0:
+                result += dashboard_utilities.hyperlinked_image(
+                    "Build Status",
+                    f'https://github.com/{user}/{project}/workflows/{encoded_workflow_name}/badge.svg?branch={branch}',
+                    f'https://github.com/{user}/{project}/actions?query=branch%3A{branch}+workflow%3A{encoded_workflow_name}')
+            else:
+                result += dashboard_utilities.hyperlinked_image(
+                    "Build Status",
+                    f'https://github.com/{user}/{project}/workflows/{encoded_workflow_name}/badge.svg',
+                    f'https://github.com/{user}/{project}/actions?query=workflow%3A%22{encoded_workflow_name}%22')
         return result
 
 class RepoAndBuilds:

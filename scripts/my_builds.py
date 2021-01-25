@@ -41,7 +41,7 @@ def add_official_approval_test_repos_cpp(builds: AllRepos) -> None:
 def add_official_approval_test_repos_python(builds: AllRepos) -> None:
     repo = 'ApprovalTests.Python'
     gh_workflows = ['Test', 'on-push-do-doco', 'Upload Python Package']
-    builds.add_source_repo('approvals', repo, ['master'], None, GitHubBuildConfig(gh_workflows))
+    builds.add_source_repo('approvals', repo, [''], None, GitHubBuildConfig(gh_workflows))
 
 
 def add_my_experimental_approvals_repos(builds: AllRepos) -> None:
