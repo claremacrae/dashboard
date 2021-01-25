@@ -99,9 +99,8 @@ class RepoAndBuilds:
         self.appveyor_build_info = appveyor_build_info
         self.github_build_info = github_build_info
 
-    def all_builds(self) -> List[Union[TravisBuildConfig, AppveyorBuildConfig, GitHubBuildConfig]]:
+    def all_builds(self) -> List[Union[AppveyorBuildConfig, GitHubBuildConfig]]:
         return [
-            self.travis_build_info,
             self.appveyor_build_info,
             self.github_build_info,
         ]

@@ -19,7 +19,6 @@ class BuildTable:
         titles = [
             'project / branch',
             'network',
-            TravisBuildConfig.column_title(),
             AppveyorBuildConfig.column_title(),
             GitHubBuildConfig.column_title()]
         stream.write(f"| {' | '.join(titles)} |\n")
