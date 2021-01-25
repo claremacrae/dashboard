@@ -51,10 +51,12 @@ class GitHubWorkflow:
         # TODO Remove the repetition of code
         # TODO Only add %22 if workflow name has quotes
         # TODO in /actions link, replace spaces with +, not %20
+        result = f'https://github.com/{user}/{project}/actions?query='
         if self.tied_to_branch > 0:
-            return f'https://github.com/{user}/{project}/actions?query=branch%3A{branch}+workflow%3A{encoded_workflow_name}'
+            result += f'branch%3A{branch}+workflow%3A{encoded_workflow_name}'
         else:
-            return f'https://github.com/{user}/{project}/actions?query=workflow%3A%22{encoded_workflow_name}%22'
+            result += f'workflow%3A%22{encoded_workflow_name}%22'
+        return result
 
     def badge(self, user:str, project:str, branch: str):
         result = ''
