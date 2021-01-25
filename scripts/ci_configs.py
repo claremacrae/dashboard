@@ -35,19 +35,20 @@ class AppveyorBuildConfig:
 
 
 class GitHubWorkflow:
-    def __init__(self, name: str):
+    def __init__(self, name: str, tied_to_branch: bool):
         self.name = name
+        self.tied_to_branch = tied_to_branch
 
 class GitHubBuildConfig:
-    def __init__(self, workflow_names=None) -> None:
+    def __init__(self, workflow_names=None, tied_to_branch: bool = True) -> None:
         if workflow_names is None:
             workflow_names = ['build']
         self.workflows = []
         for workflow in workflow_names:
-            self.add_workflow(workflow)
+            self.add_workflow(workflow, tied_to_branch)
 
-    def add_workflow(self, workflow_name: str):
-        self.workflows.append(GitHubWorkflow(workflow_name))
+    def add_workflow(self, workflow_name: str, tied_to_branch: bool ):
+        self.workflows.append(GitHubWorkflow(workflow_name, tied_to_branch))
 
     @staticmethod
     def column_title() -> str:
@@ -62,9 +63,8 @@ class GitHubBuildConfig:
             if len(result) > 0:
                 result += "  "
             encoded_workflow_name = encode_string(workflow_name)
-            # TODO Provide a first-class concept to indicate whether a workflow is associated with a branch
             # TODO Remove the repetition of code
-            if len(branch) > 0:
+            if workflow.tied_to_branch > 0:
                 result += dashboard_utilities.hyperlinked_image(
                     "Build Status",
                     f'https://github.com/{user}/{project}/workflows/{encoded_workflow_name}/badge.svg?branch={branch}',
