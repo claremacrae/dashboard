@@ -40,11 +40,11 @@ def add_official_approval_test_repos_cpp(builds: AllRepos) -> None:
 def add_official_approval_test_repos_python(builds: AllRepos) -> None:
     git_hub_build_config = GitHubBuildConfig(['Test', 'on-push-do-doco', 'Upload Python Package'], False)
     repo = builds.add_source_repo('approvals', 'ApprovalTests.Python', ['master'], None, git_hub_build_config)
-    builds.add_forked_repo(repo, 'claremacrae', None)
+    builds.add_forked_repo(repo, 'claremacrae')
 
     git_hub_build_config = GitHubBuildConfig(['Test'], False)
     repo = builds.add_source_repo('approvals', 'ApprovalTests.Python.PytestPlugin', ['master'], None, git_hub_build_config)
-    builds.add_forked_repo(repo, 'claremacrae', None)
+    builds.add_forked_repo(repo, 'claremacrae')
 
 
 def add_my_experimental_approvals_repos(builds: AllRepos) -> None:
