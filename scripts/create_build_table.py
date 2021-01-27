@@ -65,7 +65,13 @@ class BuildTable:
         builds = all_repos.builds_for_user_and_type(repo_type, user_name)
         if not builds:
             return
-        self.write_user_row(stream, builds[0])
+        first_build = builds[0]
+        self.write_user_row(stream, first_build)
+        last_language = first_build.repo_info.language
         for build in builds:
+            language = build.repo_info.language
+            if language != last_language:
+                last_language = language
+                self.write_user_row(stream, build)
             for branch in build.repo_info.branches:
                 self.write_row(stream, build, branch)
