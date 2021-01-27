@@ -15,16 +15,14 @@ def add_all_repos(builds: AllRepos) -> None:
 
 
 def add_official_approval_test_repos_cpp(builds: AllRepos) -> None:
-    gh_workflows = ['build', 'python-tests']
     repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp', ['master'],
                                   AppveyorBuildConfig('lf3i76ije89oihi5', 'isidore'),
-                                  GitHubBuildConfig(gh_workflows))
+                                  GitHubBuildConfig(['build', 'python-tests']))
     builds.add_forked_repo(repo, AppveyorBuildConfig('37smtsp3a694okv8'))  # 'setup_sanitizers'
 
-    gh_workflows = ['build', 'build_vs']
     repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp.StarterProject', ['master'],
                                   AppveyorBuildConfig('qx0546k6ii57919w', 'isidore'),
-                                  GitHubBuildConfig(gh_workflows))
+                                  GitHubBuildConfig(['build', 'build_vs']))
     builds.add_forked_repo(repo, AppveyorBuildConfig('ytjgybf5r9fviifm'))
 
     repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp.Qt', ['master'],
