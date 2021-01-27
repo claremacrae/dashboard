@@ -40,7 +40,6 @@ def add_official_approval_test_repos_python(builds: AllRepos) -> None:
     git_hub_build_config = GitHubBuildConfig(default_workflows + ['Upload Python Package'], False)
     repo = builds.add_source_repo('approvals', 'ApprovalTests.Python', ['master'], None, git_hub_build_config,
                                   language=python)
-
     git_hub_build_config = GitHubBuildConfig(default_workflows, False)
     builds.add_forked_repo(repo, github_build_info=git_hub_build_config)
 
