@@ -14,8 +14,6 @@ def add_all_repos(builds: AllRepos) -> None:
     # add_doctest_repos(builds)
 
 
-# TODO Allow language to be supplied, and group README by language
-
 def add_official_approval_test_repos_cpp(builds: AllRepos) -> None:
     gh_workflows = ['build', 'python-tests']
     repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp', ['master'],
