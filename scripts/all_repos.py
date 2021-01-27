@@ -21,7 +21,7 @@ class AllRepos:
                         github_build_info: Union[GitHubBuildConfig, None] = GitHubBuildConfig()) -> RepoAndBuilds:
         return self.add_repo(appveyor_build_info, branches, project, github_build_info, 'Source', user, 'C++')
 
-    def add_forked_repo(self, parent_repo: RepoAndBuilds, user: str, branches: List[str],
+    def add_forked_repo(self, parent_repo: RepoAndBuilds, user: str, branches: Union[List[str], None] = None,
                         appveyor_build_info: Union[AppveyorBuildConfig, None] = None,
                         github_build_info: Union[GitHubBuildConfig, None] = None) -> None:
         if not branches:

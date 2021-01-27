@@ -20,31 +20,31 @@ def add_official_approval_test_repos_cpp(builds: AllRepos) -> None:
     repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp', ['master'],
                            AppveyorBuildConfig('lf3i76ije89oihi5', 'isidore'),
                            GitHubBuildConfig(gh_workflows))
-    builds.add_forked_repo(repo, 'claremacrae', ['master'], appveyor_build_info=AppveyorBuildConfig('37smtsp3a694okv8'))  # 'setup_sanitizers'
+    builds.add_forked_repo(repo, 'claremacrae', appveyor_build_info=AppveyorBuildConfig('37smtsp3a694okv8'))  # 'setup_sanitizers'
 
     gh_workflows = ['build', 'build_vs']
     repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp.StarterProject', ['master'],
                            AppveyorBuildConfig('qx0546k6ii57919w', 'isidore'),
                            GitHubBuildConfig(gh_workflows))
-    builds.add_forked_repo(repo, 'claremacrae', ['master'], appveyor_build_info=AppveyorBuildConfig('ytjgybf5r9fviifm'))
+    builds.add_forked_repo(repo, 'claremacrae', appveyor_build_info=AppveyorBuildConfig('ytjgybf5r9fviifm'))
 
     repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp.Qt', ['master'],
                            AppveyorBuildConfig('pf8et0nk1mdajskf', 'isidore'))
-    builds.add_forked_repo(repo, 'claremacrae', ['master'], appveyor_build_info=AppveyorBuildConfig('g60qbttap7m5nul2'))
+    builds.add_forked_repo(repo, 'claremacrae', appveyor_build_info=AppveyorBuildConfig('g60qbttap7m5nul2'))
 
     repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp.Qt.StarterProject', ['master'],
                            AppveyorBuildConfig('tpitsul9axlv93uk', 'isidore'))
-    builds.add_forked_repo(repo, 'claremacrae', ['master'], appveyor_build_info=AppveyorBuildConfig('xe2iwuto0sc342a7'))
+    builds.add_forked_repo(repo, 'claremacrae', appveyor_build_info=AppveyorBuildConfig('xe2iwuto0sc342a7'))
 
 
 def add_official_approval_test_repos_python(builds: AllRepos) -> None:
     git_hub_build_config = GitHubBuildConfig(['Test', 'on-push-do-doco', 'Upload Python Package'], False)
     repo = builds.add_source_repo('approvals', 'ApprovalTests.Python', ['master'], None, git_hub_build_config)
-    builds.add_forked_repo(repo, 'claremacrae', ['master'], None)
+    builds.add_forked_repo(repo, 'claremacrae', None)
 
     git_hub_build_config = GitHubBuildConfig(['Test'], False)
     repo = builds.add_source_repo('approvals', 'ApprovalTests.Python.PytestPlugin', ['master'], None, git_hub_build_config)
-    builds.add_forked_repo(repo, 'claremacrae', ['master'], None)
+    builds.add_forked_repo(repo, 'claremacrae', None)
 
 
 def add_my_experimental_approvals_repos(builds: AllRepos) -> None:
@@ -69,7 +69,7 @@ def add_my_random_repos(builds: AllRepos) -> None:
 
 def add_catch_repos(builds):
     repo = builds.add_source_repo('catchorg', 'Catch2', ['master'])
-    builds.add_forked_repo(repo, 'claremacrae', ['master'], appveyor_build_info=AppveyorBuildConfig('8m77qos96rmcn6jg'))
+    builds.add_forked_repo(repo, 'claremacrae', appveyor_build_info=AppveyorBuildConfig('8m77qos96rmcn6jg'))
 
 
 def add_boost_ut_repos(builds):
