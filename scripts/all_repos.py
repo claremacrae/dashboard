@@ -26,8 +26,7 @@ class AllRepos:
                         github_build_info: Union[GitHubBuildConfig, None] = None) -> None:
         if not branches:
             branches = parent_repo.repo_info.branches
-        if not appveyor_build_info:
-            appveyor_build_info = parent_repo.appveyor_build_info
+        # Do not copy appveyor_build_info from parent repo, as settings are never the same
         if not github_build_info:
             github_build_info = parent_repo.github_build_info
         self.add_repo(appveyor_build_info, branches, parent_repo.repo_info.project, github_build_info, 'Fork', user, 'C++')
