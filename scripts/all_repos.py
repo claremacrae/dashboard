@@ -30,7 +30,8 @@ class AllRepos:
         # Do not copy appveyor_build_info from parent repo, as settings are never the same
         if not github_build_info:
             github_build_info = parent_repo.github_build_info
-        self.add_repo(appveyor_build_info, branches, parent_repo.repo_info.project, github_build_info, 'Fork', user, 'C++')
+        self.add_repo(appveyor_build_info, branches, parent_repo.repo_info.project, github_build_info, 'Fork', user,
+                      parent_repo.repo_info.language)
 
     def add_repo(self, appveyor_build_info: Union[AppveyorBuildConfig, None], branches: List[str], project: str,
                  github_build_info: Union[GitHubBuildConfig, None], repo_type: str, user: str, language) -> RepoAndBuilds:
