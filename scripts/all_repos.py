@@ -34,7 +34,9 @@ class AllRepos:
                       parent_repo.repo_info.language)
 
     def add_repo(self, appveyor_build_info: Union[AppveyorBuildConfig, None], branches: List[str], project: str,
-                 github_build_info: Union[GitHubBuildConfig, None], repo_type: str, user: str, language) -> RepoAndBuilds:
-        repo = RepoAndBuilds(GitHubRepoInfo(user, project, branches, repo_type, language), appveyor_build_info, github_build_info)
+                 github_build_info: Union[GitHubBuildConfig, None], repo_type: str, user: str,
+                 language) -> RepoAndBuilds:
+        repo = RepoAndBuilds(GitHubRepoInfo(user, project, branches, repo_type, language), appveyor_build_info,
+                             github_build_info)
         self.__store_repo(repo)
         return repo
