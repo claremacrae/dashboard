@@ -40,13 +40,15 @@ def add_official_approval_test_repos_cpp(builds: AllRepos) -> None:
 
 
 def add_official_approval_test_repos_python(builds: AllRepos) -> None:
+    python = 'Python'
     git_hub_build_config = GitHubBuildConfig(['Test', 'on-push-do-doco', 'Upload Python Package'], False)
-    repo = builds.add_source_repo('approvals', 'ApprovalTests.Python', ['master'], None, git_hub_build_config)
+    repo = builds.add_source_repo('approvals', 'ApprovalTests.Python', ['master'], None, git_hub_build_config,
+                                  language=python)
     builds.add_forked_repo(repo, 'claremacrae')
 
     git_hub_build_config = GitHubBuildConfig(['Test'], False)
     repo = builds.add_source_repo('approvals', 'ApprovalTests.Python.PytestPlugin', ['master'], None,
-                                  git_hub_build_config)
+                                  git_hub_build_config, language=python)
     builds.add_forked_repo(repo, 'claremacrae')
 
 
@@ -65,11 +67,13 @@ def add_my_experimental_approvals_repos(builds: AllRepos) -> None:
 
 
 def add_my_random_repos(builds: AllRepos) -> None:
+    language = 'Miscellaneous'
     # clone of other people's work - using CMake's FetchContent:
     # builds.add_builds('claremacrae', 'approval-tests-setup', ['master'])
-    repo = builds.add_source_repo('claremacrae', 'ci_playground', ['trunk'], AppveyorBuildConfig('cbksrgvypq5vksy2'))
+    repo = builds.add_source_repo('claremacrae', 'ci_playground', ['trunk'], AppveyorBuildConfig('cbksrgvypq5vksy2'),
+                                  language=language)
     repo = builds.add_source_repo('claremacrae', 'cpp_snippets', ['main'], AppveyorBuildConfig('hqf8xh615dyp3u4l'),
-                                  None)
+                                  None, language=language)
 
 
 def add_catch_repos(builds):
