@@ -47,6 +47,8 @@
 
 - [doctest/main.yml at master · onqtam/doctest](https://github.com/onqtam/doctest/blob/master/.github/workflows/main.yml)
 - [reproc/main.yml at master · DaanDeMeyer/reproc](https://github.com/DaanDeMeyer/reproc/blob/master/.github/workflows/main.yml)
+- [libgit2/main.yml at main · libgit2/libgit2](https://github.com/libgit2/libgit2/blob/main/.github/workflows/main.yml)
+  - shows that matrices can be objects, and not just strings
 
 ## Composite run steps
 
