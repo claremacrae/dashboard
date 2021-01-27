@@ -8,7 +8,7 @@ class GitHubRepoInfo:
     Class that represents a particular repository and all its active branches
     """
 
-    def __init__(self, user: str, project: str, branches: List[str], repo_type: str, language: str = 'C++') -> None:
+    def __init__(self, user: str, project: str, branches: List[str], repo_type: str, language: str) -> None:
         self.user = user
         self.project = project
         self.branches = branches
