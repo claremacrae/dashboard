@@ -16,27 +16,31 @@ def add_all_repos(builds: AllRepos) -> None:
 # TODO Allow language to be supplied, and group README by language
 
 def add_official_approval_test_repos_cpp(builds: AllRepos) -> None:
-    repo = 'ApprovalTests.cpp'
     gh_workflows = ['build', 'python-tests']
-    builds.add_source_repo('approvals', repo, ['master'], AppveyorBuildConfig('lf3i76ije89oihi5', 'isidore'),
+    builds.add_source_repo('approvals', 'ApprovalTests.cpp', ['master'],
+                           AppveyorBuildConfig('lf3i76ije89oihi5', 'isidore'),
                            GitHubBuildConfig(gh_workflows))
-    builds.add_forked_repo(None, 'claremacrae', repo, ['master'], AppveyorBuildConfig('37smtsp3a694okv8'),
+    builds.add_forked_repo(None, 'claremacrae', 'ApprovalTests.cpp', ['master'],
+                           AppveyorBuildConfig('37smtsp3a694okv8'),
                            GitHubBuildConfig(gh_workflows))  # 'setup_sanitizers'
 
-    repo = 'ApprovalTests.cpp.StarterProject'
     gh_workflows = ['build', 'build_vs']
-    builds.add_source_repo('approvals', repo, ['master'], AppveyorBuildConfig('qx0546k6ii57919w', 'isidore'),
+    builds.add_source_repo('approvals', 'ApprovalTests.cpp.StarterProject', ['master'],
+                           AppveyorBuildConfig('qx0546k6ii57919w', 'isidore'),
                            GitHubBuildConfig(gh_workflows))
-    builds.add_forked_repo(None, 'claremacrae', repo, ['master'], AppveyorBuildConfig('ytjgybf5r9fviifm'),
+    builds.add_forked_repo(None, 'claremacrae', 'ApprovalTests.cpp.StarterProject', ['master'],
+                           AppveyorBuildConfig('ytjgybf5r9fviifm'),
                            GitHubBuildConfig(gh_workflows))
 
-    repo = 'ApprovalTests.cpp.Qt'
-    builds.add_source_repo('approvals', repo, ['master'], AppveyorBuildConfig('pf8et0nk1mdajskf', 'isidore'))
-    builds.add_forked_repo(None, 'claremacrae', repo, ['master'], AppveyorBuildConfig('g60qbttap7m5nul2'))
+    builds.add_source_repo('approvals', 'ApprovalTests.cpp.Qt', ['master'],
+                           AppveyorBuildConfig('pf8et0nk1mdajskf', 'isidore'))
+    builds.add_forked_repo(None, 'claremacrae', 'ApprovalTests.cpp.Qt', ['master'],
+                           AppveyorBuildConfig('g60qbttap7m5nul2'))
 
-    repo = 'ApprovalTests.cpp.Qt.StarterProject'
-    builds.add_source_repo('approvals', repo, ['master'], AppveyorBuildConfig('tpitsul9axlv93uk', 'isidore'))
-    builds.add_forked_repo(None, 'claremacrae', repo, ['master'], AppveyorBuildConfig('xe2iwuto0sc342a7'))
+    builds.add_source_repo('approvals', 'ApprovalTests.cpp.Qt.StarterProject', ['master'],
+                           AppveyorBuildConfig('tpitsul9axlv93uk', 'isidore'))
+    builds.add_forked_repo(None, 'claremacrae', 'ApprovalTests.cpp.Qt.StarterProject', ['master'],
+                           AppveyorBuildConfig('xe2iwuto0sc342a7'))
 
 
 def add_official_approval_test_repos_python(builds: AllRepos) -> None:
@@ -71,20 +75,17 @@ def add_my_random_repos(builds: AllRepos) -> None:
 
 
 def add_catch_repos(builds):
-    repo = 'Catch2'
-    builds.add_source_repo('catchorg', repo, ['master'])
-    builds.add_forked_repo(None, 'claremacrae', repo, ['master'], AppveyorBuildConfig('8m77qos96rmcn6jg'))
+    builds.add_source_repo('catchorg', 'Catch2', ['master'])
+    builds.add_forked_repo(None, 'claremacrae', 'Catch2', ['master'], AppveyorBuildConfig('8m77qos96rmcn6jg'))
 
 
 def add_boost_ut_repos(builds):
-    repo = 'ut'
-    builds.add_source_repo('boost-experimental', repo, ['master'])
-    builds.add_forked_repo(None, 'claremacrae', repo, ['master', 'clare_learning'],
+    builds.add_source_repo('boost-experimental', 'ut', ['master'])
+    builds.add_forked_repo(None, 'claremacrae', 'ut', ['master', 'clare_learning'],
                            AppveyorBuildConfig('ab4jv9x8kveev0n4'))
 
 
 def add_doctest_repos(builds: AllRepos) -> None:
-    repo = 'doctest'
-    builds.add_source_repo('onqtam', repo, ['master', 'dev'], github_build_info=GitHubBuildConfig(['CI']))
-    builds.add_forked_repo(None, 'claremacrae', repo, ['master', 'dev'], AppveyorBuildConfig('y3ylbpuv79souy6e'),
+    builds.add_source_repo('onqtam', 'doctest', ['master', 'dev'], github_build_info=GitHubBuildConfig(['CI']))
+    builds.add_forked_repo(None, 'claremacrae', 'doctest', ['master', 'dev'], AppveyorBuildConfig('y3ylbpuv79souy6e'),
                            GitHubBuildConfig(['CI']))
