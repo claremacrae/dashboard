@@ -12,6 +12,7 @@ class GitHubRepoInfo:
         self.user = user
         self.project = project
         self.branches = branches
+        self.language = 'C++'
         self.repo_type = repo_type
 
     def user_account_url(self) -> str:
