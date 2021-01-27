@@ -20,15 +20,13 @@ def add_official_approval_test_repos_cpp(builds: AllRepos) -> None:
     repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp', ['master'],
                            AppveyorBuildConfig('lf3i76ije89oihi5', 'isidore'),
                            GitHubBuildConfig(gh_workflows))
-    builds.add_forked_repo(repo, 'claremacrae', ['master'], AppveyorBuildConfig('37smtsp3a694okv8'),
-                           GitHubBuildConfig(gh_workflows))  # 'setup_sanitizers'
+    builds.add_forked_repo(repo, 'claremacrae', ['master'], AppveyorBuildConfig('37smtsp3a694okv8'))  # 'setup_sanitizers'
 
     gh_workflows = ['build', 'build_vs']
     repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp.StarterProject', ['master'],
                            AppveyorBuildConfig('qx0546k6ii57919w', 'isidore'),
                            GitHubBuildConfig(gh_workflows))
-    builds.add_forked_repo(repo, 'claremacrae', ['master'], AppveyorBuildConfig('ytjgybf5r9fviifm'),
-                           GitHubBuildConfig(gh_workflows))
+    builds.add_forked_repo(repo, 'claremacrae', ['master'], AppveyorBuildConfig('ytjgybf5r9fviifm'))
 
     repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp.Qt', ['master'],
                            AppveyorBuildConfig('pf8et0nk1mdajskf', 'isidore'))
@@ -42,11 +40,11 @@ def add_official_approval_test_repos_cpp(builds: AllRepos) -> None:
 def add_official_approval_test_repos_python(builds: AllRepos) -> None:
     git_hub_build_config = GitHubBuildConfig(['Test', 'on-push-do-doco', 'Upload Python Package'], False)
     repo = builds.add_source_repo('approvals', 'ApprovalTests.Python', ['master'], None, git_hub_build_config)
-    builds.add_forked_repo(repo, 'claremacrae', ['master'], None, git_hub_build_config)
+    builds.add_forked_repo(repo, 'claremacrae', ['master'], None)
 
     git_hub_build_config = GitHubBuildConfig(['Test'], False)
     repo = builds.add_source_repo('approvals', 'ApprovalTests.Python.PytestPlugin', ['master'], None, git_hub_build_config)
-    builds.add_forked_repo(repo, 'claremacrae', ['master'], None, git_hub_build_config)
+    builds.add_forked_repo(repo, 'claremacrae', ['master'], None)
 
 
 def add_my_experimental_approvals_repos(builds: AllRepos) -> None:
@@ -81,5 +79,4 @@ def add_boost_ut_repos(builds):
 
 def add_doctest_repos(builds: AllRepos) -> None:
     repo = builds.add_source_repo('onqtam', 'doctest', ['master', 'dev'], github_build_info=GitHubBuildConfig(['CI']))
-    builds.add_forked_repo(repo, 'claremacrae', ['master', 'dev'], AppveyorBuildConfig('y3ylbpuv79souy6e'),
-                           GitHubBuildConfig(['CI']))
+    builds.add_forked_repo(repo, 'claremacrae', ['master', 'dev'], AppveyorBuildConfig('y3ylbpuv79souy6e'))
