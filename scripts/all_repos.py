@@ -22,8 +22,12 @@ class AllRepos:
         return self.add_repo(appveyor_build_info, branches, project, github_build_info, 'Source', user, 'C++')
 
     def add_forked_repo(self, parent_repo: RepoAndBuilds, user: str, branches: List[str],
-                        appveyor_build_info: Union[AppveyorBuildConfig, None] = AppveyorBuildConfig(),
-                        github_build_info: Union[GitHubBuildConfig, None] = GitHubBuildConfig()) -> None:
+                        appveyor_build_info: Union[AppveyorBuildConfig, None] = None,
+                        github_build_info: Union[GitHubBuildConfig, None] = None) -> None:
+        if not appveyor_build_info:
+            appveyor_build_info = parent_repo.appveyor_build_info
+        if not github_build_info:
+            github_build_info = parent_repo.github_build_info
         self.add_repo(appveyor_build_info, branches, parent_repo.repo_info.project, github_build_info, 'Fork', user, 'C++')
 
     def add_repo(self, appveyor_build_info: Union[AppveyorBuildConfig, None], branches: List[str], project: str,
