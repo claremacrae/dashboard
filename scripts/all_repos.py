@@ -17,7 +17,7 @@ class AllRepos:
         self.builds[repo.repo_info.user].append(repo)
 
     def add_source_repo(self, user: str, project: str, branches: Union[List[str], None],
-                        appveyor_build_info: Union[AppveyorBuildConfig, None] = AppveyorBuildConfig(),
+                        appveyor_build_info: Union[AppveyorBuildConfig, None] = None,
                         github_build_info: Union[GitHubBuildConfig, None] = GitHubBuildConfig(),
                         language='C++') -> RepoAndBuilds:
         return self.add_repo(appveyor_build_info, branches, project, github_build_info, 'Source', user, language)

@@ -51,9 +51,9 @@ def add_official_approval_test_repos_python(builds: AllRepos) -> None:
 
 
 def add_my_experimental_approvals_repos(builds: AllRepos) -> None:
-    repo = builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.CMakeSamples', ['main'], None)
-    repo = builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.Demos', ['main'], None)
-    repo = builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.Nursery', ['main'], None)
+    repo = builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.CMakeSamples', ['main'])
+    repo = builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.Demos', ['main'])
+    repo = builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.Nursery', ['main'])
 
     repos = [
         # 'ApprovalTests.cpp.Scripts',
