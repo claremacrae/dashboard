@@ -39,10 +39,13 @@ def add_official_approval_test_repos_cpp(builds: AllRepos) -> None:
 
 def add_official_approval_test_repos_python(builds: AllRepos) -> None:
     python = 'Python'
-    git_hub_build_config = GitHubBuildConfig(['Test', 'on-push-do-doco', 'Upload Python Package'], False)
+    default_workflows = ['Test', 'on-push-do-doco']  # We only show the publishing workflow in source repo
+    git_hub_build_config = GitHubBuildConfig(default_workflows + ['Upload Python Package'], False)
     repo = builds.add_source_repo('approvals', 'ApprovalTests.Python', ['master'], None, git_hub_build_config,
                                   language=python)
-    builds.add_forked_repo(repo, 'claremacrae')
+
+    git_hub_build_config = GitHubBuildConfig(default_workflows, False)
+    builds.add_forked_repo(repo, 'claremacrae', github_build_info=git_hub_build_config)
 
     git_hub_build_config = GitHubBuildConfig(['Test'], False)
     repo = builds.add_source_repo('approvals', 'ApprovalTests.Python.PytestPlugin', ['master'], None,
