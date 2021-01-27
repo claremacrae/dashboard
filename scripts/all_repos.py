@@ -28,5 +28,5 @@ class AllRepos:
 
     def add_repo(self, appveyor_build_info: Union[AppveyorBuildConfig, None], branches: List[str], project: str,
                  github_build_info: Union[GitHubBuildConfig, None], repo_type: str, user: str, language) -> None:
-        repo = RepoAndBuilds(GitHubRepoInfo(user, project, branches, repo_type, 'C++'), appveyor_build_info, github_build_info)
+        repo = RepoAndBuilds(GitHubRepoInfo(user, project, branches, repo_type, language), appveyor_build_info, github_build_info)
         self.__store_repo(repo)
