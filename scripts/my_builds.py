@@ -49,6 +49,8 @@ def add_official_approval_test_repos_python(builds: AllRepos) -> None:
 
 
 def add_my_experimental_approvals_repos(builds: AllRepos) -> None:
+    builds.add_source_repo('claremacrae', 'commandline-videostore-cpp', ['webinar_prep'])
+
     misc = 'Miscellaneous'
     builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.CMakeSamples', ['main'], language=misc)
     builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.Demos', ['main'], language=misc)

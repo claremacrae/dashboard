@@ -31,6 +31,10 @@ approvals/ApprovalTests.Python.PytestPlugin
 
 [![Build Status](https://github.com/approvals/ApprovalTests.Python.PytestPlugin/workflows/Test/badge.svg)](https://github.com/approvals/ApprovalTests.Python.PytestPlugin/actions?query=workflow%3ATest)
 
+claremacrae/commandline-videostore-cpp
+
+[![Build Status](https://github.com/claremacrae/commandline-videostore-cpp/workflows/build/badge.svg?branch=webinar_prep)](https://github.com/claremacrae/commandline-videostore-cpp/actions?query=branch%3Awebinar_prep+workflow%3Abuild)
+
 claremacrae/ApprovalTests.cpp.CMakeSamples
 
 [![Build Status](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/workflows/build/badge.svg?branch=main)](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/actions?query=branch%3Amain+workflow%3Abuild)
