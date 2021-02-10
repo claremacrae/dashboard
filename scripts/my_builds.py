@@ -49,17 +49,17 @@ def add_official_approval_test_repos_python(builds: AllRepos) -> None:
 
 
 def add_my_experimental_approvals_repos(builds: AllRepos) -> None:
-    python = 'Miscellaneous'
-    builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.CMakeSamples', ['main'], language=python)
-    builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.Demos', ['main'], language=python)
-    builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.Nursery', ['main'], language=python)
+    misc = 'Miscellaneous'
+    builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.CMakeSamples', ['main'], language=misc)
+    builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.Demos', ['main'], language=misc)
+    builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.Nursery', ['main'], language=misc)
 
     repos = [
         # 'ApprovalTests.cpp.Scripts',
         'SuperBuildApprovalTests',
     ]
     for repo in repos:
-        builds.add_source_repo('claremacrae', repo, ['main'], None, None, language=python)
+        builds.add_source_repo('claremacrae', repo, ['main'], None, None, language=misc)
 
 
 def add_my_random_repos(builds: AllRepos) -> None:
