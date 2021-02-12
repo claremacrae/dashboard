@@ -49,7 +49,7 @@ def add_official_approval_test_repos_python(builds: AllRepos) -> None:
 
 
 def add_my_experimental_approvals_repos(builds: AllRepos) -> None:
-    builds.add_source_repo('claremacrae', 'commandline-videostore-cpp', ['webinar_prep', 'W1-endpoint', 'W2', 'DR1'],
+    builds.add_source_repo('claremacrae', 'commandline-videostore-cpp', ['webinar_prep', 'DR1'],
                            language="Webinar")
 
     misc = 'Miscellaneous'
