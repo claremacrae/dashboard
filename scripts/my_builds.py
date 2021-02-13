@@ -15,7 +15,7 @@ def add_all_repos(builds: AllRepos) -> None:
 
 
 def add_official_approval_test_repos_cpp(builds: AllRepos) -> None:
-    repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp', ['master'],
+    repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp', ['master', 'issue/171-ninja-fix'],
                                   AppveyorBuildConfig('lf3i76ije89oihi5', 'isidore'),
                                   GitHubBuildConfig(['build', 'python-tests']))
     builds.add_forked_repo(repo, AppveyorBuildConfig('37smtsp3a694okv8'))  # 'setup_sanitizers'
@@ -49,7 +49,7 @@ def add_official_approval_test_repos_python(builds: AllRepos) -> None:
 
 
 def add_my_experimental_approvals_repos(builds: AllRepos) -> None:
-    builds.add_source_repo('claremacrae', 'commandline-videostore-cpp', ['webinar_prep', 'DR1'],
+    builds.add_source_repo('claremacrae', 'commandline-videostore-cpp', ['webinar_prep', 'DR1', 'DR2'],
                            language="Webinar")
 
     misc = 'Miscellaneous'
