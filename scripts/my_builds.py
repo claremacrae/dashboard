@@ -50,6 +50,7 @@ def add_official_approval_test_repos_python(builds: AllRepos) -> None:
 
 def add_my_experimental_approvals_repos(builds: AllRepos) -> None:
     builds.add_source_repo('claremacrae', 'commandline-videostore-cpp', ['starting-point', 'complete-run', 'webinar'],
+                           github_build_info=GitHubBuildConfig(['build', 'on-push-do-doco']),
                            language="Webinar")
 
     misc = 'Miscellaneous'
