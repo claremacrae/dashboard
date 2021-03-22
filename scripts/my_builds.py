@@ -3,8 +3,8 @@ from scripts.ci_configs import AppveyorBuildConfig, GitHubBuildConfig
 
 
 def add_all_repos(builds: AllRepos) -> None:
-    CppApprovalTests.add_official_approval_test_repos_cpp(builds)
-    PythonApprovalTests.add_official_approval_test_repos_python(builds)
+    CppApprovalTests.add_all_repos(builds)
+    PythonApprovalTests.add_all_repos(builds)
     add_my_experimental_approvals_repos(builds)
     add_my_random_repos(builds)
 
@@ -14,7 +14,7 @@ def add_all_repos(builds: AllRepos) -> None:
 
 class CppApprovalTests:
     @staticmethod
-    def add_official_approval_test_repos_cpp(builds: AllRepos) -> None:
+    def add_all_repos(builds: AllRepos) -> None:
         repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp', ['master'],
                                       AppveyorBuildConfig('lf3i76ije89oihi5', 'isidore'),
                                       GitHubBuildConfig(['build', 'python-tests']))
@@ -36,7 +36,7 @@ class CppApprovalTests:
 
 class PythonApprovalTests:
     @staticmethod
-    def add_official_approval_test_repos_python(builds: AllRepos) -> None:
+    def add_all_repos(builds: AllRepos) -> None:
         python = 'Python'
         default_workflows = ['Test', 'on-push-do-doco']  # We only show the publishing workflow in source repo
         parent_git_hub_build_config = GitHubBuildConfig(default_workflows + ['Upload Python Package'], False)
