@@ -4,7 +4,7 @@ from scripts.ci_configs import AppveyorBuildConfig, GitHubBuildConfig
 
 def add_all_repos(builds: AllRepos) -> None:
     add_official_approval_test_repos_cpp(builds)
-    add_official_approval_test_repos_python(builds)
+    PythonApprovalTests.add_official_approval_test_repos_python(builds)
     add_my_experimental_approvals_repos(builds)
     add_my_random_repos(builds)
 
@@ -32,6 +32,12 @@ def add_official_approval_test_repos_cpp(builds: AllRepos) -> None:
     repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp.Qt.StarterProject', ['master'],
                                   AppveyorBuildConfig('tpitsul9axlv93uk', 'isidore'))
     builds.add_forked_repo(repo, AppveyorBuildConfig('xe2iwuto0sc342a7'))
+
+
+class PythonApprovalTests:
+    @staticmethod
+    def add_official_approval_test_repos_python(builds: AllRepos) -> None:
+        add_official_approval_test_repos_python(builds)
 
 
 def add_official_approval_test_repos_python(builds: AllRepos) -> None:
