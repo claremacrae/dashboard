@@ -37,21 +37,18 @@ def add_official_approval_test_repos_cpp(builds: AllRepos) -> None:
 class PythonApprovalTests:
     @staticmethod
     def add_official_approval_test_repos_python(builds: AllRepos) -> None:
-        add_official_approval_test_repos_python(builds)
+        python = 'Python'
+        default_workflows = ['Test', 'on-push-do-doco']  # We only show the publishing workflow in source repo
+        parent_git_hub_build_config = GitHubBuildConfig(default_workflows + ['Upload Python Package'], False)
+        repo = builds.add_source_repo('approvals', 'ApprovalTests.Python', ['master'], None,
+                                      parent_git_hub_build_config,
+                                      language=python)
+        fork_git_hub_build_config = GitHubBuildConfig(default_workflows, False)
+        builds.add_forked_repo(repo, github_build_info=fork_git_hub_build_config)
 
-
-def add_official_approval_test_repos_python(builds: AllRepos) -> None:
-    python = 'Python'
-    default_workflows = ['Test', 'on-push-do-doco']  # We only show the publishing workflow in source repo
-    parent_git_hub_build_config = GitHubBuildConfig(default_workflows + ['Upload Python Package'], False)
-    repo = builds.add_source_repo('approvals', 'ApprovalTests.Python', ['master'], None, parent_git_hub_build_config,
-                                  language=python)
-    fork_git_hub_build_config = GitHubBuildConfig(default_workflows, False)
-    builds.add_forked_repo(repo, github_build_info=fork_git_hub_build_config)
-
-    repo = builds.add_source_repo('approvals', 'ApprovalTests.Python.PytestPlugin', ['master'], None,
-                                  GitHubBuildConfig(['Test'], False), language=python)
-    builds.add_forked_repo(repo)
+        repo = builds.add_source_repo('approvals', 'ApprovalTests.Python.PytestPlugin', ['master'], None,
+                                      GitHubBuildConfig(['Test'], False), language=python)
+        builds.add_forked_repo(repo)
 
 
 def add_my_experimental_approvals_repos(builds: AllRepos) -> None:
