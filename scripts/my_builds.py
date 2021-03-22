@@ -3,7 +3,7 @@ from scripts.ci_configs import AppveyorBuildConfig, GitHubBuildConfig
 
 
 def add_all_repos(builds: AllRepos) -> None:
-    add_official_approval_test_repos_cpp(builds)
+    CppApprovalTests.add_official_approval_test_repos_cpp(builds)
     PythonApprovalTests.add_official_approval_test_repos_python(builds)
     add_my_experimental_approvals_repos(builds)
     add_my_random_repos(builds)
@@ -14,24 +14,26 @@ def add_all_repos(builds: AllRepos) -> None:
     # add_doctest_repos(builds)
 
 
-def add_official_approval_test_repos_cpp(builds: AllRepos) -> None:
-    repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp', ['master'],
-                                  AppveyorBuildConfig('lf3i76ije89oihi5', 'isidore'),
-                                  GitHubBuildConfig(['build', 'python-tests']))
-    builds.add_forked_repo(repo, AppveyorBuildConfig('37smtsp3a694okv8'))  # 'setup_sanitizers'
+class CppApprovalTests:
+    @staticmethod
+    def add_official_approval_test_repos_cpp(builds: AllRepos) -> None:
+        repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp', ['master'],
+                                      AppveyorBuildConfig('lf3i76ije89oihi5', 'isidore'),
+                                      GitHubBuildConfig(['build', 'python-tests']))
+        builds.add_forked_repo(repo, AppveyorBuildConfig('37smtsp3a694okv8'))  # 'setup_sanitizers'
 
-    repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp.StarterProject', ['master'],
-                                  AppveyorBuildConfig('qx0546k6ii57919w', 'isidore'),
-                                  GitHubBuildConfig(['build', 'build_vs']))
-    builds.add_forked_repo(repo, AppveyorBuildConfig('ytjgybf5r9fviifm'))
+        repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp.StarterProject', ['master'],
+                                      AppveyorBuildConfig('qx0546k6ii57919w', 'isidore'),
+                                      GitHubBuildConfig(['build', 'build_vs']))
+        builds.add_forked_repo(repo, AppveyorBuildConfig('ytjgybf5r9fviifm'))
 
-    repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp.Qt', ['master'],
-                                  AppveyorBuildConfig('pf8et0nk1mdajskf', 'isidore'))
-    builds.add_forked_repo(repo, AppveyorBuildConfig('g60qbttap7m5nul2'))
+        repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp.Qt', ['master'],
+                                      AppveyorBuildConfig('pf8et0nk1mdajskf', 'isidore'))
+        builds.add_forked_repo(repo, AppveyorBuildConfig('g60qbttap7m5nul2'))
 
-    repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp.Qt.StarterProject', ['master'],
-                                  AppveyorBuildConfig('tpitsul9axlv93uk', 'isidore'))
-    builds.add_forked_repo(repo, AppveyorBuildConfig('xe2iwuto0sc342a7'))
+        repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp.Qt.StarterProject', ['master'],
+                                      AppveyorBuildConfig('tpitsul9axlv93uk', 'isidore'))
+        builds.add_forked_repo(repo, AppveyorBuildConfig('xe2iwuto0sc342a7'))
 
 
 class PythonApprovalTests:
