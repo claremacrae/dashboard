@@ -1,5 +1,5 @@
 from scripts.implementation.all_repos import AllRepos
-from scripts.implementation.ci_configs import GitHubBuildConfig
+from scripts.implementation.ci_configs import GitHubBuildConfig, AppveyorBuildConfig
 
 
 class JavaScriptApprovalTests:
@@ -12,7 +12,7 @@ class JavaScriptApprovalTests:
         language = 'JavaScript'
 
         repo = builds.add_source_repo('approvals', 'Approvals.NodeJS', ['master'],
-                                      None,
+                                      AppveyorBuildConfig('fwyi6sryl03h9em6', 'JasonJarrett'),
                                       GitHubBuildConfig([]), language)
         repo = builds.add_source_repo('approvals', 'ApprovalTests.js.StarterProject', ['master'],
                                       None,
