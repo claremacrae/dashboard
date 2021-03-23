@@ -2,7 +2,7 @@ from collections import defaultdict
 from typing import DefaultDict, List, Union
 
 from scripts.implementation.ci_configs import AppveyorBuildConfig, GitHubBuildConfig, RepoAndBuilds
-from scripts.github_repo_info import GitHubRepoInfo
+from scripts.implementation.github_repo_info import GitHubRepoInfo
 
 
 class AllRepos:
