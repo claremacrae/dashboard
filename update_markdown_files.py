@@ -2,7 +2,7 @@
 
 from scripts.implementation.all_repos import AllRepos
 from scripts.implementation.create_build_badges import BuildBadges
-from scripts.create_build_table import BuildTable
+from scripts.implementation.create_build_table import BuildTable
 from scripts.my_builds import add_all_repos
 
 
