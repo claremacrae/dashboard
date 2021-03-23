@@ -1,7 +1,7 @@
 from typing import TextIO
 
 from scripts.implementation.all_repos import AllRepos
-from scripts.ci_configs import AppveyorBuildConfig, RepoAndBuilds, GitHubBuildConfig
+from scripts.implementation.ci_configs import AppveyorBuildConfig, RepoAndBuilds, GitHubBuildConfig
 
 
 class BuildTable:

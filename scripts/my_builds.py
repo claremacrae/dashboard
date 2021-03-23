@@ -1,5 +1,5 @@
 from scripts.implementation.all_repos import AllRepos
-from scripts.ci_configs import AppveyorBuildConfig, GitHubBuildConfig
+from scripts.implementation.ci_configs import AppveyorBuildConfig, GitHubBuildConfig
 
 
 def add_all_repos(builds: AllRepos) -> None:
