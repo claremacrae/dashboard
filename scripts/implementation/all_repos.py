@@ -13,7 +13,7 @@ class AllRepos:
         builds = self.builds[user_name]
         return [build for build in builds if build.repo_info.repo_type == repo_type]
 
-    def __store_repo(self, repo):
+    def __store_repo(self, repo) -> None:
         self.builds[repo.repo_info.user].append(repo)
 
     def add_source_repo(self, user: str, project: str, branches: Union[List[str], None],

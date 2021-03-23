@@ -18,7 +18,7 @@ class TestFrameworkRepos:
         builds.add_forked_repo(repo, AppveyorBuildConfig('8m77qos96rmcn6jg'))
 
     @staticmethod
-    def add_boost_ut_repos(builds: AllRepos):
+    def add_boost_ut_repos(builds: AllRepos) -> None:
         repo = builds.add_source_repo('boost-experimental', 'ut', ['master'])
         builds.add_forked_repo(repo, AppveyorBuildConfig('ab4jv9x8kveev0n4'), ['master', 'clare_learning'])
 

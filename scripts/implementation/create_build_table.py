@@ -43,7 +43,7 @@ class BuildTable:
         stream.write(F'| {line} |' + '\n')
 
     @staticmethod
-    def get_status(build, branch_build, branch):
+    def get_status(build, branch_build, branch) -> str:
         if build:
             status = build.status(branch_build.repo_info, branch)
         else:

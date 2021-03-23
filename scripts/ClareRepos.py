@@ -4,20 +4,20 @@ from scripts.implementation.ci_configs import GitHubBuildConfig, AppveyorBuildCo
 
 class ClareRepos:
     @staticmethod
-    def add_all_my_repos(builds: AllRepos):
+    def add_all_my_repos(builds: AllRepos) -> None:
         # ClareRepos.add_clion_webinar(builds)
         ClareRepos.add_misc_approvals(builds)
         ClareRepos.add_my_random_repos(builds)
 
     @staticmethod
-    def add_clion_webinar(builds):
+    def add_clion_webinar(builds: AllRepos) -> None:
         builds.add_source_repo('claremacrae', 'commandline-videostore-cpp',
                                ['starting-point', 'complete-run', 'webinar'],
                                github_build_info=GitHubBuildConfig(['build', 'on-push-do-doco']),
                                language="Webinar")
 
     @staticmethod
-    def add_misc_approvals(builds):
+    def add_misc_approvals(builds: AllRepos) -> None:
         misc = 'Miscellaneous'
         builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.CMakeSamples', ['main'], language=misc)
         builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.Demos', ['main'], language=misc)

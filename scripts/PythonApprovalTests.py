@@ -9,7 +9,7 @@ class PythonApprovalTests:
         pass
 
     @staticmethod
-    def add_approvals_repos(builds):
+    def add_approvals_repos(builds: AllRepos) -> None:
         python = 'Python'
         default_workflows = ['Test', 'on-push-do-doco']  # We only show the publishing workflow in source repo
         parent_git_hub_build_config = GitHubBuildConfig(default_workflows + ['Upload Python Package'], False)
