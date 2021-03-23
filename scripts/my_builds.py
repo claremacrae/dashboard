@@ -9,8 +9,6 @@ def add_all_repos(builds: AllRepos) -> None:
     CppApprovalTests.add_all_repos(builds)
     PythonApprovalTests.add_all_repos(builds)
     ClareRepos.add_all_my_repos(builds)
-
-    # Other things I've forked - alphabetical by account name
     TestFrameworkRepos.add_all_repos(builds)
 
 
