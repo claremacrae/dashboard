@@ -58,7 +58,7 @@ class PythonApprovalTests:
 class ClareRepos:
     @staticmethod
     def add_all_my_repos(builds: AllRepos):
-        ClareRepos.add_clion_webinar(builds)
+        # ClareRepos.add_clion_webinar(builds)
         ClareRepos.add_misc_approvals(builds)
         ClareRepos.add_my_random_repos(builds)
 
