@@ -5,8 +5,7 @@ from scripts.ci_configs import AppveyorBuildConfig, GitHubBuildConfig
 def add_all_repos(builds: AllRepos) -> None:
     CppApprovalTests.add_all_repos(builds)
     PythonApprovalTests.add_all_repos(builds)
-    add_my_experimental_approvals_repos(builds)
-    add_my_random_repos(builds)
+    add_all_my_repos(builds)
 
     # Other things I've forked - alphabetical by account name
     TestFrameworkRepos.add_all_repos(builds)
@@ -54,6 +53,11 @@ class PythonApprovalTests:
         repo = builds.add_source_repo('approvals', 'ApprovalTests.Python.PytestPlugin', ['master'], None,
                                       GitHubBuildConfig(['Test'], False), language=python)
         builds.add_forked_repo(repo)
+
+
+def add_all_my_repos(builds):
+    add_my_experimental_approvals_repos(builds)
+    add_my_random_repos(builds)
 
 
 def add_my_experimental_approvals_repos(builds: AllRepos) -> None:
