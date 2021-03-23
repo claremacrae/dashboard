@@ -1,7 +1,7 @@
 from typing import Optional, List, Union
 
-from scripts import dashboard_utilities
-from scripts.dashboard_utilities import hyperlinked_text, encode_string
+from scripts.implementation import dashboard_utilities
+from scripts.implementation.dashboard_utilities import hyperlinked_text, encode_string
 from scripts.github_repo_info import GitHubRepoInfo
 
 

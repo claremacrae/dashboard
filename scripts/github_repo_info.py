@@ -1,6 +1,6 @@
 from typing import List
 
-from scripts import dashboard_utilities
+from scripts.implementation import dashboard_utilities
 
 
 class GitHubRepoInfo:
