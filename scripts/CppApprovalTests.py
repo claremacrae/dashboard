@@ -11,7 +11,7 @@ class CppApprovalTests:
         builds.add_forked_repo(repo, AppveyorBuildConfig('37smtsp3a694okv8'))  # 'setup_sanitizers'
 
         repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp.StarterProject', ['master'],
-                                      AppveyorBuildConfig('qx0546k6ii57919w', 'isidore'),
+                                      None,
                                       GitHubBuildConfig(['build', 'build_vs']))
         builds.add_forked_repo(repo, AppveyorBuildConfig('ytjgybf5r9fviifm'))
 
