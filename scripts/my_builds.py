@@ -68,11 +68,14 @@ class ClareRepos:
                                github_build_info=GitHubBuildConfig(['build', 'on-push-do-doco']),
                                language="Webinar")
 
+        ClareRepos.add_misc_approvals(builds)
+
+    @staticmethod
+    def add_misc_approvals(builds):
         misc = 'Miscellaneous'
         builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.CMakeSamples', ['main'], language=misc)
         builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.Demos', ['main'], language=misc)
         builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.Nursery', ['main'], language=misc)
-
         repos = [
             # 'ApprovalTests.cpp.Scripts',
             'SuperBuildApprovalTests',
