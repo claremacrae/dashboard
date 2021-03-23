@@ -63,12 +63,16 @@ class ClareRepos:
 
     @staticmethod
     def add_my_experimental_approvals_repos(builds: AllRepos) -> None:
+        ClareRepos.add_clion_webinar(builds)
+
+        ClareRepos.add_misc_approvals(builds)
+
+    @staticmethod
+    def add_clion_webinar(builds):
         builds.add_source_repo('claremacrae', 'commandline-videostore-cpp',
                                ['starting-point', 'complete-run', 'webinar'],
                                github_build_info=GitHubBuildConfig(['build', 'on-push-do-doco']),
                                language="Webinar")
-
-        ClareRepos.add_misc_approvals(builds)
 
     @staticmethod
     def add_misc_approvals(builds):
