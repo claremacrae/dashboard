@@ -21,16 +21,6 @@ approvals/ApprovalTests.cpp.Qt.StarterProject
 [![Build status](https://ci.appveyor.com/api/projects/status/tpitsul9axlv93uk/branch/master?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-cpp-qt-starterproject/branch/master)
 [![Build Status](https://github.com/approvals/ApprovalTests.cpp.Qt.StarterProject/workflows/build/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp.Qt.StarterProject/actions?query=branch%3Amaster+workflow%3Abuild)
 
-approvals/ApprovalTests.Python
-
-[![Build Status](https://github.com/approvals/ApprovalTests.Python/workflows/Test/badge.svg)](https://github.com/approvals/ApprovalTests.Python/actions?query=workflow%3ATest)
-[![Build Status](https://github.com/approvals/ApprovalTests.Python/workflows/on-push-do-doco/badge.svg)](https://github.com/approvals/ApprovalTests.Python/actions?query=workflow%3Aon-push-do-doco)
-[![Build Status](https://github.com/approvals/ApprovalTests.Python/workflows/Upload%20Python%20Package/badge.svg)](https://github.com/approvals/ApprovalTests.Python/actions?query=workflow%3A%22Upload+Python+Package%22)
-
-approvals/ApprovalTests.Python.PytestPlugin
-
-[![Build Status](https://github.com/approvals/ApprovalTests.Python.PytestPlugin/workflows/Test/badge.svg)](https://github.com/approvals/ApprovalTests.Python.PytestPlugin/actions?query=workflow%3ATest)
-
 claremacrae/commandline-videostore-cpp
 
 [![Build Status](https://github.com/claremacrae/commandline-videostore-cpp/workflows/build/badge.svg?branch=starting-point)](https://github.com/claremacrae/commandline-videostore-cpp/actions?query=branch%3Astarting-point+workflow%3Abuild)

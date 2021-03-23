@@ -37,7 +37,8 @@ class CppApprovalTests:
 class PythonApprovalTests:
     @staticmethod
     def add_all_repos(builds: AllRepos) -> None:
-        PythonApprovalTests.add_approvals_repos(builds)
+        # PythonApprovalTests.add_approvals_repos(builds)
+        pass
 
     @staticmethod
     def add_approvals_repos(builds):
