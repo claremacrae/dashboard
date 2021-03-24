@@ -1,7 +1,7 @@
 from typing import TextIO
 
 from scripts.implementation.all_repos import AllRepos
-from scripts.implementation.ci_configs import RepoAndBuilds
+from scripts.implementation.repo_and_builds import RepoAndBuilds
 from scripts.implementation.github_configs import GitHubBuildConfig
 from scripts.implementation.appveyor_configs import AppveyorBuildConfig
 
