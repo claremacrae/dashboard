@@ -29,6 +29,11 @@ approvals/ApprovalTests.js.StarterProject
 
 
 
+claremacrae/commandline-videostore-cpp
+
+[![Build Status](https://github.com/claremacrae/commandline-videostore-cpp/workflows/build/badge.svg?branch=starting-point)](https://github.com/claremacrae/commandline-videostore-cpp/actions?query=branch%3Astarting-point+workflow%3Abuild)
+[![Build Status](https://github.com/claremacrae/commandline-videostore-cpp/workflows/on-push-do-doco/badge.svg?branch=starting-point)](https://github.com/claremacrae/commandline-videostore-cpp/actions?query=branch%3Astarting-point+workflow%3Aon-push-do-doco)
+
 claremacrae/ApprovalTests.cpp.CMakeSamples
 
 [![Build Status](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/workflows/build/badge.svg?branch=main)](https://github.com/claremacrae/ApprovalTests.cpp.CMakeSamples/actions?query=branch%3Amain+workflow%3Abuild)
