@@ -49,6 +49,7 @@
 - [reproc/main.yml at master · DaanDeMeyer/reproc](https://github.com/DaanDeMeyer/reproc/blob/master/.github/workflows/main.yml)
 - [libgit2/main.yml at main · libgit2/libgit2](https://github.com/libgit2/libgit2/blob/main/.github/workflows/main.yml)
   - shows that matrices can be objects, and not just strings
+- [How to share matrix between jobs](https://github.community/t/how-to-share-matrix-between-jobs/128595)
 
 ## Composite run steps
 
