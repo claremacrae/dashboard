@@ -52,8 +52,7 @@
 
 ## Composite run steps
 
--
-Docs: [Creating a composite run steps action](https://docs.github.com/en/free-pro-team@latest/actions/creating-actions/creating-a-composite-run-steps-action)
+- Docs: [Creating a composite run steps action](https://docs.github.com/en/free-pro-team@latest/actions/creating-actions/creating-a-composite-run-steps-action)
 - Stack Overflow
   - [Reuse composite run steps action in same repo](https://stackoverflow.com/a/64079155/104370)
   - [How to us snippets in github action workflow file to avoid duplicates?
