@@ -12,9 +12,12 @@ class ClareRepos:
 
     @staticmethod
     def add_clion_webinar(builds: AllRepos) -> None:
-        branches2 = ['starting-point', 'complete-run', 'webinar']
-        workflows2 = ['build', 'on-push-do-doco']
-        branches_and_workflows = [[branches2, workflows2]]
+        branches_and_workflows = [
+            [
+                ['starting-point', 'complete-run', 'webinar'],
+                ['build', 'on-push-do-doco']
+            ]
+        ]
         for branches, workflows in branches_and_workflows:
             builds.add_source_repo('claremacrae', 'commandline-videostore-cpp',
                                    branches,
