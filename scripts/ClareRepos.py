@@ -15,10 +15,11 @@ class ClareRepos:
         branches2 = ['starting-point', 'complete-run', 'webinar']
         workflows2 = ['build', 'on-push-do-doco']
         branches_and_workflows = [[branches2, workflows2]]
-        builds.add_source_repo('claremacrae', 'commandline-videostore-cpp',
-                               branches2,
-                               github_build_info=GitHubBuildConfig(workflows2),
-                               language="Webinar")
+        for branches, workflows in branches_and_workflows:
+            builds.add_source_repo('claremacrae', 'commandline-videostore-cpp',
+                                   branches,
+                                   github_build_info=GitHubBuildConfig(workflows),
+                                   language="Webinar")
 
     @staticmethod
     def add_misc_approvals(builds: AllRepos) -> None:
