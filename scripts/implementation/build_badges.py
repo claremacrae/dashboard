@@ -10,9 +10,18 @@ class BuildBadges:
     def write_row(stream: TextIO, branch_build: RepoAndBuilds) -> None:
         repo_info = branch_build.repo_info
         branch = repo_info.branches[0]
+
+        number_of_badges = 0
+        for build in branch_build.all_builds():
+            if build:
+                number_of_badges += 1
+        if number_of_badges == 0:
+            return
+
         stream.write(F'\n')
         stream.write(F'{repo_info.user}/{repo_info.project}\n')
         stream.write(F'\n')
+
         for build in branch_build.all_builds():
             if not build:
                 continue

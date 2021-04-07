@@ -46,9 +46,6 @@ claremacrae/ApprovalTests.cpp.Nursery
 
 [![Build Status](https://github.com/claremacrae/ApprovalTests.cpp.Nursery/workflows/build/badge.svg?branch=main)](https://github.com/claremacrae/ApprovalTests.cpp.Nursery/actions?query=branch%3Amain+workflow%3Abuild)
 
-claremacrae/SuperBuildApprovalTests
-
-
 claremacrae/ci_playground
 
 [![Build status](https://ci.appveyor.com/api/projects/status/cbksrgvypq5vksy2/branch/trunk?svg=true)](https://ci.appveyor.com/project/claremacrae/ci-playground/branch/trunk)
