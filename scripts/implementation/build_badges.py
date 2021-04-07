@@ -11,7 +11,7 @@ class BuildBadges:
         repo_info = branch_build.repo_info
         branch = repo_info.branches[0]
 
-        if BuildBadges.number_of_badges2(branch_build) == 0:
+        if BuildBadges.number_of_badges(branch_build) == 0:
             return
 
         stream.write(F'\n')
@@ -26,7 +26,7 @@ class BuildBadges:
             stream.write(F'{wrapped_link}\n')
 
     @staticmethod
-    def number_of_badges2(branch_build: RepoAndBuilds) -> int:
+    def number_of_badges(branch_build: RepoAndBuilds) -> int:
         number_of_badges = 0
         for build in branch_build.all_builds():
             if build:
