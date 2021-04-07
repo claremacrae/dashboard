@@ -43,6 +43,8 @@ class BuildBadges:
         if not builds:
             return
 
+        stream.write(F'## {user_name}\n')
+
         last_project_name = None
         for build in builds:
             project_name = build.repo_info.project
