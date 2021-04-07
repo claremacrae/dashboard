@@ -29,5 +29,11 @@ class BuildBadges:
         builds = all_repos.builds_for_user_and_type('Source', user_name)
         if not builds:
             return
+
+        last_project_name = None
         for build in builds:
+            project_name = build.repo_info.project
+            if last_project_name == project_name:
+                continue
             self.write_row(stream, build)
+            last_project_name = project_name
