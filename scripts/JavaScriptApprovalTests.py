@@ -14,7 +14,7 @@ class JavaScriptApprovalTests:
 
         repo = builds.add_source_repo('approvals', 'Approvals.NodeJS', ['master'],
                                       AppveyorBuildConfig('fwyi6sryl03h9em6', 'JasonJarrett'),
-                                      GitHubBuildConfig([]), language)
+                                      None, language)
         repo = builds.add_source_repo('approvals', 'ApprovalTests.js.StarterProject', ['master'],
                                       None,
-                                      GitHubBuildConfig([]), language)
+                                      None, language)

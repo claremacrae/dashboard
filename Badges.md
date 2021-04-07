@@ -24,11 +24,6 @@ approvals/Approvals.NodeJS
 
 [![Build status](https://ci.appveyor.com/api/projects/status/fwyi6sryl03h9em6/branch/master?svg=true)](https://ci.appveyor.com/project/JasonJarrett/approvals-nodejs/branch/master)
 
-
-approvals/ApprovalTests.js.StarterProject
-
-
-
 claremacrae/commandline-videostore-cpp
 
 [![Build Status](https://github.com/claremacrae/commandline-videostore-cpp/workflows/build/badge.svg?branch=starting-point)](https://github.com/claremacrae/commandline-videostore-cpp/actions?query=branch%3Astarting-point+workflow%3Abuild)
