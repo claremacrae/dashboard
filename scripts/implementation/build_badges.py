@@ -11,8 +11,7 @@ class BuildBadges:
         repo_info = branch_build.repo_info
         branch = repo_info.branches[0]
 
-        number_of_badges = BuildBadges.number_of_badges2(branch_build)
-        if number_of_badges == 0:
+        if BuildBadges.number_of_badges2(branch_build) == 0:
             return
 
         stream.write(F'\n')
