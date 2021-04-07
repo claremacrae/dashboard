@@ -11,10 +11,7 @@ class BuildBadges:
         repo_info = branch_build.repo_info
         branch = repo_info.branches[0]
 
-        number_of_badges = 0
-        for build in branch_build.all_builds():
-            if build:
-                number_of_badges += 1
+        number_of_badges = BuildBadges.number_of_badges2(branch_build)
         if number_of_badges == 0:
             return
 
@@ -28,6 +25,14 @@ class BuildBadges:
             link = build.status(repo_info, branch)
             wrapped_link = link.replace('  ', '\n')
             stream.write(F'{wrapped_link}\n')
+
+    @staticmethod
+    def number_of_badges2(branch_build: RepoAndBuilds) -> int:
+        number_of_badges = 0
+        for build in branch_build.all_builds():
+            if build:
+                number_of_badges += 1
+        return number_of_badges
 
     def write_badges(self, all_repos: AllRepos) -> None:
         with open('Badges.md', 'w') as stream:
