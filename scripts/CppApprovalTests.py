@@ -6,7 +6,7 @@ from scripts.implementation.appveyor_configs import AppveyorBuildConfig
 class CppApprovalTests:
     @staticmethod
     def add_all_repos(builds: AllRepos) -> None:
-        repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp', ['master'],
+        repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp', ['master', 'reduce-repetition'],
                                       AppveyorBuildConfig('lf3i76ije89oihi5', 'isidore'),
                                       GitHubBuildConfig(['build', 'python-tests']))
         builds.add_forked_repo(repo, AppveyorBuildConfig('37smtsp3a694okv8'))  # 'setup_sanitizers'
