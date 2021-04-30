@@ -7,7 +7,7 @@ class CppApprovalTests:
     @staticmethod
     def add_all_repos(builds: AllRepos) -> None:
         repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp', ['master',
-                                                                         'cygwin1', 'cygwin2', 'mingw', 'mingw2',
+                                                                         'cygwin2', 'mingw2',
                                                                          ],
                                       AppveyorBuildConfig('lf3i76ije89oihi5', 'isidore'),
                                       GitHubBuildConfig(['build', 'python-tests']))
