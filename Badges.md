@@ -3,6 +3,8 @@
 approvals/ApprovalTests.cpp
 
 [![Build Status](https://github.com/approvals/ApprovalTests.cpp/workflows/build/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp/actions?query=branch%3Amaster+workflow%3Abuild)
+[![Build Status](https://github.com/approvals/ApprovalTests.cpp/workflows/cygwin/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp/actions?query=branch%3Amaster+workflow%3Acygwin)
+[![Build Status](https://github.com/approvals/ApprovalTests.cpp/workflows/mingw/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp/actions?query=branch%3Amaster+workflow%3Amingw)
 [![Build Status](https://github.com/approvals/ApprovalTests.cpp/workflows/python-tests/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp/actions?query=branch%3Amaster+workflow%3Apython-tests)
 
 approvals/ApprovalTests.cpp.StarterProject
