@@ -9,9 +9,9 @@ class CppApprovalTests:
         repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp', ['master',
                                                                          'cygwin2', 'mingw2',
                                                                          ],
-                                      AppveyorBuildConfig('lf3i76ije89oihi5', 'isidore'),
+                                      None,
                                       GitHubBuildConfig(['build', 'python-tests']))
-        builds.add_forked_repo(repo, AppveyorBuildConfig('37smtsp3a694okv8'))  # 'setup_sanitizers'
+        builds.add_forked_repo(repo,)  # 'setup_sanitizers'
 
         repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp.StarterProject', ['master'],
                                       None,
