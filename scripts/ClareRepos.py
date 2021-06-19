@@ -45,7 +45,11 @@ class ClareRepos:
     def add_my_random_repos(builds: AllRepos) -> None:
         language = 'Miscellaneous'
         #
-        builds.add_source_repo('claremacrae', 'sudoku-kata-cpp', ['main', 'with-tests'], language='C++')
+        builds.add_source_repo('claremacrae', 'sudoku-kata-cpp',
+                               ['main', 'with-tests'],
+                               None,
+                               GitHubBuildConfig(['CMake']),
+                               language='C++')
         # clone of other people's work - using CMake's FetchContent:
         # builds.add_builds('claremacrae', 'approval-tests-setup', ['master'])
         builds.add_source_repo('claremacrae', 'ci_playground', ['trunk'], AppveyorBuildConfig('cbksrgvypq5vksy2'),

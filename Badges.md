@@ -41,7 +41,7 @@ claremacrae/ApprovalTests.cpp.Nursery
 
 claremacrae/sudoku-kata-cpp
 
-[![Build Status](https://github.com/claremacrae/sudoku-kata-cpp/workflows/build/badge.svg?branch=main)](https://github.com/claremacrae/sudoku-kata-cpp/actions?query=branch%3Amain+workflow%3Abuild)
+[![Build Status](https://github.com/claremacrae/sudoku-kata-cpp/workflows/CMake/badge.svg?branch=main)](https://github.com/claremacrae/sudoku-kata-cpp/actions?query=branch%3Amain+workflow%3ACMake)
 
 claremacrae/ci_playground
 
