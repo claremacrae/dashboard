@@ -46,7 +46,5 @@ class ClareRepos:
                                language='C++')
         # clone of other people's work - using CMake's FetchContent:
         # builds.add_builds('claremacrae', 'approval-tests-setup', ['master'])
-        builds.add_source_repo('claremacrae', 'ci_playground', ['trunk'], AppveyorBuildConfig('cbksrgvypq5vksy2'),
-                               language=language)
         builds.add_source_repo('claremacrae', 'cpp_snippets', ['main'], AppveyorBuildConfig('hqf8xh615dyp3u4l'),
                                None, language=language)

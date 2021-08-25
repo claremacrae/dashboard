@@ -39,11 +39,6 @@ claremacrae/sudoku-kata-cpp
 
 [![Build Status](https://github.com/claremacrae/sudoku-kata-cpp/workflows/CMake/badge.svg?branch=main)](https://github.com/claremacrae/sudoku-kata-cpp/actions?query=branch%3Amain+workflow%3ACMake)
 
-claremacrae/ci_playground
-
-[![Build status](https://ci.appveyor.com/api/projects/status/cbksrgvypq5vksy2/branch/trunk?svg=true)](https://ci.appveyor.com/project/claremacrae/ci-playground/branch/trunk)
-[![Build Status](https://github.com/claremacrae/ci_playground/workflows/build/badge.svg?branch=trunk)](https://github.com/claremacrae/ci_playground/actions?query=branch%3Atrunk+workflow%3Abuild)
-
 claremacrae/cpp_snippets
 
 [![Build status](https://ci.appveyor.com/api/projects/status/hqf8xh615dyp3u4l/branch/main?svg=true)](https://ci.appveyor.com/project/claremacrae/cpp-snippets/branch/main)
