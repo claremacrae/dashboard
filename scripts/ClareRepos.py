@@ -34,12 +34,6 @@ class ClareRepos:
         builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.CMakeSamples', ['main'], language=misc)
         builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.Demos', ['main'], language=misc)
         builds.add_source_repo('claremacrae', 'ApprovalTests.cpp.Nursery', ['main'], language=misc)
-        repos = [
-            # 'ApprovalTests.cpp.Scripts',
-            'SuperBuildApprovalTests',
-        ]
-        for repo in repos:
-            builds.add_source_repo('claremacrae', repo, ['main'], None, None, language=misc)
 
     @staticmethod
     def add_my_random_repos(builds: AllRepos) -> None:
