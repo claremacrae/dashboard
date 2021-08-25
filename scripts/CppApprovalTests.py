@@ -15,7 +15,7 @@ class CppApprovalTests:
         repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp.StarterProject', ['master'],
                                       None,
                                       GitHubBuildConfig(['build', 'build_vs']))
-        builds.add_forked_repo(repo, AppveyorBuildConfig('ytjgybf5r9fviifm'))
+        builds.add_forked_repo(repo)
 
         repo = builds.add_source_repo('approvals', 'ApprovalTests.cpp.Qt', ['master'],
                                       AppveyorBuildConfig('pf8et0nk1mdajskf', 'isidore'))
