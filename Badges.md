@@ -14,12 +14,10 @@ approvals/ApprovalTests.cpp.StarterProject
 
 approvals/ApprovalTests.cpp.Qt
 
-[![Build status](https://ci.appveyor.com/api/projects/status/pf8et0nk1mdajskf/branch/master?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-cpp-qt/branch/master)
 [![Build Status](https://github.com/approvals/ApprovalTests.cpp.Qt/workflows/build/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp.Qt/actions?query=branch%3Amaster+workflow%3Abuild)
 
 approvals/ApprovalTests.cpp.Qt.StarterProject
 
-[![Build status](https://ci.appveyor.com/api/projects/status/tpitsul9axlv93uk/branch/master?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-cpp-qt-starterproject/branch/master)
 [![Build Status](https://github.com/approvals/ApprovalTests.cpp.Qt.StarterProject/workflows/build/badge.svg?branch=master)](https://github.com/approvals/ApprovalTests.cpp.Qt.StarterProject/actions?query=branch%3Amaster+workflow%3Abuild)
 ## claremacrae
 
