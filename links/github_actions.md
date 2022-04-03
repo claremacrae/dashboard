@@ -28,7 +28,7 @@
 - [Workflow syntax for GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions)
 - [Specifications for GitHub-hosted runners](https://docs.github.com/en/free-pro-team@latest/actions/reference/specifications-for-github-hosted-runners)
   - [Supported software](https://docs.github.com/en/free-pro-team@latest/actions/reference/specifications-for-github-hosted-runners#supported-software)
-- [Contexts and expression syntax for GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/reference/context-and-expression-syntax-for-github-actions)
+- [Contexts](https://docs.github.com/en/actions/learn-github-actions/contexts)
 - [Environment variables](https://docs.github.com/en/free-pro-team@latest/actions/reference/environment-variables)
 - [Workflow commands for GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-commands-for-github-actions)
 - [Events that trigger workflows](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#example-using-multiple-events-with-activity-types-or-configuration)
@@ -50,6 +50,7 @@
 ### Searches
 
 - [Search · search_term path:/.github/workflows/](https://github.com/search?q=search_term+path%3A%2F.github%2Fworkflows%2F+extension%3Ayml&type=Code)
+- [New Search · search_term path:/.github/workflows/](https://cs.github.com/?scopeName=All+repos&scope=&q=search_term+path%3A%2F.github%2Fworkflows%2F+path%3A*.yml)
 - [github actions qt5 - Google Search](https://www.google.com/search?client=safari&rls=en&q=github+actions+qt5&ie=UTF-8&oe=UTF-8)
 
 ### Examples
@@ -72,6 +73,7 @@
 - Video: [GitHub Actions - Composite Run Steps FIRST LOOK](https://www.youtube.com/watch?v=OqJyrZUUGTw)
 - Issue: [Next Steps for Fully Functioning Composite Actions](https://github.com/actions/runner/issues/646) - include
   examples of what you **can** do
+- [GitHub Actions: reusable workflows is generally available](https://github.blog/2021-11-29-github-actions-reusable-workflows-is-generally-available/)
 
 ### Cron Jobs
 
